@@ -21,9 +21,15 @@ let animals = []; //objects
 let sausageDogImage;
 let sausageDog;
 
+let state = 'title'
+let clear = 'GG! :)'
+let retry = `click anywhere to restart`
+
+
 /**
 Description of preload
 */
+
 function preload() {
 
  for (let i = 0; i < NUM_ANIMAL_IMAGES; i++) {
@@ -76,8 +82,46 @@ Description of draw()
 function draw() {
 background(30,30,0);
 
-updateAnimals();
-updateSausageDog();
+//Game states
+
+if (state === `title`) {
+  titlescreen();
+} else if (state === 'gameplay') {
+  gameplay();
+
+} else if (state === `gameclear`) {
+  gameclear();
+
+}
+
+}
+
+function titlescreen() {
+  textSize(40);
+  textAlign(CENTER);
+
+  fill(252);
+  text('hi', width / 2, height / 2);
+
+starting();
+}
+
+
+function gameplay(){
+  updateAnimals();
+  updateSausageDog();
+}
+
+function gameclear() {
+
+  textSize(50);
+  textAlign(CENTER);
+  fill(252, 169, 3);
+  text(clear, width / 2, height / 2);
+
+
+  updateAnimals();
+  updateSausageDog();
 }
 
 function updateAnimals() {
@@ -94,4 +138,10 @@ function updateSausageDog() {
 
 function mousePressed(){
   sausageDog.mousePressed();
+}
+
+function  starting(){
+  if ((keyIsDown(32))&&((state === `gameclear`) || (state === `title`))) {
+    state = `gameplay`;
+}
 }
