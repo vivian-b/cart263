@@ -4,7 +4,7 @@
 Sausage Dog
 Vivian Bui
 
-find the sausage dog picture
+find the sausage dog among all the other animals moving around
 */
 
 // global constants
@@ -12,7 +12,7 @@ const NUM_ANIMAL_IMAGES = 10;
 const ANIMAL_IMAGE_PREFIX = `assets/images/animal`;
 const SAUSAGE_DOG_IMAGE = `assets/images/sausage-dog.png`;
 
-const NUM_ANIMALS = 50;
+const NUM_ANIMALS = 105;
 
 // Array of animals
 let animalImages = []; //images
@@ -22,9 +22,10 @@ let sausageDogImage;
 let sausageDog;
 
 let state = 'title'
-let clear = 'GG! :)'
+let clear = '*happy dog noises*'
 let retry = `click anywhere to restart`
 
+let barkSFX;
 
 /**
 Description of preload
@@ -32,12 +33,12 @@ Description of preload
 
 function preload() {
 
- for (let i = 0; i < NUM_ANIMAL_IMAGES; i++) {
-   let animalImage = loadImage(`${ANIMAL_IMAGE_PREFIX}${i}.png`);
-   animalImages.push(animalImage);
- }
+  for (let i = 0; i < NUM_ANIMAL_IMAGES; i++) {
+    let animalImage = loadImage(`${ANIMAL_IMAGE_PREFIX}${i}.png`);
+    animalImages.push(animalImage);
+  }
 
- sausageDogImage = loadImage(`assets/images/sausage-dog.png`)
+  sausageDogImage = loadImage(`assets/images/sausage-dog.png`)
 }
 
 
@@ -46,6 +47,8 @@ Description of setup
 */
 function setup() {
   createCanvas(900, 900);
+
+  barkSFX = loadSound(`assets/sounds/bark.wav`)
 
   createAnimals();
   createSausageDog();
@@ -80,19 +83,19 @@ function createSausageDog() {
 Description of draw()
 */
 function draw() {
-background(30,30,0);
+  background(30, 30, 0);
 
-//Game states
+  //Game states
 
-if (state === `title`) {
-  titlescreen();
-} else if (state === 'gameplay') {
-  gameplay();
+  if (state === `title`) {
+    titlescreen();
+  } else if (state === 'gameplay') {
+    gameplay();
 
-} else if (state === `gameclear`) {
-  gameclear();
+  } else if (state === `gameclear`) {
+    gameclear();
 
-}
+  }
 
 }
 
@@ -103,25 +106,32 @@ function titlescreen() {
   fill(252);
   text('hi', width / 2, height / 2);
 
-starting();
+  loadGame();
 }
 
 
-function gameplay(){
-  updateAnimals();
+function gameplay() {
   updateSausageDog();
+  updateAnimals();
 }
 
 function gameclear() {
 
-  textSize(50);
+  textSize(45);
   textAlign(CENTER);
   fill(252, 169, 3);
   text(clear, width / 2, height / 2);
 
+  textSize(20);
+  text(retry, width / 2, height / 2 - 60);
 
-  updateAnimals();
+
   updateSausageDog();
+  loadGame();
+}
+
+function updateSausageDog() {
+  sausageDog.update();
 }
 
 function updateAnimals() {
@@ -132,16 +142,15 @@ function updateAnimals() {
   }
 }
 
-function updateSausageDog() {
-  sausageDog.update();
-}
 
-function mousePressed(){
+
+function mousePressed() {
   sausageDog.mousePressed();
 }
 
-function  starting(){
-  if ((keyIsDown(32))&&((state === `gameclear`) || (state === `title`))) {
+function loadGame() {
+  if ((keyIsDown(32)) && ((state === `gameclear`) || (state === `title`))) {
     state = `gameplay`;
-}
+    sausageDog.reset();
+  }
 }
