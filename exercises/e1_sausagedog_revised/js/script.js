@@ -12,7 +12,7 @@ const NUM_ANIMAL_IMAGES = 10;
 const ANIMAL_IMAGE_PREFIX = `assets/images/animal`;
 const SAUSAGE_DOG_IMAGE = `assets/images/sausage-dog.png`;
 
-const NUM_ANIMALS = 105;
+const NUM_ANIMALS = 100;
 
 // Array of animals
 let animalImages = []; //images
@@ -22,8 +22,10 @@ let sausageDogImage;
 let sausageDog;
 
 let state = 'title'
-let clear = '*happy dog noises*'
-let retry = `click anywhere to restart`
+let instructions = 'Find the doggo!'
+let clear = '* happy dog noises *'
+let retry = 'press space to try again!'
+let start = 'press space to start'
 
 let barkSFX;
 
@@ -83,7 +85,8 @@ function createSausageDog() {
 Description of draw()
 */
 function draw() {
-  background(30, 30, 0);
+  textFont(`Chewy`);
+  background(122, 77, 34);
 
   //Game states
 
@@ -100,11 +103,16 @@ function draw() {
 }
 
 function titlescreen() {
-  textSize(40);
+  gameplay();
+  background(36, 100, 133, 240);
+  textSize(60);
   textAlign(CENTER);
 
-  fill(252);
-  text('hi', width / 2, height / 2);
+  fill(255);
+  text(instructions, width / 2, height / 2);
+
+  textSize(20);
+  text(start, width / 2, height / 2 + 60);
 
   loadGame();
 }
@@ -116,14 +124,13 @@ function gameplay() {
 }
 
 function gameclear() {
-
+  background(68, 189, 68);
   textSize(45);
   textAlign(CENTER);
-  fill(252, 169, 3);
   text(clear, width / 2, height / 2);
 
   textSize(20);
-  text(retry, width / 2, height / 2 - 60);
+  text(retry, width / 2, height / 2 + 60);
 
 
   updateSausageDog();
