@@ -7,8 +7,7 @@ class SausageDog extends Animal {
     this.rotationSpeed = 0.15;
   }
 
-  // update()
-  // Calls the super update() and changes angle if found (to rotate!)
+  // Calls the super update() + clear condition
   update() {
     super.update();
     if (this.found) {
@@ -17,6 +16,7 @@ class SausageDog extends Animal {
     }
   }
 
+// tweaks to the dog in the clear screen
   happydog() {
     barkSFX.play();
     this.y = height / 2;
@@ -26,14 +26,15 @@ class SausageDog extends Animal {
     this.found = false;
   }
 
+// reset dog's position when restarting
   reset() {
     this.x = random(0, width);
     this.y = random(0, height);
     this.speed = 2;
     this.vx = 2;
   }
-  // mousePressed()
-  // Checks if this sausage dog was clicked and remembers it was found if so
+  
+  // Checks if this sausage dog was clicked on
   mousePressed() {
     if (!this.found && this.overlap(mouseX, mouseY)) {
       this.found = true;

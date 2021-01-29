@@ -5,48 +5,51 @@ Sausage Dog
 Vivian Bui
 
 find the sausage dog among all the other animals moving around
+>added animal movements
+>added title/end screen
+>added restart option
+>added SFX
+
 */
 
-// global constants
-const NUM_ANIMAL_IMAGES = 10;
+// Global constants
+const NUM_ANIMAL_IMAGES = 10; // image files from 1-10
 const ANIMAL_IMAGE_PREFIX = `assets/images/animal`;
 const SAUSAGE_DOG_IMAGE = `assets/images/sausage-dog.png`;
-
-const NUM_ANIMALS = 100;
+const NUM_ANIMALS = 100; //amount of mobs in the game
 
 // Array of animals
 let animalImages = []; //images
 let animals = []; //objects
 
-let sausageDogImage;
-let sausageDog;
+let sausageDogImage; //dog image
+let sausageDog; //dog object
 
+// game states
 let state = 'title'
 let instructions = 'Find the doggo!'
 let clear = '* happy dog noises *'
 let retry = 'press space to try again!'
 let start = 'press space to start'
 
+// sound effects
 let barkSFX;
 
-/**
-Description of preload
-*/
 
+// Loads all the animal images and the sausage dog image
 function preload() {
 
+// Loop for each animal image
   for (let i = 0; i < NUM_ANIMAL_IMAGES; i++) {
-    let animalImage = loadImage(`${ANIMAL_IMAGE_PREFIX}${i}.png`);
-    animalImages.push(animalImage);
+    let animalImage = loadImage(`${ANIMAL_IMAGE_PREFIX}${i}.png`); // Load the image with the current number (starting from 0)
+    animalImages.push(animalImage); //random image selection (added to the array)
   }
 
+// load the dog image
   sausageDogImage = loadImage(`assets/images/sausage-dog.png`)
 }
 
-
-/**
-Description of setup
-*/
+//  create canvas, sound file, animal objects + dog object
 function setup() {
   createCanvas(900, 900);
 
@@ -57,7 +60,7 @@ function setup() {
 }
 
 function createAnimals() {
-  // Create the correct number of animals
+  // Create the specified number of animals
   for (let i = 0; i < NUM_ANIMALS; i++) {
     // Create one random animal
     let animal = createRandomAnimal();
@@ -66,6 +69,7 @@ function createAnimals() {
   }
 }
 
+// Create an animal object (random position & random image)
 function createRandomAnimal() {
   let x = random(0, width);
   let y = random(0, height);
@@ -74,22 +78,19 @@ function createRandomAnimal() {
   return animal;
 }
 
-// createSausageDog()
-// Creates a sausage dog at a random position
+// Creates a sausage dog (random position)
 function createSausageDog() {
   let x = random(0, width);
   let y = random(0, height);
   sausageDog = new SausageDog(x, y, sausageDogImage);
 }
-/**
-Description of draw()
-*/
+
+// game states + main background and main font
 function draw() {
-  textFont(`Chewy`);
-  background(122, 77, 34);
+  textFont(`Chewy`); //chosen font
+  background(122, 77, 34); //brown background color
 
   //Game states
-
   if (state === `title`) {
     titlescreen();
   } else if (state === 'gameplay') {
@@ -102,29 +103,31 @@ function draw() {
 
 }
 
+// main starting screen: title of game and instructions
 function titlescreen() {
   gameplay();
-  background(36, 100, 133, 240);
+  background(36, 100, 133, 240); //low opacity (see through)
+
+// text styling
   textSize(60);
   textAlign(CENTER);
 
+// instruction/title
   fill(255);
   text(instructions, width / 2, height / 2);
 
+// guide to start the game (press space bar)
   textSize(20);
   text(start, width / 2, height / 2 + 60);
 
+// function to play the game
   loadGame();
 }
 
-
-function gameplay() {
-  updateSausageDog();
-  updateAnimals();
-}
-
+// screen when game is cleared
 function gameclear() {
-  background(68, 189, 68);
+  background(68, 189, 68); //green BG
+  //  text decoration
   textSize(45);
   textAlign(CENTER);
   text(clear, width / 2, height / 2);
@@ -132,15 +135,25 @@ function gameclear() {
   textSize(20);
   text(retry, width / 2, height / 2 + 60);
 
-
+  // activate sausage dog
   updateSausageDog();
+
+  // function to play the game
   loadGame();
 }
 
+// activate mobs (animals) and the target (dog)
+function gameplay() {
+  updateSausageDog();
+  updateAnimals();
+}
+
+// activate sausage dog
 function updateSausageDog() {
   sausageDog.update();
 }
 
+// group of animals
 function updateAnimals() {
   // Loop through all animals
   for (let i = 0; i < animals.length; i++) {
@@ -149,12 +162,12 @@ function updateAnimals() {
   }
 }
 
-
-
+// interaction between the dog and the user
 function mousePressed() {
   sausageDog.mousePressed();
 }
 
+// start/restarting the game from the title/clear screen
 function loadGame() {
   if ((keyIsDown(32)) && ((state === `gameclear`) || (state === `title`))) {
     state = `gameplay`;

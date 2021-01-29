@@ -1,3 +1,4 @@
+//class defining/displaying the animals
 class Animal {
   constructor(x, y, image) {
     this.x = x;
@@ -7,41 +8,31 @@ class Animal {
     this.speed = 2;
     this.image = image;
 
-    this.angle = 0;
+    // mirror effect (flip)
     this.scale = {
     x: 1,
     y: 1,
   };
   }
 
+// call all functions
   update() {
     this.display();
     this.move();
     this.flip();
   }
 
+// display the animal's image + position + effects
   display() {
     push();
     imageMode(CENTER);
     translate(this.x, this.y);
-    rotate(this.angle);
     scale(this.scale.x, this.scale.y);
     image(this.image, 0, 0)
     pop();
   }
 
-  overlap(x, y) {
-    if (x > this.x - this.image.width / 2 &&
-      x < this.x + this.image.width / 2 &&
-      y > this.y - this.image.height / 2 &&
-      y < this.y + this.image.height / 2) {
-      return true;
-    }
-    else {
-      return false
-    }
-  }
-
+// animal's movement
   move(){
     let change = random(0, 9);
     if (change < .1) {
@@ -67,5 +58,20 @@ class Animal {
      this.scale.x = -1;
 
    }
+  }
+
+
+
+// interaction with the positioning of the animal's image
+  overlap(x, y) {
+    if (x > this.x - this.image.width / 2 &&
+      x < this.x + this.image.width / 2 &&
+      y > this.y - this.image.height / 2 &&
+      y < this.y + this.image.height / 2) {
+      return true; //interaction
+    }
+    else {
+      return false; //no interaction
+    }
   }
 }
