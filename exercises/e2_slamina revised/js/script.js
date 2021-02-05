@@ -5,6 +5,8 @@ wybmv?
 Vivian Bui
 
 Answer a simple yes or no question.
+
+added features: random voice on click, added visuals, added sound fx
 */
 
 // bot voices set up
@@ -23,9 +25,20 @@ let intro = `(click anywhere)`;
 // set variable
 let bottomHeight = 350;
 
+// set sfx names
+let sadSFX;
+  let happySFX;
+// preloading soundFX
+function preload(){
+
+//soundFX
+  happySFX = loadSound(`assets/sounds/happy.wav`)
+  sadSFX = loadSound(`assets/sounds/sad.wav`)
+}
+
 // general text size and position & voice speech set up
 function setup() {
-  createCanvas(500, 500)
+  createCanvas(windowWidth, windowHeight)
 
   voices = responsiveVoice.getVoices();
 
@@ -36,7 +49,6 @@ function setup() {
 /**
 set up first/
 second stage and text positions
-
 */
 function draw() {
   background(255);
@@ -62,7 +74,7 @@ push();
 // intro to the program
   textSize(40);
     fill(0);
-      text(`...!`, width / 2, height/2);
+      text(`...!`, width / 2, 150);
 
 // instructions
       textSize(20);
@@ -104,6 +116,8 @@ function mousePressed() {
   let voice = random(voices);
   let currentVoiceName = voice.name;
   responsiveVoice.speak(currentQuestion, currentVoiceName);
+
+
 }
 
 // user's answer (vocal)
@@ -111,12 +125,17 @@ function myResponse() {
 
   // Vocal YES answer = happy reaction + green text
   if (currentAnswer === `yes`) {
-    fill(0, 255, 0);
+    happySFX.play();
+  background(255, 235, 254);
+  fill(224, 63, 90);
     text(`:D`, width / 2, bottomHeight);
 
 // Vocal NO answer = sad reaction + red text
   } else if(currentAnswer === `no`){
-    fill(255, 0, 0);
+    background(142, 160, 189);
+    sadSFX.play();
+
+    fill(81, 96, 181);
       text(`D:`, width / 2, bottomHeight);
   }
 
@@ -126,6 +145,8 @@ function myResponse() {
       text(`???`, width / 2, bottomHeight);
   }
 }
+
+
 
 // translate vocal to text
 function myAnswer(answer) {
