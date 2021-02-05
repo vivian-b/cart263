@@ -1,36 +1,29 @@
 "use strict";
 
 /**
-slaminA
+wybmv?
 Vivian Bui
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+Answer a simple yes or no question.
 */
 
-
-let voices; // To remember the array of voices
+// bot voices set up
+let voices;
 let currentVoiceName = ``;
 
-
+// starting screen
 let state = `title`;
 
-
-/**
-Description of preload
-*/
-function preload() {
-
-}
-
+// text strings
 let currentQuestion = `"Will you be my Valentine?"`;
 let currentAnswer = ``;
 let instruction = `keep clicking`;
+let intro = `(click anywhere)`;
 
-/**
-Description of setup
-*/
+// set variable
+let bottomHeight = 350;
 
+// general text size and position & voice speech set up
 function setup() {
   createCanvas(500, 500)
 
@@ -38,15 +31,15 @@ function setup() {
 
   textSize(32);
   textAlign(CENTER, CENTER);
-
 }
 
-
 /**
-Description of draw()
+set up first/
+second stage and text positions
+
 */
 function draw() {
-  background(0);
+  background(255);
 
   if (state === `title`) {
     titlescreen();
@@ -54,89 +47,92 @@ function draw() {
     gameplay();
   }
 
-
   text(currentAnswer, width / 2, height / 2);
   text(currentVoiceName, width / 2, height);
 
-
 }
 
+// start of program (landing page)
 function titlescreen() {
-
 
 // function to play the game
   loadGame();
 
 push();
+// intro to the program
   textSize(40);
-    fill(255, 255, 255);
-      text(`...`, width / 2, height/2);
+    fill(0);
+      text(`...!`, width / 2, height/2);
 
+// instructions
       textSize(20);
-      text(`press space to continue`, width / 2, 350)
+      text(`press space to continue`, width / 2, 380)
+      text(intro, width / 2, bottomHeight)
+
     pop();
 }
 
+// function of the program
 function gameplay() {
+  myResponse(); //vocal to text
+
+// vocal program
   if (annyang) {
     let commands = {
-      '*answer': myAnswer
+      '*answer': myAnswer //register any vocal words
     };
     annyang.addCommands(commands);
     annyang.start();
   }
 
-  myResponse();
-
 push();
-  fill(255, 255, 255);
+// bot question
+  fill(0);
     text(currentQuestion, width / 2, height/5);
-    textSize(10);
-    text(instruction, width / 2, height-50 )
-    pop();
 
+// user instructions
+  textSize(10);
+  fill(220)
+    text(instruction, width / 2, height-50 )
+  pop();
 }
 
+// Mouse Pressed to generate voices (randomized every click)
 function mousePressed() {
+
+   //randomized speaker name/voice
   let voice = random(voices);
   let currentVoiceName = voice.name;
-
   responsiveVoice.speak(currentQuestion, currentVoiceName);
-
 }
 
+// user's answer (vocal)
 function myResponse() {
+
+  // Vocal YES answer = happy reaction + green text
   if (currentAnswer === `yes`) {
     fill(0, 255, 0);
+    text(`:D`, width / 2, bottomHeight);
 
-    push();
-    fill(255, 255, 255);
-      text(`:D`, width / 2, height-150);
-    pop();
-
+// Vocal NO answer = sad reaction + red text
   } else if(currentAnswer === `no`){
     fill(255, 0, 0);
-
-    push();
-    fill(255, 255, 255);
-      text(`D:`, width / 2, height-150);
-    pop();
+      text(`D:`, width / 2, bottomHeight);
   }
+
+  // Vocal ANY answer = confusion (??? text)
   else{
-    fill(80, 80, 80);
-
-    push();
-    fill(255, 255, 255);
-      text(`???`, width / 2, height-100);
-    pop();
+    fill(230, 230, 230);
+      text(`???`, width / 2, bottomHeight);
   }
-
 }
 
+// translate vocal to text
 function myAnswer(answer) {
   currentAnswer = answer.toLowerCase();
 }
 
+// title state shift
 function loadGame() {
   if ((keyIsDown(32)) && (state === `title`)) {
     state = `gameplay`;
