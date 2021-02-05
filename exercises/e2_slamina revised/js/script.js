@@ -27,12 +27,11 @@ let bottomHeight = 350;
 
 // set sfx names
 let sadSFX;
-let happySFX;
-
+  let happySFX;
 // preloading soundFX
-function preload() {
+function preload(){
 
-  //soundFX
+//soundFX
   happySFX = loadSound(`assets/sounds/happy.wav`)
   sadSFX = loadSound(`assets/sounds/sad.wav`)
 }
@@ -52,7 +51,6 @@ set up first/
 second stage and text positions
 */
 function draw() {
-  textFont(`Chewy`); //chosen font
   background(255);
 
   if (state === `title`) {
@@ -69,27 +67,28 @@ function draw() {
 // start of program (landing page)
 function titlescreen() {
 
-  // function to play the game
+// function to play the game
   loadGame();
 
-  push();
-  // intro to the program
-  textSize(60);
-  fill(0);
-  text(`...!`, width / 2, 150);
+push();
+// intro to the program
+  textSize(40);
+    fill(0);
+      text(`...!`, width / 2, 150);
 
-  // instructions
-  textSize(20);
-  text(`press space to continue`, width / 2, 380)
-  text(intro, width / 2, bottomHeight)
+// instructions
+      textSize(20);
+      text(`press space to continue`, width / 2, 380)
+      text(intro, width / 2, bottomHeight)
 
-  pop();
+    pop();
 }
 
 // function of the program
 function gameplay() {
   myResponse(); //vocal to text
-  // vocal program
+
+// vocal program
   if (annyang) {
     let commands = {
       '*answer': myAnswer //register any vocal words
@@ -98,25 +97,26 @@ function gameplay() {
     annyang.start();
   }
 
-  push();
-  // bot question
+push();
+// bot question
   fill(0);
-  text(currentQuestion, width / 2, height / 5);
+    text(currentQuestion, width / 2, height/5);
 
-  // user instructions
-  textSize(20);
+// user instructions
+  textSize(10);
   fill(220)
-  text(instruction, width / 2, height - 50)
+    text(instruction, width / 2, height-50 )
   pop();
 }
 
 // Mouse Pressed to generate voices (randomized every click)
 function mousePressed() {
 
-  //randomized speaker name/voice
+   //randomized speaker name/voice
   let voice = random(voices);
   let currentVoiceName = voice.name;
   responsiveVoice.speak(currentQuestion, currentVoiceName);
+
 
 }
 
@@ -125,59 +125,28 @@ function myResponse() {
 
   // Vocal YES answer = happy reaction + green text
   if (currentAnswer === `yes`) {
-    goodEnd();
-
     happySFX.play();
+  background(255, 235, 254);
+  fill(224, 63, 90);
+    text(`:D`, width / 2, bottomHeight);
 
-
-    // Vocal NO answer = sad reaction + red text
-  } else if (currentAnswer === `no`) {
-    badEnd();
-
+// Vocal NO answer = sad reaction + red text
+  } else if(currentAnswer === `no`){
+    background(142, 160, 189);
     sadSFX.play();
 
+    fill(81, 96, 181);
+      text(`D:`, width / 2, bottomHeight);
   }
 
   // Vocal ANY answer = confusion (??? text)
-  else {
+  else{
     fill(230, 230, 230);
-    text(`???`, width / 2, bottomHeight);
-  }
-
-
-}
-
-// Vocal YES answer = happy reaction + green text
-function goodEnd() {
-  stopSound();
-
-  background(255, 245, 248); //pink background
-  fill(224, 63, 90);
-  text(`:D`, width / 2, bottomHeight);
-
-}
-
-// Vocal NO answer = sad reaction + red text
-function badEnd() {
-  stopSound();
-
-  background(129, 134, 184); //blue background
-  fill(81, 96, 181);
-  text(`D:`, width / 2, bottomHeight);
-
-}
-
-// trying to stop the loop but can't
-function stopSound() {
-
-  if (happySFX.isPlaying()) {
-    happySFX.pause();
-  }
-
-  if (sadSFX.isPlaying()) {
-    sadSFX.pause();
+      text(`???`, width / 2, bottomHeight);
   }
 }
+
+
 
 // translate vocal to text
 function myAnswer(answer) {
