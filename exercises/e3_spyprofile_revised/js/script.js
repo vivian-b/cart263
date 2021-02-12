@@ -6,6 +6,7 @@ vivian bui
 
 randomized spy profile generator with a password to revisit the profile.
 Incorrect password results in automatically reseting the profile.
+user can hide and shuffle their information
 */
 
 // spy profile text variables
@@ -119,7 +120,27 @@ function keyPressed() {
     spyProfile.secretWeapon = `*******`;
     spyProfile.password = `*******`;
   }
+
+// shuffle data
+
+    if (keyCode === 32){
+      // variable: instrument
+      let instrument = random(instrumentData.instruments); //randomized data taken from JSON
+      spyProfile.alias = `The ${instrument}`; //display
+
+      // variable: secret weapon
+      spyProfile.secretWeapon = random(objectData.objects); //randomized data taken from JSON
+
+      // variable: password
+      let card = random(tarotData.tarot_interpretations); //randomized data taken from JSON (+ specific selection)
+      spyProfile.password = random(card.keywords);
+
+      // update information on server
+      localStorage.setItem(`spy-profile-data`, JSON.stringify(spyProfile));
+    }
 }
+
+
 
 // prompt pop up + canvas size
 function setup() {
@@ -148,5 +169,5 @@ function addedContent() {
 
   // instruction text
   textSize(20);
-  text(`press ESC to hide information`, 100, 500);
+  text(`press ESC to hide information / press SPACEBAR to shuffle`, 100, 500);
 }
