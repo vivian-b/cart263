@@ -8,10 +8,10 @@ randomized spy profile generator
 */
 
 let spyProfile = {
-  name: `**REDACTED**`,
-  alias: `**REDACTED**`,
-  secretWeapon: `**REDACTED**`,
-  password: `**REDACTED**`
+  name: ``,
+  alias: ``,
+  secretWeapon: ``,
+  password: ``,
 };
 
 let instrumentData = undefined;
@@ -37,7 +37,7 @@ function profileCheck() {
   // saved data (revisiting)
   if (data !== null) {
 
-    let password = prompt(`Agent, what is the password?`);
+    let password = prompt(`Welcome back Agent, what is the password?  \n[WARNING!] Providing the wrong code will erase all previous data`);
     if (password === data.password) {
 
       spyProfile.name = data.name;
@@ -48,15 +48,13 @@ function profileCheck() {
     }
     if (password !== data.password) {
 
+      generateSpyProfile('rebooting');
       localStorage.removeItem('spy-profile-data');
 
-      generateSpyProfile('rebooting');
-    } }
+  }}
     else {
-      generateSpyProfile('AGENT. STATE YOUR NAME.');
-
+      generateSpyProfile();
     }
-
 }
 
 
@@ -87,17 +85,24 @@ function givenProfile() {
   SecretWeapon: ${spyProfile.secretWeapon}
   Password: ${spyProfile.password} `;
 
-  push();
   textFont(`Courier, monospace`);
   textSize(30);
   textAlign(LEFT, TOP);
   fill(255);
   text(profile, 100, 100);
 
-  pop();
-
 }
 
+function keyPressed() {
+  if (keyCode === 27) {
+
+    // Set all data to REDACTED
+    spyProfile.alias = `*******`;
+    spyProfile.secretWeapon = `*******`;
+    spyProfile.password = `*******`;
+  }
+
+}
 
 
 /**
@@ -115,13 +120,22 @@ Description of draw()
 */
 function draw() {
   background(0);
+  backgroundOutline();
   givenProfile();
-
-
+instructions();
 }
 
-function keyPressed() {
-  if (keyCode === 27) {
-    localStorage.removeItem(`spy-profile-data`);
-  }
+function instructions() {
+  textSize(20);
+  text(`press ESC to hide information`, 100, 500);
+}
+
+function backgroundOutline(){
+  push();
+noFill();
+strokeWeight(3);
+stroke(255);
+  rectMode(CENTER);
+  rect(width/2, height/2, 800, 500, 20);
+  pop();
 }
