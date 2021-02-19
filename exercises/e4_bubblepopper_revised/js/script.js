@@ -11,13 +11,14 @@ author, and this description to match your project!
 let video = undefined; //webcam
 let handpose = undefined; //handpose model
 let predictions = []; //current set of predictions (empty array)
-let bubble = undefined // bubble
+let kitty; // cat
 /**
 Description of setup
 */
 function setup() {
   createCanvas(800, 800);
 
+kitty = new Cat(0,0);
   // access webcam
   video = createCapture(VIDEO);
   video.hide();
@@ -36,15 +37,7 @@ function setup() {
     predictions = results; //keeping predictions array up to date with results
   });
 
-  // bubble
-  bubble = {
-    x: random(width),
-    y: height,
-    size: 100,
-    vx: 0,
-    vy: -2,
-  }
-  ''
+
 }
 
 
@@ -69,36 +62,27 @@ function draw() {
     push();
     noFill();
     stroke(255, 255, 255);
-    strokeWeight(2);
+    strokeWeight(40);
     line(baseX, baseY, tipX, tipY);
     pop();
 
     // pin end display
     push();
-    noFill();
-    stroke(255, 0, 0);
-    ellipse(baseX, baseY, 20);
+    fill(255, 255, 255);
+    noStroke();
+    ellipse(baseX, baseY, 200);
     pop();
 
-    // check bubble pop
-    let d = dist(tipX, tipY, bubble.x, bubble.y);
-    if (d < bubble.size / 2) {
-      bubble.x = random(width);
-      bubble.y = height;
+    // check cat
+    let d = dist(tipX, tipY, cat.x, cat.y);
+    if (d < cat.size / 2) {
+      cat.x = random(width);
+      cat.y = height;
     }
   }
+simulation();
+}
 
-  bubble.x += bubble.vx
-  bubble.y += bubble.vy
-
-  if (bubble.y < 0) {
-    bubble.x = random(width);
-    bubble.y = height;
-  }
-
-  push();
-  fill(0, 0, 200);
-  noStroke();
-  ellipse(bubble.x, bubble.y, bubble.size);
-  pop();
+function simulation(){
+  kitty.function();
 }
