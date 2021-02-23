@@ -1,94 +1,99 @@
-let player_still;
-let player_moveLeft;
-let player_moveRight;
-let player_moveUp;
-let player_moveDown;
-
 class Hilda {
+
   constructor(x, y) {
+    this.size = 45;
 
-    // player image + hitbox size
-    this.size = 50;
-    this.imgSize = 100;
-
-    // player position
     this.x = x;
     this.y = y;
-
-    // player movement
-    this.vx = 0;
-    this.vy = 0;
-    this.speed = 8;
+    this.vx = 2;
+    this.vy = 2;
+    this.speed = 5;
 
   }
 
-  // Player direction movements
-  move() {
 
-    // player movements
-    this.x = this.x + this.vx;
-    this.y = this.y + this.vy;
+  display() {
+    push();
+    fill(255);
+    noStroke();
+    ellipse(this.x, this.y, this.size/2);
+    pop();
 
-    // border constraints
-    this.x = constrain(this.x, 0, width);
-    this.y = constrain(this.y, 0, height);
+    push();
+    fill(200);
+    noStroke();
+    ellipse(mouseX, mouseY, this.size);
+    pop();
+
   }
 
 
-  // Player keyboard movements
-  handleInput() {
-    fill(112, 234, 255);
-ellipse(250, 250, 20)
-    // Left Movement
-    if (keyIsDown(LEFT_ARROW)) {
-      this.vx = -this.speed * 1.5;
-
-      // Right Movement
-    } else if (keyIsDown(RIGHT_ARROW)) {
-      this.vx = this.speed * 1.5;
-
-      // Iddle
-    } else {
-      this.vx = 0;
+  input() {
+    if (mouseX > this.x) {
+      this.vx = this.speed;
+    } else if (mouseX < this.x) {
+      this.vx = -this.speed;
+    } else if (mouseX < this.y) {
+      this.vy = this.speed;
+    } else if (mouseX > this.y) {
+      this.vy = -this.speed;
     }
 
-    // Up Movement
-    if (keyIsDown(UP_ARROW)) {
-      this.vy = -this.speed * 1.5;
+    let distX = mouseX - this.x;
+    let distY = mouseY - this.y;
 
-      // Down Movement
-    } else if (keyIsDown(DOWN_ARROW)) {
-      this.vy = this.speed * 1.5;
-
-      // Iddle
-    } else {
-      this.vy = 0;
-    }
+    this.x += distX / 25;
+    this.y += distY / 25;
   }
+
+  wander(){
+  let change = random(0, 5);
+   if (change < .2) {
+
+     this.vx = random(-this.speed/4, this.speed/4);
+     this.vy = random(-this.speed/4, this.speed/4);
+
+   }
+
+   this.x += this.vx;
+   this.y += this.vy;
+
+  }
+
+  // flip(){
+  //    if (this.vx >= 0) {
+  //     this.scale.x = 1;
+  //   }
   //
-  // // Player Images
-  // handleDisplay() {
+  //   else if (this.vx < 0) {
+  //     this.scale.x = -1;
   //
-  //   // Left Movement
-  //   if (keyIsDown(LEFT_ARROW)) {
-  //     image(player_moveLeft, user.x, user.y, this.imgSize, this.imgSize);
-  //
-  //     // Right Movement
-  //   } else if (keyIsDown(RIGHT_ARROW)) {
-  //     image(player_moveRight, user.x, user.y, this.imgSize, this.imgSize);
-  //
-  //     // Up Movement
-  //   } else if (keyIsDown(UP_ARROW)) {
-  //     image(player_moveUp, user.x, user.y, this.imgSize, this.imgSize);
-  //
-  //     // Down Movement
-  //   } else if (keyIsDown(DOWN_ARROW)) {
-  //     image(player_moveDown, user.x, user.y, this.imgSize, this.imgSize);
-  //
-  //     // Iddle Movement
-  //   } else {
-  //     image(player_still, user.x, user.y, this.imgSize, this.imgSize);
   //   }
   // }
 
+    //   handleInput() {
+    //
+    //     if (keyIsDown(LEFT_ARROW)) {
+    //       this.vx = -this.speed * 2;
+    //     } else if (keyIsDown(RIGHT_ARROW)) {
+    //       this.vx = this.speed * 2;
+    //
+    //     } else {
+    //       this.vx = 0;
+    //
+    //     }
+    //
+    //     if (keyIsDown(UP_ARROW)) {
+    //           this.vy = -this.speed * 2;
+    //           }
+    //
+    //         else if (keyIsDown(DOWN_ARROW)){
+    //           this.vy = this.speed * 2;
+    //           }
+    //
+    //         else {
+    //           this.vy = 0;
+    //           }
+    //
+    // }
 }
