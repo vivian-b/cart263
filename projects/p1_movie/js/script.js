@@ -26,11 +26,12 @@ let characters;
 
 let state = 'title'
 
-let currentCharacter;
 let dialogueData;
 
 let lineNumber = 0;
 let characterNumber = 0;
+
+// let randomDialogue = [0,1]
 
 /**
 Description of preload
@@ -121,16 +122,3 @@ function simulation() {
 function mouseMoved() {
   hilda.handleInput();
 }
-
-
-
-// function generateDialogue(){
-//   if (currentCharacter === `Johanna`){
-//     let dialogue = dialogueData.character_dialogues[0].johanna.light[0]
-//
-// } else if (currentCharacter === `Woodman`){
-//   createDialogue(characterDialogue.woodman_dialogue);
-//   }
-//
-//   displayDialogue();
-// }
