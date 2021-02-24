@@ -7,16 +7,22 @@ Vivianbui
 description
 */
 
+let d;
+let d2;
+
 //user control
 let hilda;
+
+let width = 1050;
+let height = 750;
 
 // map layout
 let area;
 
 //elements
 let arrow;
-
-let  tester;
+let characters;
+let tester;
 
 let state = 'title'
 
@@ -32,12 +38,12 @@ function preload() {
 Description of setup
 */
 function setup() {
-createCanvas(750,750)
+  createCanvas(width, height)
   hilda = new Hilda(width / 2, height / 2);
   area = new Area(width / 2, height / 2);
   arrow = new Arrow(width / 2, height / 2);
-
-  tester = new Tester(0,0);
+  characters = new Character();
+  tester = new Tester(0, 0);
 
 }
 
@@ -46,7 +52,7 @@ createCanvas(750,750)
 Description of draw()
 */
 function draw() {
-noCursor();
+  noCursor();
 
   if (state === `title`) {
     titleScreen();
@@ -58,40 +64,40 @@ noCursor();
     areaC();
   } else if (state === `city2`) {
     areaD();
-}
+  }
 }
 
-function titleScreen(){
+function titleScreen() {
   background(20);
-hilda.display();
-enterGame();
+  hilda.display();
+  enterGame();
 }
 
-function enterGame(){
-  if (keyIsDown(32)){
+function enterGame() {
+  if (keyIsDown(32)) {
     state = `city2`
   }
 }
 
-function areaA(){
+function areaA() {
   area.outskirt1();
   simulation();
 
 }
 
-function areaB(){
+function areaB() {
   area.outskirt2();
   simulation();
 
 }
 
-function areaC(){
+function areaC() {
   area.city1();
   simulation();
 
 }
 
-function areaD(){
+function areaD() {
   area.city2();
   simulation();
 
@@ -102,12 +108,12 @@ function simulation() {
   hilda.wander();
 }
 
-function mouseMoved(){
+function mouseMoved() {
   hilda.input();
-// hilda.flip();
+  // hilda.flip();
 }
 
-function simulationTest(){
+function simulationTest() {
   // tester.draw();
   tester.drawCircle();
   tester.createVectorDirection();

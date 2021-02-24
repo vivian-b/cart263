@@ -42,12 +42,12 @@ class Hilda {
     let distX = mouseX - this.x;
     let distY = mouseY - this.y;
 
-    this.x += distX / 25;
-    this.y += distY / 25;
+    this.x += distX / 20;
+    this.y += distY / 20;
   }
 
   wander(){
-  let change = random(0, 5);
+  let change = random(0, 4);
    if (change < .2) {
 
      this.vx = random(-this.speed/4, this.speed/4);
