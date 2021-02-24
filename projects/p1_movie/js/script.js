@@ -10,6 +10,10 @@ description
 let d;
 let d2;
 
+let dialogues = []; //array of dialogues
+
+let characterDialogue;
+
 //user control
 let hilda;
 
@@ -26,10 +30,13 @@ let tester;
 
 let state = 'title'
 
+let currentCharacter;
+
 /**
 Description of preload
 */
 function preload() {
+  characterDialogue = loadJSON('data/characterDialogue.json');
 
 }
 
@@ -109,14 +116,50 @@ function simulation() {
 }
 
 function mouseMoved() {
-  hilda.input();
-  // hilda.flip();
+  hilda.handleInput();
 }
 
-function simulationTest() {
-  // tester.draw();
-  tester.drawCircle();
-  tester.createVectorDirection();
-  tester.moveCurrent();
+function createDialogue(character, sentence) {
+  let dialogue = {
+    character: character,
+    sentence: sentence,
+  };
+
+  return dialogue;
+}
+
+
+function updateCharacterDialogue() {
+  if (currentCharacter === `Johanna`) {
+    generateDialogue(characterDialogue.johanna_dialogue);
+  }
+}
+
+
+function generateDialogue() {
+
+    let dialogue = createDialogue(characterDialogue.character, characterDialogue.sentence);
+    dialogues.push(dialogue);
+
+  displayDialogue();
+
+}
+
+
+function displayDialogue() {
+
+  //dialoguebox
+  push();
+  fill(0);
+  rect(200, 400);
+  pop();
+
+  //display current character dialogue
+  push();
+  textSize(24);
+  textAlign(LEFT);
+  text(`${characterDialogue.sentence}`, 550, 550); //dialogue
+  text(`${characterDialogue.character} :`, 550, 525);
+  pop();
 
 }

@@ -27,7 +27,8 @@ this.woodmanY = 700;
 
     d = dist(mouseX, mouseY, this.johannaX, this.johannaY);
     if ((d < hilda.size / 2 + hilda.size/ 2)  && (mouseIsPressed)) {
-      currentDialogue = `johanna`
+      currentCharacter = `Johanna`;
+      updateCharacterDialogue();
     }
   }
 
