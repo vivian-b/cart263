@@ -1,20 +1,19 @@
-
 class Character {
 
   constructor() {
-this.size = 40;
+    this.size = 40;
 
-// city characters
+    // city characters
 
-// johanna
-this.johannaX = 750;
-this.johannaY = 700;
+    // johanna
+    this.johannaX = 750;
+    this.johannaY = 700;
 
-// woodman
-this.woodmanX = 750;
-this.woodmanY = 700;
+    // woodman
+    this.woodmanX = 750;
+    this.woodmanY = 700;
 
-// aahhaha
+    // aahhaha
 
   }
 
@@ -26,9 +25,9 @@ this.woodmanY = 700;
     pop();
 
     d = dist(mouseX, mouseY, this.johannaX, this.johannaY);
-    if ((d < hilda.size / 2 + hilda.size/ 2)  && (mouseIsPressed)) {
-      currentCharacter = `Johanna`;
-      updateCharacterDialogue();
+    if ((d < hilda.size / 2 + hilda.size / 2) && (mouseIsPressed)) {
+      currentCharacter === `Johanna`;
+      generateDialogue();
     }
   }
 
@@ -38,21 +37,27 @@ this.woodmanY = 700;
     noStroke();
     ellipse(this.woodmanX, this.woodmanY, this.size);
     pop();
+
+    d = dist(mouseX, mouseY, this.woodmanX, this.woodmanY);
+
+    if ((d < hilda.size / 2 + hilda.size / 2) && (mouseIsPressed)) {
+      currentCharacter === `Woodman`;
+      generateDialogue();
+    }
+
   }
 
-  cityLeft(){
-  }
+  cityLeft() {}
 
-  cityRight(){
+  cityRight() {
     this.johanna();
   }
 
-  outskirtLeft(){
+  outskirtLeft() {
     this.woodman();
   }
 
-  outskirtRight(){
-  }
+  outskirtRight() {}
 
 
 }

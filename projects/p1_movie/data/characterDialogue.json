@@ -1,11 +1,11 @@
 {
   "johanna_dialogue":[
     {
-      "character": "Johanna",
+      "chara": "Johanna",
       "sentence": "Hilda!"
     },
     {
-      "character": "Hilda",
+      "chara": "Hilda",
       "sentence": "Hi mum!"
     }
   ]

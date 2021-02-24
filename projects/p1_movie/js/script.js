@@ -10,10 +10,6 @@ description
 let d;
 let d2;
 
-let dialogues = []; //array of dialogues
-
-let characterDialogue;
-
 //user control
 let hilda;
 
@@ -31,7 +27,7 @@ let tester;
 let state = 'title'
 
 let currentCharacter;
-
+let characterDialogue;
 /**
 Description of preload
 */
@@ -119,47 +115,35 @@ function mouseMoved() {
   hilda.handleInput();
 }
 
-function createDialogue(character, sentence) {
-  let dialogue = {
-    character: character,
-    sentence: sentence,
-  };
 
-  return dialogue;
+
+function generateDialogue(){
+  if (currentCharacter === `Johanna`){
+dialogue.name = characterDialogue.woodman_dialogue;
+} else if (currentCharacter === `Woodman`){
+  createDialogue(characterDialogue.woodman_dialogue);
+  }
+
+  displayDialogue();
 }
 
+function createDialogue(name, sentence){
 
-function updateCharacterDialogue() {
-  if (currentCharacter === `Johanna`) {
-    generateDialogue(characterDialogue.johanna_dialogue);
+  let dialogue = {
+    name: ``,
+    sentence:``,
   }
 }
 
-
-function generateDialogue() {
-
-    let dialogue = createDialogue(characterDialogue.character, characterDialogue.sentence);
-    dialogues.push(dialogue);
-
-  displayDialogue();
-
-}
-
-
 function displayDialogue() {
 
-  //dialoguebox
-  push();
-  fill(0);
-  rect(200, 400);
-  pop();
 
   //display current character dialogue
   push();
   textSize(24);
   textAlign(LEFT);
+  text(`${characterDialogue.chara} :`, 550, 525);
   text(`${characterDialogue.sentence}`, 550, 550); //dialogue
-  text(`${characterDialogue.character} :`, 550, 525);
   pop();
 
 }
