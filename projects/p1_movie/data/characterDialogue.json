@@ -1,12 +1,21 @@
 {
-  "johanna_dialogue":[
-    {
-      "chara": "Johanna",
-      "sentence": "Hilda!"
+  "characters": [
+  {
+     "name": "jo",
+      "line": [
+        "oh god",
+        "why"
+        ]
+
     },
     {
-      "chara": "Hilda",
-      "sentence": "Hi mum!"
+      "name": "ha",
+       "line": [
+         "oh god",
+         "aaaa"
+         ]
     }
+
   ]
+
 }

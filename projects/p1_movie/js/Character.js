@@ -27,7 +27,10 @@ class Character {
     d = dist(mouseX, mouseY, this.johannaX, this.johannaY);
     if ((d < hilda.size / 2 + hilda.size / 2) && (mouseIsPressed)) {
       currentCharacter === `Johanna`;
-      generateDialogue();
+      lineNumber = 0;
+      characterNumber = 0;
+
+      this.displayDialogue();
     }
   }
 
@@ -42,7 +45,10 @@ class Character {
 
     if ((d < hilda.size / 2 + hilda.size / 2) && (mouseIsPressed)) {
       currentCharacter === `Woodman`;
-      generateDialogue();
+      lineNumber = 1;
+      characterNumber = 1;
+
+      this.displayDialogue();
     }
 
   }
@@ -59,5 +65,22 @@ class Character {
 
   outskirtRight() {}
 
+   displayDialogue() {
 
+     // let characterName = dialogueData.characters.chara[characterNumber];
+     // let dialogue = dialogueData.characters[characterNumber].line[lineNumber];
+
+     let characterName = dialogueData.characters[characterNumber].name;
+     let dialogue = dialogueData.characters[characterNumber].line[lineNumber];
+
+
+    push();
+    textSize(24);
+    textAlign(LEFT);
+    text(`${characterName} :`, 550, 525);
+    text(`${dialogue}`, 550, 555);
+
+    pop();
+
+  }
 }

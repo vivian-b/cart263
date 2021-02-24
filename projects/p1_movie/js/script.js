@@ -22,17 +22,21 @@ let area;
 //elements
 let arrow;
 let characters;
-let tester;
+// let tester;
 
 let state = 'title'
 
 let currentCharacter;
-let characterDialogue;
+let dialogueData;
+
+let lineNumber = 0;
+let characterNumber = 0;
+
 /**
 Description of preload
 */
 function preload() {
-  characterDialogue = loadJSON('data/characterDialogue.json');
+  dialogueData = loadJSON('data/characterDialogue.json');
 
 }
 
@@ -46,7 +50,7 @@ function setup() {
   area = new Area(width / 2, height / 2);
   arrow = new Arrow(width / 2, height / 2);
   characters = new Character();
-  tester = new Tester(0, 0);
+  // tester = new Tester(0, 0);
 
 }
 
@@ -68,6 +72,9 @@ function draw() {
   } else if (state === `city2`) {
     areaD();
   }
+
+
+
 }
 
 function titleScreen() {
@@ -117,33 +124,13 @@ function mouseMoved() {
 
 
 
-function generateDialogue(){
-  if (currentCharacter === `Johanna`){
-dialogue.name = characterDialogue.woodman_dialogue;
-} else if (currentCharacter === `Woodman`){
-  createDialogue(characterDialogue.woodman_dialogue);
-  }
-
-  displayDialogue();
-}
-
-function createDialogue(name, sentence){
-
-  let dialogue = {
-    name: ``,
-    sentence:``,
-  }
-}
-
-function displayDialogue() {
-
-
-  //display current character dialogue
-  push();
-  textSize(24);
-  textAlign(LEFT);
-  text(`${characterDialogue.chara} :`, 550, 525);
-  text(`${characterDialogue.sentence}`, 550, 550); //dialogue
-  pop();
-
-}
+// function generateDialogue(){
+//   if (currentCharacter === `Johanna`){
+//     let dialogue = dialogueData.character_dialogues[0].johanna.light[0]
+//
+// } else if (currentCharacter === `Woodman`){
+//   createDialogue(characterDialogue.woodman_dialogue);
+//   }
+//
+//   displayDialogue();
+// }
