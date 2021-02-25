@@ -1,16 +1,16 @@
   //
-  // vittra() {
+  // erik(){
   //   push();
   //   fill(255);
   //   noStroke();
-  //   ellipse(this.vittraX, this.vittraY, this.size);
+  //   ellipse(this.erikX, this.erikY, this.size);
   //   pop();
   //
-  //   d = dist(mouseX, mouseY, this.vittraX, this.vittraY);
+  //   d = dist(mouseX, mouseY, this.erikX, this.erikY);
   //   if (d < hilda.size / 2 + hilda.size / 2) {
   //
-  //     updateX = this.vittraX;
-  //     updateY = this.vittraY;
+  //     updateX = this.erikX;
+  //     updateY = this.erikY;
   //     lineNumber = 0;
   //     if (mouseIsPressed) {
   //       lineNumber = 1;
@@ -20,3 +20,4 @@
   //     this.displayDialogue();
   //   }
   // }
+  //
