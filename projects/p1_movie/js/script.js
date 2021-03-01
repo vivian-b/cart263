@@ -14,8 +14,8 @@ let d2;
 let user;
 let companion;
 
-let width = 1050;
-let height = 750;
+let width = 950;
+let height = 700;
 
 // map layout
 let area;
@@ -33,6 +33,9 @@ let lineNumber = 0;
 let characterNumber = 0;
 
 
+let images = [];
+let sprites = [];
+let numImages = 3;
 
 /**
 Description of preload
@@ -40,6 +43,16 @@ Description of preload
 function preload() {
   dialogueData = loadJSON('data/characterDialogue.json');
 
+
+for (let i=0; i < numImages; i++){
+  let loadedImages = loadImage(`assets/images/clown-${i}.png`);
+  images.push(loadedImages);
+}
+
+for (let i=0; i < numImages; i++){
+  let loadedImages = loadImage(`assets/images/clown-${i}.png`);
+  sprites.push(loadedImages);
+}
 
 }
 
@@ -53,7 +66,6 @@ function setup() {
   area = new Area(width / 2, height / 2);
   arrow = new Arrow(width / 2, height / 2);
   characters = new Character();
-  // tester = new Tester(0, 0);
 
 }
 
@@ -63,6 +75,8 @@ Description of draw()
 */
 function draw() {
   noCursor();
+  imageMode(CENTER)
+
 
   if (state === `title`) {
     titleScreen();

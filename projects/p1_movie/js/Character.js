@@ -95,10 +95,10 @@ class Character {
     this.principalX = 700;
     this.principalY = 700;
 
-    // #17 ratking
-    this.ratkingN = 17;
-    this.ratkingX = 350;
-    this.ratkingY = 350;
+    // #17 ratKing
+    this.ratKingN = 17;
+    this.ratKingX = 350;
+    this.ratKingY = 350;
 
     // #18 ravenLeader
     this.ravenLeaderN = 18;
@@ -117,7 +117,7 @@ class Character {
 
     // #21 vittra
     this.vittraN = 21,
-    this.vittraX = 450;
+      this.vittraX = 450;
     this.vittraY = 450;
 
     // #22 wofs
@@ -139,11 +139,7 @@ class Character {
 
   // Character #0
   baba() {
-
-    push();
-    fill(2);
-    ellipse(this.babaX, this.babaY, this.size);
-    pop();
+    image(images[characterNumber], this.babaX, this.babaY, this.size, this.size)
 
     d = dist(mouseX, mouseY, this.babaX, this.babaY);
     if (d < user.size / 2 + user.size / 2) {
@@ -162,11 +158,7 @@ class Character {
 
   // Character #1
   bellkeeper() {
-    push();
-    fill(255);
-
-    ellipse(this.bellkeeperX, this.bellkeeperY, this.size);
-    pop();
+    image(images[characterNumber], this.bellkeeperX, this.bellkeeperY, this.size, this.size)
 
     d = dist(mouseX, mouseY, this.bellkeeperX, this.bellkeeperY);
     if (d < user.size / 2 + user.size / 2) {
@@ -185,11 +177,7 @@ class Character {
 
   // Character #2
   david() {
-    push();
-    fill(255);
-
-    ellipse(this.davidX, this.davidY, this.size);
-    pop();
+    image(images[characterNumber], this.davidX, this.davidY, this.size, this.size)
 
     d = dist(mouseX, mouseY, this.davidX, this.davidY);
     if (d < user.size / 2 + user.size / 2) {
@@ -528,24 +516,24 @@ class Character {
   }
 
   // Character #17
-  ratking() {
+  ratKing() {
     push();
     fill(255);
 
-    ellipse(this.ratkingX, this.ratkingY, this.size);
+    ellipse(this.ratKingX, this.ratKingY, this.size);
     pop();
 
-    d = dist(mouseX, mouseY, this.ratkingX, this.ratkingY);
+    d = dist(mouseX, mouseY, this.ratKingX, this.ratKingY);
     if (d < user.size / 2 + user.size / 2) {
 
-      updateX = this.ratkingX;
-      updateY = this.ratkingY;
+      updateX = this.ratKingX;
+      updateY = this.ratKingY;
       lineNumber = 0;
       if (mouseIsPressed) {
         lineNumber = 1;
       }
 
-      characterNumber = this.ratkingN;
+      characterNumber = this.ratKingN;
       this.displayDialogue();
     }
   }
@@ -744,7 +732,11 @@ class Character {
     rectMode(CENTER);
     rect(width / 2, 700, 900, 400, 30);
     pop();
+
+    imageMode(CENTER)
+    image(images[characterNumber], 800, 500)
   }
+
 
   // Bottom Left (city): david, frida, johanna, kelly, matilda, peter, tontu
   // Bottom Right (city): erik, kaisa, principal, greatRaven, ratKing, ravenLeader, vittra
@@ -766,7 +758,7 @@ class Character {
     this.kaisa(); // #11
     this.principal(); // #16
     this.greatRaven(); // #19
-    this.ratking(); // #17
+    this.ratKing(); // #17
     this.ravenLeader(); // #18
     this.vittra(); //#21
 
