@@ -109,13 +109,17 @@ class Character {
     this.jellybeanX = 450;
     this.jellybeanY = 450;
 
+    // troll
+    this.trollX = 250;
+    this.trollY = 250;
+
   }
 
-// 0
+  // 0
   baba() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.babaX, this.babaY, this.size);
     pop();
 
@@ -134,11 +138,11 @@ class Character {
     }
   }
 
-// 1
+  // 1
   bellkeeper() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.bellkeeperX, this.bellkeeperY, this.size);
     pop();
 
@@ -157,11 +161,11 @@ class Character {
     }
   }
 
-// 2
+  // 2
   david() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.davidX, this.davidY, this.size);
     pop();
 
@@ -180,11 +184,11 @@ class Character {
     }
   }
 
-// 3
+  // 3
   deerfoxes() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.deerfoxesX, this.deerfoxesY, this.size);
     pop();
 
@@ -203,11 +207,11 @@ class Character {
     }
   }
 
-// 4
+  // 4
   erik() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.erikX, this.erikY, this.size);
     pop();
 
@@ -226,11 +230,11 @@ class Character {
     }
   }
 
-// 5
+  // 5
   elfking() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.elfkingX, this.elfkingY, this.size);
     pop();
 
@@ -249,11 +253,11 @@ class Character {
     }
   }
 
-// 6
+  // 6
   elfmayor() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.elfmayorX, this.elfmayorY, this.size);
     pop();
 
@@ -272,11 +276,11 @@ class Character {
     }
   }
 
-// 7
+  // 7
   frida() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.fridaX, this.fridaY, this.size);
     pop();
 
@@ -295,11 +299,11 @@ class Character {
     }
   }
 
-// 8
+  // 8
   giants() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.giantsX, this.giantsY, this.size);
     pop();
 
@@ -318,11 +322,11 @@ class Character {
     }
   }
 
-// 9
+  // 9
   jellybean() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.jellybeanX, this.jellybeanY, this.size);
     pop();
 
@@ -341,11 +345,11 @@ class Character {
     }
   }
 
-// 10
+  // 10
   johanna() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.johannaX, this.johannaY, this.size);
     pop();
 
@@ -363,11 +367,11 @@ class Character {
     }
   }
 
-// 11
+  // 11
   kaisa() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.kaisaX, this.kaisaY, this.size);
     pop();
 
@@ -386,11 +390,11 @@ class Character {
     }
   }
 
-// 12
+  // 12
   kelly() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.kellyX, this.kellyY, this.size);
     pop();
 
@@ -409,11 +413,11 @@ class Character {
     }
   }
 
-// 13
+  // 13
   lindworm() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.lindwormX, this.lindwormY, this.size);
     pop();
 
@@ -432,11 +436,11 @@ class Character {
     }
   }
 
-// 14
+  // 14
   matilda() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.matildaX, this.matildaY, this.size);
     pop();
 
@@ -455,11 +459,11 @@ class Character {
     }
   }
 
-// 15
+  // 15
   peter() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.peterX, this.peterY, this.size);
     pop();
 
@@ -478,11 +482,11 @@ class Character {
     }
   }
 
-// 16
+  // 16
   principal() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.principalX, this.principalY, this.size);
     pop();
 
@@ -501,11 +505,11 @@ class Character {
     }
   }
 
-// 17
+  // 17
   ratking() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.ratkingX, this.ratkingY, this.size);
     pop();
 
@@ -524,11 +528,11 @@ class Character {
     }
   }
 
-// 18
+  // 18
   ravenLeader() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.ravenLeaderX, this.ravenLeaderY, this.size);
     pop();
 
@@ -547,11 +551,11 @@ class Character {
     }
   }
 
-// 19
+  // 19
   greatRaven() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.greatRavenX, this.greatRavenY, this.size);
     pop();
 
@@ -570,11 +574,11 @@ class Character {
     }
   }
 
-// 20
+  // 20
   tontu() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.tontuX, this.tontuY, this.size);
     pop();
 
@@ -593,11 +597,11 @@ class Character {
     }
   }
 
-// 21
+  // 21
   vittra() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.vittraX, this.vittraY, this.size);
     pop();
 
@@ -616,11 +620,11 @@ class Character {
     }
   }
 
-// 22
+  // 22
   wofs() {
     push();
     fill(255);
-    noStroke();
+
     ellipse(this.wofsX, this.wofsY, this.size);
     pop();
 
@@ -639,11 +643,11 @@ class Character {
     }
   }
 
-// 23
+  // 23
   woodman() {
     push();
-    fill(20,200,20);
-    noStroke();
+    fill(20, 200, 20);
+
     ellipse(this.woodmanX, this.woodmanY, this.size);
     pop();
 
@@ -664,40 +668,71 @@ class Character {
 
   }
 
+  // 24
+  troll() {
+    push();
+    fill(20, 200, 20);
 
-  cityLeft() {}
+    ellipse(this.trollX, this.trollY, this.size);
+    pop();
 
-  cityRight() {
+    d = dist(mouseX, mouseY, this.trollX, this.trollY);
+
+    if (d < hilda.size / 2 + hilda.size / 2) {
+      updateX = this.trollX;
+      updateY = this.trollY;
+      lineNumber = 1;
+      if (mouseIsPressed) {
+        lineNumber = 0;
+      }
+      characterNumber = 24;
+
+      this.displayDialogue();
+
+    }
+
+  }
+
+  cityLeft() {
 
     this.david();
-    this.erik();
     this.frida();
     this.johanna();
-    this.kaisa();
     this.kelly();
     this.matilda();
     this.peter();
+    this.tontu();
+
+
+  }
+
+  cityRight() {
+
+    this.erik();
+    this.kaisa();
     this.principal();
     this.greatRaven();
-    this.tontu();
     this.ratking();
     this.ravenLeader();
 
   }
 
-  outskirtLeft() {}
+  outskirtLeft() {
+    this.deerfoxes();
+    this.elfking();
+    this.lindworm();
+    this.wofs();
+    this.woodman();
+
+  }
 
   outskirtRight() {
     this.baba();
     this.bellkeeper();
-    this.deerfoxes();
-    this.elfking();
     this.elfmayor();
     this.giants();
-    this.lindworm();
     this.jellybean();
-    this.wofs();
-    this.woodman();
+    this.troll();
 
 
   }
@@ -726,7 +761,6 @@ class Character {
     }
 
   }
-
 
 
 

@@ -32,7 +32,6 @@ let lineNumber = 0;
 let characterNumber = 0;
 
 let currentCharacter;
-// let randomDialogue = [0,1]
 
 /**
 Description of preload
@@ -121,5 +120,5 @@ function simulation() {
 }
 
 function mouseMoved() {
-  hilda.handleInput();
+  hilda.twig();
 }

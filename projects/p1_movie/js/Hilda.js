@@ -28,7 +28,7 @@ class Hilda {
   }
 
 
-  handleInput() {
+  twig() {
     if (mouseX > this.x) {
       this.vx = this.speed;
     } else if (mouseX < this.x) {
