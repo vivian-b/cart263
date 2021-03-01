@@ -11,7 +11,7 @@ class Area {
     characters.outskirtLeft();
 
     d = dist(mouseX, mouseY, arrow.max, arrow.mid);
-    if ((d < arrow.size / 2 + hilda.size /2)  && (mouseIsPressed)) {
+    if ((d < arrow.size / 2 + user.size /2)  && (mouseIsPressed)) {
       state = `outskirt2`;
     }
   }
@@ -25,12 +25,12 @@ class Area {
 
 
     d = dist(mouseX, mouseY, arrow.min, arrow.mid);
-    if ((d < arrow.size / 2 + hilda.size /2)  && (mouseIsPressed)) {
+    if ((d < arrow.size / 2 + user.size /2)  && (mouseIsPressed)) {
       state = `outskirt1`
     }
 
     d2 = dist(mouseX, mouseY, arrow.mid, arrow.side);
-    if ((d2 < arrow.size / 2 + hilda.size /2)  && (mouseIsPressed)) {
+    if ((d2 < arrow.size / 2 + user.size /2)  && (mouseIsPressed)) {
       state = `city2`
     }
   }
@@ -42,7 +42,7 @@ class Area {
     characters.cityLeft();
 
     d = dist(mouseX, mouseY, arrow.max, arrow.mid);
-    if ((d < arrow.size / 2 + hilda.size/2)  && (mouseIsPressed)) {
+    if ((d < arrow.size / 2 + user.size/2)  && (mouseIsPressed)) {
       state = `city2`
     }
   }
@@ -57,12 +57,12 @@ class Area {
 
 
     d = dist(mouseX, mouseY, arrow.mid, arrow.min);
-    if ((d < arrow.size / 2 + hilda.size) / 2 && (mouseIsPressed)) {
+    if ((d < arrow.size / 2 + user.size) / 2 && (mouseIsPressed)) {
       state = `outskirt2`
     }
 
     d2 = dist(mouseX, mouseY, arrow.min, arrow.mid);
-    if ((d2 < arrow.size / 2 + hilda.size) / 2 && (mouseIsPressed)) {
+    if ((d2 < arrow.size / 2 + user.size) / 2 && (mouseIsPressed)) {
       state = `city1`
     }
 

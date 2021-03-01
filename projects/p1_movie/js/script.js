@@ -11,7 +11,8 @@ let d;
 let d2;
 
 //user control
-let hilda;
+let user;
+let companion;
 
 let width = 1050;
 let height = 750;
@@ -24,7 +25,7 @@ let arrow;
 let characters;
 // let tester;
 
-let state = 'title'
+let state = 'title';
 
 let dialogueData;
 
@@ -39,6 +40,7 @@ Description of preload
 function preload() {
   dialogueData = loadJSON('data/characterDialogue.json');
 
+
 }
 
 
@@ -47,7 +49,7 @@ Description of setup
 */
 function setup() {
   createCanvas(width, height)
-  hilda = new Hilda(width / 2, height / 2);
+  user = new User(width / 2, height / 2);
   area = new Area(width / 2, height / 2);
   arrow = new Arrow(width / 2, height / 2);
   characters = new Character();
@@ -73,20 +75,21 @@ function draw() {
   } else if (state === `city2`) {
     areaD();
   }
-
-
-
 }
 
 function titleScreen() {
   background(20);
-  hilda.display();
+  user.displayHilda();
   enterGame();
 }
 
 function enterGame() {
   if (keyIsDown(32)) {
-    state = `city2`
+    state = `city2`;
+    companion = `alfur`;
+  } else if (keyIsDown(13)){
+    state = `city2`;
+companion = `twig`;
   }
 }
 
@@ -115,10 +118,14 @@ function areaD() {
 }
 
 function simulation() {
-  hilda.display();
-  hilda.wander();
+  if (companion === `twig`){
+  user.displayTwig();
+  user.wander();
+} else if (companion === `alfur`){
+  user.displayAlfur();
+}
 }
 
 function mouseMoved() {
-  hilda.twig();
+  user.twig();
 }

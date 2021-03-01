@@ -117,7 +117,6 @@ class Character {
 
   // 0
   baba() {
-    this.displayDialogue();
 
     push();
     fill(2);
@@ -125,7 +124,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.babaX, this.babaY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.babaX;
       updateY = this.babaY;
@@ -134,6 +133,8 @@ class Character {
         lineNumber = 1;
       }
       characterNumber = 0;
+      this.displayDialogue();
+
     }
   }
 
@@ -146,7 +147,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.bellkeeperX, this.bellkeeperY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.bellkeeperX;
       updateY = this.bellkeeperY;
@@ -169,7 +170,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.davidX, this.davidY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.davidX;
       updateY = this.davidY;
@@ -192,7 +193,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.deerfoxesX, this.deerfoxesY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.deerfoxesX;
       updateY = this.deerfoxesY;
@@ -215,7 +216,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.erikX, this.erikY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.erikX;
       updateY = this.erikY;
@@ -238,7 +239,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.elfkingX, this.elfkingY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.elfkingX;
       updateY = this.elfkingY;
@@ -261,7 +262,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.elfmayorX, this.elfmayorY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.elfmayorX;
       updateY = this.elfmayorY;
@@ -284,7 +285,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.fridaX, this.fridaY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.fridaX;
       updateY = this.fridaY;
@@ -307,7 +308,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.giantsX, this.giantsY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.giantsX;
       updateY = this.giantsY;
@@ -330,7 +331,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.jellybeanX, this.jellybeanY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.jellybeanX;
       updateY = this.jellybeanY;
@@ -353,7 +354,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.johannaX, this.johannaY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.johannaX;
       updateY = this.johannaY;
@@ -375,7 +376,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.kaisaX, this.kaisaY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.kaisaX;
       updateY = this.kaisaY;
@@ -398,7 +399,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.kellyX, this.kellyY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.kellyX;
       updateY = this.kellyY;
@@ -421,7 +422,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.lindwormX, this.lindwormY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.lindwormX;
       updateY = this.lindwormY;
@@ -444,7 +445,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.matildaX, this.matildaY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.matildaX;
       updateY = this.matildaY;
@@ -467,7 +468,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.peterX, this.peterY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.peterX;
       updateY = this.peterY;
@@ -490,7 +491,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.principalX, this.principalY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.principalX;
       updateY = this.principalY;
@@ -513,7 +514,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.ratkingX, this.ratkingY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.ratkingX;
       updateY = this.ratkingY;
@@ -536,7 +537,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.ravenLeaderX, this.ravenLeaderY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.ravenLeaderX;
       updateY = this.ravenLeaderY;
@@ -559,7 +560,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.greatRavenX, this.greatRavenY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.greatRavenX;
       updateY = this.greatRavenY;
@@ -582,7 +583,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.tontuX, this.tontuY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.tontuX;
       updateY = this.tontuY;
@@ -605,7 +606,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.vittraX, this.vittraY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.vittraX;
       updateY = this.vittraY;
@@ -628,7 +629,7 @@ class Character {
     pop();
 
     d = dist(mouseX, mouseY, this.wofsX, this.wofsY);
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
 
       updateX = this.wofsX;
       updateY = this.wofsY;
@@ -652,7 +653,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.woodmanX, this.woodmanY);
 
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
       updateX = this.woodmanX;
       updateY = this.woodmanY;
       lineNumber = 1;
@@ -660,7 +661,6 @@ class Character {
         lineNumber = 0;
       }
       characterNumber = 23;
-
       this.displayDialogue();
 
     }
@@ -677,7 +677,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.trollX, this.trollY);
 
-    if (d < hilda.size / 2 + hilda.size / 2) {
+    if (d < user.size / 2 + user.size / 2) {
       updateX = this.trollX;
       updateY = this.trollY;
       lineNumber = 0;
@@ -700,11 +700,14 @@ class Character {
 
 
     if (mouseIsPressed) {
+      this.displayDialogueBox();
+
       push();
       textSize(40);
+      fill(200);
       textAlign(LEFT);
-      text(`${characterName} :`, 100, 580);
-      text(`${dialogue}`, 100, 620);
+      text(`${characterName} :`, 110, 570);
+      text(`${dialogue}`, 110, 640);
       pop();
     } else {
       push();
@@ -716,6 +719,14 @@ class Character {
     }
 
   }
+
+displayDialogueBox(){
+  push();
+  fill(0);
+  rectMode(CENTER);
+  rect(width/2,700,900,400,30);
+pop();
+}
 
   cityLeft() {
 
@@ -747,7 +758,6 @@ class Character {
     this.lindworm();
     this.wofs();
     this.woodman();
-
   }
 
   outskirtRight() {
@@ -758,7 +768,7 @@ class Character {
     this.jellybean();
     this.troll();
 
-
   }
+
 
 }

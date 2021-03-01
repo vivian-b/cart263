@@ -1,4 +1,4 @@
-class Hilda {
+class User {
 
   constructor(x, y) {
     this.size = 45;
@@ -8,23 +8,34 @@ class Hilda {
     this.vx = 2;
     this.vy = 2;
     this.speed = 5;
-
   }
 
+displayHilda(){
+  push();
+  fill(200);
+  noStroke();
+  ellipse(mouseX, mouseY, this.size);
+  pop();
+}
 
-  display() {
+  displayTwig() {
+    this.displayHilda();
     push();
     fill(255);
     noStroke();
     ellipse(this.x, this.y, this.size/2);
     pop();
 
+  }
+
+  displayAlfur(){
+
+    this.displayHilda();
     push();
     fill(200);
     noStroke();
-    ellipse(mouseX, mouseY, this.size);
+    ellipse(mouseX, mouseY-40, this.size/2);
     pop();
-
   }
 
 
@@ -60,40 +71,7 @@ class Hilda {
 
   }
 
-  // flip(){
-  //    if (this.vx >= 0) {
-  //     this.scale.x = 1;
-  //   }
-  //
-  //   else if (this.vx < 0) {
-  //     this.scale.x = -1;
-  //
-  //   }
-  // }
 
-    //   handleInput() {
-    //
-    //     if (keyIsDown(LEFT_ARROW)) {
-    //       this.vx = -this.speed * 2;
-    //     } else if (keyIsDown(RIGHT_ARROW)) {
-    //       this.vx = this.speed * 2;
-    //
-    //     } else {
-    //       this.vx = 0;
-    //
-    //     }
-    //
-    //     if (keyIsDown(UP_ARROW)) {
-    //           this.vy = -this.speed * 2;
-    //           }
-    //
-    //         else if (keyIsDown(DOWN_ARROW)){
-    //           this.vy = this.speed * 2;
-    //           }
-    //
-    //         else {
-    //           this.vy = 0;
-    //           }
-    //
-    // }
+
+
 }
