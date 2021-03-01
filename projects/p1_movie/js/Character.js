@@ -117,9 +117,10 @@ class Character {
 
   // 0
   baba() {
-    push();
-    fill(255);
+    this.displayDialogue();
 
+    push();
+    fill(2);
     ellipse(this.babaX, this.babaY, this.size);
     pop();
 
@@ -132,9 +133,7 @@ class Character {
       if (mouseIsPressed) {
         lineNumber = 1;
       }
-
       characterNumber = 0;
-      this.displayDialogue();
     }
   }
 
@@ -681,14 +680,39 @@ class Character {
     if (d < hilda.size / 2 + hilda.size / 2) {
       updateX = this.trollX;
       updateY = this.trollY;
-      lineNumber = 1;
+      lineNumber = 0;
       if (mouseIsPressed) {
-        lineNumber = 0;
+        lineNumber = 1;
+
       }
       characterNumber = 24;
 
       this.displayDialogue();
 
+    }
+
+  }
+
+  displayDialogue() {
+
+    let characterName = dialogueData.characters[characterNumber].name;
+    let dialogue = dialogueData.characters[characterNumber].line[lineNumber];
+
+
+    if (mouseIsPressed) {
+      push();
+      textSize(40);
+      textAlign(LEFT);
+      text(`${characterName} :`, 100, 580);
+      text(`${dialogue}`, 100, 620);
+      pop();
+    } else {
+      push();
+      textSize(24);
+      textAlign(LEFT);
+      text(`${characterName} :`, updateX, updateY - 70);
+      text(`${dialogue}`, updateX, updateY - 50);
+      pop();
     }
 
   }
@@ -736,32 +760,5 @@ class Character {
 
 
   }
-
-  displayDialogue() {
-
-    let characterName = dialogueData.characters[characterNumber].name;
-    let dialogue = dialogueData.characters[characterNumber].line[lineNumber];
-
-
-
-    if (mouseIsPressed) {
-      push();
-      textSize(40);
-      textAlign(LEFT);
-      text(`${characterName} :`, 100, 580);
-      text(`${dialogue}`, 100, 620);
-      pop();
-    } else {
-      push();
-      textSize(24);
-      textAlign(LEFT);
-      text(`${characterName} :`, updateX, updateY - 70);
-      text(`${dialogue}`, updateX, updateY - 50);
-      pop();
-    }
-
-  }
-
-
 
 }

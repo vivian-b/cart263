@@ -31,7 +31,7 @@ let dialogueData;
 let lineNumber = 0;
 let characterNumber = 0;
 
-let currentCharacter;
+
 
 /**
 Description of preload
