@@ -8,130 +8,112 @@ class Character {
     // general character size
     this.size = 40;
 
-    // All character coordinates
-
-    // #0 baba
-    this.babaN = 0;
-    this.babaX = 600;
-    this.babaY = 600;
-
-    // #1 bellkeeper
-    this.bellkeeperN = 1;
-    this.bellkeeperX = 150;
-    this.bellkeeperY = 150;
+    // City character coordinates
+    // Bottom Left (city): david, frida, johanna, kelly, matilda, peter, tontu
+    // Bottom Right (city): erik, kaisa, principal, greatRaven, ratKing, ravenLeader, vittra
 
     // #2 david
-    this.davidN = 2;
+    this.davidN = 2
     this.davidX = 100;
     this.davidY = 100;
 
-    // #3 deerfoxes
-    this.deerfoxesN = 3;
-    this.deerfoxesX = 300;
-    this.deerfoxesY = 300;
-
-    // #4 erik
-    this.erikN = 4;
-    this.erikX = 680;
-    this.erikY = 680;
-
-    // #5 elfking
-    this.elfkingN = 5;
-    this.elfkingX = 250;
-    this.elfkingY = 250;
-
-    // #6 elfmayor
-    this.elfmayorN = 6;
-    this.elfmayorX = 350;
-    this.elfmayorY = 350;
-
-    // #7 frida
-    this.fridaN = 7;
+    // # frida
     this.fridaX = 300;
     this.fridaY = 300;
 
-    // #8 giants
-    this.giantsN = 8;
-    this.giantsX = 500;
-    this.giantsY = 500;
-
-    // #9 jellybean
-    this.jellybeanN = 9;
-    this.jellybeanX = 450;
-    this.jellybeanY = 450;
-
-    // #10 johanna
-    this.johannaN = 10;
+    // # johanna
     this.johannaX = 750;
     this.johannaY = 750;
 
-    // #11 kaisa
-    this.kaisaN = 11;
+    // # kaisa
     this.kaisaX = 200;
     this.kaisaY = 200;
 
-    // #12 kelly
-    this.kellyN = 12;
-    this.kellyX = 650;
-    this.kellyY = 650;
-
-    // #13 lindworm
-    this.lindwormN = 13;
-    this.lindwormX = 200;
-    this.lindwormY = 200;
-
-    // #14 matilda
-    this.matildaN = 14;
-    this.matildaX = 550;
-    this.matildaY = 550;
-
-    // #15 peter
-    this.peterN = 15;
+    // # peter
     this.peterX = 250;
     this.peterY = 250;
 
-    // #16 principal
-    this.principalN = 16;
-    this.principalX = 700;
-    this.principalY = 700;
-
-    // #17 ratking
-    this.ratkingN = 17;
+    // # ratking
     this.ratkingX = 350;
     this.ratkingY = 350;
 
-    // #18 ravenLeader
-    this.ravenLeaderN = 18;
-    this.ravenLeaderX = 150;
-    this.ravenLeaderY = 150;
-
-    // #19 greatRaven
-    this.greatRavenN = 19;
+    // # greatRaven
     this.greatRavenX = 500;
     this.greatRavenY = 500;
 
-    // #20 tontu
-    this.tontuN = 20;
+    // # tontu
     this.tontuX = 400;
     this.tontuY = 400;
 
-    // #21 vittra
-    this.vittraN = 21,
+    // # vittra
     this.vittraX = 450;
     this.vittraY = 450;
 
-    // #22 wofs
-    this.wofsN = 22;
+    // # matilda
+    this.matildaX = 550;
+    this.matildaY = 550;
+
+    // # kelly
+    this.kellyX = 650;
+    this.kellyY = 650;
+
+    // # ravenLeader
+    this.ravenLeaderX = 150;
+    this.ravenLeaderY = 150;
+
+    // # principal
+    this.principalX = 700;
+    this.principalY = 700;
+
+    // # erik
+    this.erikX = 680;
+    this.erikY = 680;
+
+    // Outskirts character coordinates
+    // Top Left (outskirts): deerfoxes, elfking, lindworm, wofs, woodman
+    // Top Right (outskirts): baba, bellkeeper, elfmayor, giants, jellybean, troll
+
+    // # baba
+    this.babaX = 600;
+    this.babaY = 600;
+
+    // #deerfoxes
+    this.deerfoxesX = 300;
+    this.deerfoxesY = 300;
+
+    // #elfking
+    this.elfkingX = 250;
+    this.elfkingY = 250;
+
+    // #elfmayor
+    this.elfmayorX = 350;
+    this.elfmayorY = 350;
+
+    // #giants
+    this.giantsX = 500;
+    this.giantsY = 500;
+
+    // #lindworm
+    this.lindwormX = 200;
+    this.lindwormY = 200;
+
+    // #wofs
     this.wofsX = 400;
     this.wofsY = 400;
 
-    // #23 woodman
-    this.woodmanN = 23;
+    // #woodman
     this.woodmanX = 100;
     this.woodmanY = 100;
 
-    // #24 troll
-    this.trollN = 24;
+    // #bellkeeper
+    this.bellkeeperX = 150;
+    this.bellkeeperY = 150;
+
+    // #jellybean
+    this.jellybeanX = 450;
+    this.jellybeanY = 450;
+
+    // #troll
     this.trollX = 250;
     this.trollY = 250;
 
@@ -154,7 +136,7 @@ class Character {
       if (mouseIsPressed) {
         lineNumber = 1;
       }
-      characterNumber = this.babaN;
+      characterNumber = 0;
       this.displayDialogue();
 
     }
@@ -178,7 +160,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.bellkeeperN;
+      characterNumber = 1;
       this.displayDialogue();
     }
   }
@@ -224,7 +206,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.deerfoxesN;
+      characterNumber = 3;
       this.displayDialogue();
     }
   }
@@ -247,7 +229,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.erikN;
+      characterNumber = 4;
       this.displayDialogue();
     }
   }
@@ -270,7 +252,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.elfkingN;
+      characterNumber = 5;
       this.displayDialogue();
     }
   }
@@ -293,7 +275,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.elfmayorN;
+      characterNumber = 6;
       this.displayDialogue();
     }
   }
@@ -316,7 +298,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.fridaN;
+      characterNumber = 7;
       this.displayDialogue();
     }
   }
@@ -339,7 +321,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.giantsN;
+      characterNumber = 8;
       this.displayDialogue();
     }
   }
@@ -362,7 +344,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.jellybeanN;
+      characterNumber = 9;
       this.displayDialogue();
     }
   }
@@ -384,7 +366,7 @@ class Character {
       if (mouseIsPressed) {
         lineNumber = 1;
       }
-      characterNumber = this.johannaN;
+      characterNumber = 10;
       this.displayDialogue();
     }
   }
@@ -407,7 +389,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.kaisaN;
+      characterNumber = 11;
       this.displayDialogue();
     }
   }
@@ -430,7 +412,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.kellyN;
+      characterNumber = 12;
       this.displayDialogue();
     }
   }
@@ -453,7 +435,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.lindwormN;
+      characterNumber = 13;
       this.displayDialogue();
     }
   }
@@ -476,7 +458,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.matildaN;
+      characterNumber = 14;
       this.displayDialogue();
     }
   }
@@ -499,7 +481,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.peterN;
+      characterNumber = 15;
       this.displayDialogue();
     }
   }
@@ -522,7 +504,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.principalN;
+      characterNumber = 16;
       this.displayDialogue();
     }
   }
@@ -545,7 +527,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.ratkingN;
+      characterNumber = 17;
       this.displayDialogue();
     }
   }
@@ -568,7 +550,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.ravenLeaderN;
+      characterNumber = 18;
       this.displayDialogue();
     }
   }
@@ -591,7 +573,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.greatRavenN;
+      characterNumber = 19;
       this.displayDialogue();
     }
   }
@@ -614,7 +596,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.tontuN;
+      characterNumber = 20;
       this.displayDialogue();
     }
   }
@@ -637,7 +619,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.vittraN;
+      characterNumber = 21;
       this.displayDialogue();
     }
   }
@@ -660,7 +642,7 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.wofsN;
+      characterNumber = 22;
       this.displayDialogue();
     }
   }
@@ -682,7 +664,7 @@ class Character {
       if (mouseIsPressed) {
         lineNumber = 0;
       }
-      characterNumber = this.woodmanN;
+      characterNumber = 23;
       this.displayDialogue();
     }
 
@@ -705,7 +687,7 @@ class Character {
       if (mouseIsPressed) {
         lineNumber = 1;
       }
-      characterNumber = this.trollN;
+      characterNumber = 24;
       this.displayDialogue();
     }
 
@@ -746,10 +728,6 @@ class Character {
     pop();
   }
 
-  // Bottom Left (city): david, frida, johanna, kelly, matilda, peter, tontu
-  // Bottom Right (city): erik, kaisa, principal, greatRaven, ratKing, ravenLeader, vittra
-
-
   cityLeft() {
 
     this.david(); // #2
@@ -759,9 +737,12 @@ class Character {
     this.matilda(); // #14
     this.peter(); // #15
     this.tontu(); // #20
+
+
   }
 
   cityRight() {
+
     this.erik(); // #4
     this.kaisa(); // #11
     this.principal(); // #16
@@ -771,9 +752,6 @@ class Character {
     this.vittra(); //#21
 
   }
-
-  // Top Left (outskirts): deerfoxes, elfking, lindworm, wofs, woodman
-  // Top Right (outskirts): baba, bellkeeper, elfmayor, giants, jellybean, troll
 
   outskirtLeft() {
     this.deerfoxes(); // #3
