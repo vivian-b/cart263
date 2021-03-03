@@ -5,6 +5,10 @@ class User {
 
     this.x = x;
     this.y = y;
+
+    this.hildaX = x;
+    this.hildaY = y;
+
     this.vx = 2;
     this.vy = 2;
     this.speed = 5;
@@ -12,32 +16,42 @@ class User {
 
 displayHilda(){
   push();
-  fill(200);
-  noStroke();
-  ellipse(mouseX, mouseY, this.size);
+  if (companion === `twig`){
+  image(hildaSprite, this.hildaX, this.hildaY, this.size, this.size+30)
+} else {
+  image(hildaNalfurSprite, this.hildaX, this.hildaY, this.size, this.size+30)
+
+}
   pop();
 }
 
   displayTwig() {
-    this.displayHilda();
     push();
     fill(255);
     noStroke();
     ellipse(this.x, this.y, this.size/2);
     pop();
-
+this.wander();
   }
 
-  displayAlfur(){
 
-    this.displayHilda();
-    push();
-    fill(200);
-    noStroke();
-    ellipse(mouseX, mouseY-40, this.size/2);
-    pop();
+hilda(){
+  if (mouseX > this.hildaX) {
+    this.vx = this.speed;
+  } else if (mouseX < this.hildaX) {
+    this.vx = -this.speed;
+  } else if (mouseX < this.hildaY) {
+    this.vy = this.speed;
+  } else if (mouseX > this.hildaY) {
+    this.vy = -this.speed;
   }
 
+  let distX = mouseX - this.hildaX;
+  let distY = mouseY - this.hildaY;
+
+  this.hildaX += distX / 5;
+  this.hildaY += distY / 5;
+}
 
   twig() {
     if (mouseX > this.x) {

@@ -38,6 +38,8 @@ let sprites = [];
 let numImages = 20;
 let numSprites = 2;
 
+let hildaSprite;
+let hildaNalfurSprite;
 
 /**
 Description of preload
@@ -69,6 +71,8 @@ function setup() {
   arrow = new Arrow(width / 2, height / 2);
   characters = new Character();
 
+  hildaSprite = loadImage(`assets/images/hilda.png`);
+  hildaNalfurSprite = loadImage(`assets/images/hilda2.png`);
 }
 
 
@@ -76,7 +80,7 @@ function setup() {
 Description of draw()
 */
 function draw() {
-  noCursor();
+  // noCursor();
   imageMode(CENTER)
 
 
@@ -135,14 +139,14 @@ function areaD() {
 
 function simulation() {
   if (companion === `twig`){
+  user.displayHilda();
   user.displayTwig();
-  user.wander();
 } else if (companion === `alfur`){
-  user.displayAlfur();
+  user.displayHilda();
 }
 }
 
 function mouseMoved() {
   user.twig();
-
+user.hilda();
 }
