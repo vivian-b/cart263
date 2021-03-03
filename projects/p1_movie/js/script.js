@@ -35,7 +35,9 @@ let characterNumber = 0;
 
 let images = [];
 let sprites = [];
-let numImages = 3;
+let numImages = 20;
+let numSprites = 2;
+
 
 /**
 Description of preload
@@ -45,12 +47,12 @@ function preload() {
 
 
 for (let i=0; i < numImages; i++){
-  let loadedImages = loadImage(`assets/images/clown-${i}.png`);
+  let loadedImages = loadImage(`assets/images/images-${i}.png`);
   images.push(loadedImages);
 }
 
-for (let i=0; i < numImages; i++){
-  let loadedImages = loadImage(`assets/images/clown-${i}.png`);
+for (let i=0; i < numSprites; i++){
+  let loadedImages = loadImage(`assets/images/sprites-${i}.png`);
   sprites.push(loadedImages);
 }
 

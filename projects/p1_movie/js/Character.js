@@ -50,10 +50,10 @@ class Character {
     this.fridaX = 300;
     this.fridaY = 300;
 
-    // #8 giants
-    this.giantsN = 8;
-    this.giantsX = 500;
-    this.giantsY = 500;
+    // #8 giant
+    this.giantN = 8;
+    this.giantX = 500;
+    this.giantY = 500;
 
     // #9 jellybean
     this.jellybeanN = 9;
@@ -310,24 +310,24 @@ class Character {
   }
 
   // Character #8
-  giants() {
+  giant() {
     push();
     fill(255);
 
-    ellipse(this.giantsX, this.giantsY, this.size);
+    ellipse(this.giantX, this.giantY, this.size);
     pop();
 
-    d = dist(mouseX, mouseY, this.giantsX, this.giantsY);
+    d = dist(mouseX, mouseY, this.giantX, this.giantY);
     if (d < user.size / 2 + user.size / 2) {
 
-      updateX = this.giantsX;
-      updateY = this.giantsY;
+      updateX = this.giantX;
+      updateY = this.giantY;
       lineNumber = 0;
       if (mouseIsPressed) {
         lineNumber = 1;
       }
 
-      characterNumber = this.giantsN;
+      characterNumber = this.giantN;
       this.displayDialogue();
     }
   }
@@ -709,15 +709,16 @@ class Character {
       this.displayDialogueBox();
 
       push();
-      textSize(40);
+      textSize(35);
       fill(200);
       textAlign(LEFT);
-      text(`${characterName} :`, 110, 570);
-      text(`${dialogue}`, 110, 640);
+      text(`${characterName} :`, 100, 550);
+      textSize(25);
+      text(`${dialogue}`, 100, 600);
       pop();
     } else {
       push();
-      textSize(24);
+      textSize(15);
       textAlign(LEFT);
       text(`${characterName} :`, updateX, updateY - 70);
       text(`${dialogue}`, updateX, updateY - 50);
@@ -730,11 +731,11 @@ class Character {
     push();
     fill(0);
     rectMode(CENTER);
-    rect(width / 2, 700, 900, 400, 30);
+    rect(width / 2, 700, 900, 450, 30);
     pop();
 
     imageMode(CENTER)
-    image(images[characterNumber], 800, 500)
+    image(images[characterNumber], 750, 500)
   }
 
 
@@ -765,7 +766,7 @@ class Character {
   }
 
   // Top Left (outskirts): deerfoxes, elfking, lindworm, wofs, woodman
-  // Top Right (outskirts): baba, bellkeeper, elfmayor, giants, jellybean, troll
+  // Top Right (outskirts): baba, bellkeeper, elfmayor, giant, jellybean, troll
 
   outskirtLeft() {
     this.deerfoxes(); // #3
@@ -779,7 +780,7 @@ class Character {
     this.baba(); // #0
     this.bellkeeper(); // #1
     this.elfmayor(); // #6
-    this.giants(); // #8
+    this.giant(); // #8
     this.jellybean(); // #9
     this.troll(); // #24
 
