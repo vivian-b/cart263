@@ -117,7 +117,7 @@ class Character {
 
     // #21 vittra
     this.vittraN = 21,
-      this.vittraX = 450;
+    this.vittraX = 450;
     this.vittraY = 450;
 
     // #22 wofs
