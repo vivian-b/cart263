@@ -35,8 +35,8 @@ let characterNumber = 0;
 
 let images = [];
 let sprites = [];
-let numImages = 20;
-let numSprites = 2;
+let numImages = 25;
+let numSprites = 5;
 
 let hildaSprite;
 let hildaNalfurSprite;
@@ -46,7 +46,6 @@ Description of preload
 */
 function preload() {
   dialogueData = loadJSON('data/characterDialogue.json');
-
 
 for (let i=0; i < numImages; i++){
   let loadedImages = loadImage(`assets/images/images-${i}.png`);

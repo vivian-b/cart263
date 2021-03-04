@@ -139,7 +139,7 @@ class Character {
 
   // Character #0
   baba() {
-    image(images[characterNumber], this.babaX, this.babaY, this.size, this.size)
+    image(sprites[0], this.babaX, this.babaY, this.size, this.size)
 
     d = dist(mouseX, mouseY, this.babaX, this.babaY);
     if (d < user.size / 2 + user.size / 2) {
@@ -158,7 +158,7 @@ class Character {
 
   // Character #1
   bellkeeper() {
-    image(images[characterNumber], this.bellkeeperX, this.bellkeeperY, this.size, this.size)
+    image(sprites[1], this.bellkeeperX, this.bellkeeperY, this.size, this.size)
 
     d = dist(mouseX, mouseY, this.bellkeeperX, this.bellkeeperY);
     if (d < user.size / 2 + user.size / 2) {
@@ -177,7 +177,7 @@ class Character {
 
   // Character #2
   david() {
-    image(images[characterNumber], this.davidX, this.davidY, this.size, this.size)
+    image(sprites[2], this.davidX, this.davidY, this.size, this.size)
 
     d = dist(mouseX, mouseY, this.davidX, this.davidY);
     if (d < user.size / 2 + user.size / 2) {
@@ -219,11 +219,8 @@ class Character {
 
   // Character #4
   erik() {
-    push();
-    fill(255);
+    image(sprites[4], this.erikX, this.erikY, this.size, this.size)
 
-    ellipse(this.erikX, this.erikY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.erikX, this.erikY);
     if (d < user.size / 2 + user.size / 2) {
@@ -242,11 +239,8 @@ class Character {
 
   // Character #5
   elfking() {
-    push();
-    fill(255);
+    image(sprites[4], this.elfkingX, this.elfkingY, this.size, this.size)
 
-    ellipse(this.elfkingX, this.elfkingY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.elfkingX, this.elfkingY);
     if (d < user.size / 2 + user.size / 2) {
