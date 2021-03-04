@@ -1,7 +1,3 @@
-let min = 0;
-let mid = height/2;
-let side  = height;
-
 class Arrow {
 
   constructor(x, y) {
@@ -10,10 +6,19 @@ class Arrow {
     this.x = x;
     this.y = y;
 
-    this.min = min;
-    this.mid = mid;
-    this.max = width;
-    this.side = side;
+    this.arrowLeftX = 0;
+    this.arrowLeftY = 385;
+    this.arrowLeftY2 = 450;
+
+    this.arrowRightX = width;
+    this.arrowRightY = 385;
+    this.arrowRightY2 = 450;
+
+    this.arrowTopX = 97;
+    this.arrowTopY = 193;
+
+    this.arrowBottomX = 97;
+    this.arrowBottomY = height;
 
   }
 
@@ -23,24 +28,31 @@ class Arrow {
   }
 
   displayTop() {
-    ellipse(this.mid, this.min, this.size);
+    ellipse(this.arrowTopX, this.arrowTopY, this.size);
 
   }
 
   displayBot() {
-    ellipse(this.mid, this.side, this.size);
+    ellipse(this.arrowBottomX, this.arrowBottomY, this.size);
 
   }
 
   displayLeft() {
-    ellipse(this.min, this.mid, this.size);
+    ellipse(this.arrowLeftX, this.arrowLeftY, this.size);
 
   }
 
   displayRight() {
-    ellipse(this.max, this.mid, this.size);
+    ellipse(this.arrowRightX, this.arrowRightY, this.size);
+  }
+
+  displayLeft2() {
+    ellipse(this.arrowLeftX, this.arrowLeftY2, this.size);
 
   }
 
+  displayRight2() {
+    ellipse(this.arrowRightX, this.arrowRightY2, this.size);
+  }
 
 }

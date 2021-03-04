@@ -31,12 +31,14 @@ let dialogueData;
 
 let lineNumber = 0;
 let characterNumber = 0;
-
+let mapNumber = 0;
 
 let images = [];
 let sprites = [];
+let map = [];
 let numImages = 25;
 let numSprites = 5;
+let numMaps = 4;
 
 let hildaSprite;
 let hildaNalfurSprite;
@@ -55,6 +57,11 @@ for (let i=0; i < numImages; i++){
 for (let i=0; i < numSprites; i++){
   let loadedImages = loadImage(`assets/images/sprites-${i}.png`);
   sprites.push(loadedImages);
+}
+
+for (let i=0; i < numMaps; i++){
+  let loadedImages = loadImage(`assets/images/map-${i}.jpg`);
+  map.push(loadedImages);
 }
 
 }
@@ -97,14 +104,14 @@ function draw() {
 }
 
 function titleScreen() {
-  background(20);
+  background(0);
   user.displayHilda();
   enterGame();
 }
 
 function enterGame() {
   if (keyIsDown(32)) {
-    state = `city2`;
+    state = `outskirt1`;
     companion = `alfur`;
   } else if (keyIsDown(13)){
     state = `city2`;
@@ -143,6 +150,10 @@ function simulation() {
 } else if (companion === `alfur`){
   user.displayHilda();
 }
+
+// console.log(mouseX);
+// console.log(mouseY);
+
 }
 
 function mouseMoved() {

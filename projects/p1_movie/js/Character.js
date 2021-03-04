@@ -12,128 +12,128 @@ class Character {
 
     // #0 baba
     this.babaN = 0;
-    this.babaX = 600;
-    this.babaY = 600;
+    this.babaX = 829;
+    this.babaY = 217;
 
     // #1 bellkeeper
     this.bellkeeperN = 1;
-    this.bellkeeperX = 150;
-    this.bellkeeperY = 150;
+    this.bellkeeperX = 868;
+    this.bellkeeperY = 213;
 
     // #2 david
     this.davidN = 2;
-    this.davidX = 100;
-    this.davidY = 100;
+    this.davidX = 61;
+    this.davidY = 670;
 
     // #3 deerfoxes
     this.deerfoxesN = 3;
-    this.deerfoxesX = 300;
-    this.deerfoxesY = 300;
+    this.deerfoxesX = 122;
+    this.deerfoxesY = 125;
 
     // #4 erik
     this.erikN = 4;
-    this.erikX = 680;
-    this.erikY = 680;
+    this.erikX = 481;
+    this.erikY = 569;
 
     // #5 elfking
     this.elfkingN = 5;
-    this.elfkingX = 250;
-    this.elfkingY = 250;
+    this.elfkingX = 142;
+    this.elfkingY = 123;
 
     // #6 elfmayor
     this.elfmayorN = 6;
-    this.elfmayorX = 350;
-    this.elfmayorY = 350;
+    this.elfmayorX = 143;
+    this.elfmayorY = 344;
 
     // #7 frida
     this.fridaN = 7;
-    this.fridaX = 300;
-    this.fridaY = 300;
+    this.fridaX = 51;
+    this.fridaY = 450;
 
     // #8 giant
     this.giantN = 8;
-    this.giantX = 500;
-    this.giantY = 500;
+    this.giantX = 675;
+    this.giantY = 172;
 
     // #9 jellybean
     this.jellybeanN = 9;
-    this.jellybeanX = 450;
-    this.jellybeanY = 450;
+    this.jellybeanX = 420;
+    this.jellybeanY = 268;
 
     // #10 johanna
     this.johannaN = 10;
-    this.johannaX = 750;
-    this.johannaY = 750;
+    this.johannaX = 231;
+    this.johannaY = 351;
 
     // #11 kaisa
     this.kaisaN = 11;
-    this.kaisaX = 200;
-    this.kaisaY = 200;
+    this.kaisaX = 812;
+    this.kaisaY = 664;
 
     // #12 kelly
     this.kellyN = 12;
-    this.kellyX = 650;
-    this.kellyY = 650;
+    this.kellyX = 655;
+    this.kellyY = 807;
 
     // #13 lindworm
     this.lindwormN = 13;
-    this.lindwormX = 200;
-    this.lindwormY = 200;
+    this.lindwormX = 648;
+    this.lindwormY = 110;
 
     // #14 matilda
     this.matildaN = 14;
-    this.matildaX = 550;
-    this.matildaY = 550;
+    this.matildaX = 792;
+    this.matildaY = 472;
 
     // #15 peter
     this.peterN = 15;
-    this.peterX = 250;
-    this.peterY = 250;
+    this.peterX = 176;
+    this.peterY = 559;
 
     // #16 principal
     this.principalN = 16;
-    this.principalX = 700;
-    this.principalY = 700;
+    this.principalX = 567;
+    this.principalY = 493;
 
     // #17 ratKing
     this.ratKingN = 17;
-    this.ratKingX = 350;
-    this.ratKingY = 350;
+    this.ratKingX = 458;
+    this.ratKingY = 688;
 
     // #18 ravenLeader
     this.ravenLeaderN = 18;
-    this.ravenLeaderX = 150;
-    this.ravenLeaderY = 150;
+    this.ravenLeaderX = 82;
+    this.ravenLeaderY = 269;
 
     // #19 greatRaven
     this.greatRavenN = 19;
-    this.greatRavenX = 500;
-    this.greatRavenY = 500;
+    this.greatRavenX = 376;
+    this.greatRavenY = 241;
 
     // #20 tontu
     this.tontuN = 20;
-    this.tontuX = 400;
-    this.tontuY = 400;
+    this.tontuX = 228;
+    this.tontuY = 559;
 
     // #21 vittra
     this.vittraN = 21,
-    this.vittraX = 450;
-    this.vittraY = 450;
+    this.vittraX = 763;
+    this.vittraY = 643;
 
     // #22 wofs
     this.wofsN = 22;
-    this.wofsX = 400;
-    this.wofsY = 400;
+    this.wofsX = 886;
+    this.wofsY = 330;
 
     // #23 woodman
     this.woodmanN = 23;
-    this.woodmanX = 100;
-    this.woodmanY = 100;
+    this.woodmanX = 126;
+    this.woodmanY = 597;
 
     // #24 troll
     this.trollN = 24;
-    this.trollX = 250;
-    this.trollY = 250;
+    this.trollX = 559;
+    this.trollY = 310;
 
   }
 
@@ -196,11 +196,6 @@ class Character {
 
   // Character #3
   deerfoxes() {
-    push();
-    fill(255);
-
-    ellipse(this.deerfoxesX, this.deerfoxesY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.deerfoxesX, this.deerfoxesY);
     if (d < user.size / 2 + user.size / 2) {
@@ -241,7 +236,6 @@ class Character {
   elfking() {
     image(sprites[4], this.elfkingX, this.elfkingY, this.size, this.size)
 
-
     d = dist(mouseX, mouseY, this.elfkingX, this.elfkingY);
     if (d < user.size / 2 + user.size / 2) {
 
@@ -259,11 +253,6 @@ class Character {
 
   // Character #6
   elfmayor() {
-    push();
-    fill(255);
-
-    ellipse(this.elfmayorX, this.elfmayorY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.elfmayorX, this.elfmayorY);
     if (d < user.size / 2 + user.size / 2) {
@@ -282,11 +271,6 @@ class Character {
 
   // Character #7
   frida() {
-    push();
-    fill(255);
-
-    ellipse(this.fridaX, this.fridaY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.fridaX, this.fridaY);
     if (d < user.size / 2 + user.size / 2) {
@@ -305,11 +289,6 @@ class Character {
 
   // Character #8
   giant() {
-    push();
-    fill(255);
-
-    ellipse(this.giantX, this.giantY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.giantX, this.giantY);
     if (d < user.size / 2 + user.size / 2) {
@@ -328,11 +307,6 @@ class Character {
 
   // Character #9
   jellybean() {
-    push();
-    fill(255);
-
-    ellipse(this.jellybeanX, this.jellybeanY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.jellybeanX, this.jellybeanY);
     if (d < user.size / 2 + user.size / 2) {
@@ -351,11 +325,6 @@ class Character {
 
   // Character #10
   johanna() {
-    push();
-    fill(255);
-
-    ellipse(this.johannaX, this.johannaY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.johannaX, this.johannaY);
     if (d < user.size / 2 + user.size / 2) {
@@ -373,11 +342,6 @@ class Character {
 
   // Character #11
   kaisa() {
-    push();
-    fill(255);
-
-    ellipse(this.kaisaX, this.kaisaY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.kaisaX, this.kaisaY);
     if (d < user.size / 2 + user.size / 2) {
@@ -396,11 +360,6 @@ class Character {
 
   // Character #12
   kelly() {
-    push();
-    fill(255);
-
-    ellipse(this.kellyX, this.kellyY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.kellyX, this.kellyY);
     if (d < user.size / 2 + user.size / 2) {
@@ -419,11 +378,6 @@ class Character {
 
   // Character #13
   lindworm() {
-    push();
-    fill(255);
-
-    ellipse(this.lindwormX, this.lindwormY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.lindwormX, this.lindwormY);
     if (d < user.size / 2 + user.size / 2) {
@@ -442,11 +396,6 @@ class Character {
 
   // Character #14
   matilda() {
-    push();
-    fill(255);
-
-    ellipse(this.matildaX, this.matildaY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.matildaX, this.matildaY);
     if (d < user.size / 2 + user.size / 2) {
@@ -465,11 +414,6 @@ class Character {
 
   // Character #15
   peter() {
-    push();
-    fill(255);
-
-    ellipse(this.peterX, this.peterY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.peterX, this.peterY);
     if (d < user.size / 2 + user.size / 2) {
@@ -488,11 +432,6 @@ class Character {
 
   // Character #16
   principal() {
-    push();
-    fill(255);
-
-    ellipse(this.principalX, this.principalY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.principalX, this.principalY);
     if (d < user.size / 2 + user.size / 2) {
@@ -511,11 +450,6 @@ class Character {
 
   // Character #17
   ratKing() {
-    push();
-    fill(255);
-
-    ellipse(this.ratKingX, this.ratKingY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.ratKingX, this.ratKingY);
     if (d < user.size / 2 + user.size / 2) {
@@ -534,11 +468,6 @@ class Character {
 
   // Character #18
   ravenLeader() {
-    push();
-    fill(255);
-
-    ellipse(this.ravenLeaderX, this.ravenLeaderY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.ravenLeaderX, this.ravenLeaderY);
     if (d < user.size / 2 + user.size / 2) {
@@ -557,11 +486,6 @@ class Character {
 
   // Character #19
   greatRaven() {
-    push();
-    fill(50);
-
-    ellipse(this.greatRavenX, this.greatRavenY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.greatRavenX, this.greatRavenY);
     if (d < user.size / 2 + user.size / 2) {
@@ -580,11 +504,6 @@ class Character {
 
   // Character #20
   tontu() {
-    push();
-    fill(255);
-
-    ellipse(this.tontuX, this.tontuY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.tontuX, this.tontuY);
     if (d < user.size / 2 + user.size / 2) {
@@ -603,11 +522,6 @@ class Character {
 
   // Character #21
   vittra() {
-    push();
-    fill(255);
-
-    ellipse(this.vittraX, this.vittraY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.vittraX, this.vittraY);
     if (d < user.size / 2 + user.size / 2) {
@@ -626,11 +540,6 @@ class Character {
 
   // Character #22
   wofs() {
-    push();
-    fill(255);
-
-    ellipse(this.wofsX, this.wofsY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.wofsX, this.wofsY);
     if (d < user.size / 2 + user.size / 2) {
@@ -649,11 +558,6 @@ class Character {
 
   // Character #23
   woodman() {
-    push();
-    fill(20, 200, 20);
-
-    ellipse(this.woodmanX, this.woodmanY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.woodmanX, this.woodmanY);
 
@@ -672,11 +576,6 @@ class Character {
 
   // Character #24
   troll() {
-    push();
-    fill(20, 200, 20);
-
-    ellipse(this.trollX, this.trollY, this.size);
-    pop();
 
     d = dist(mouseX, mouseY, this.trollX, this.trollY);
 
@@ -741,21 +640,24 @@ class Character {
 
     this.david(); // #2
     this.frida(); // #7
-    this.johanna(); // #10
     this.kelly(); // #12
-    this.matilda(); // #14
-    this.peter(); // #15
     this.tontu(); // #20
+    this.jellybean(); // #9
+    this.ratKing(); // #17
+    this.ravenLeader(); // #18
+    this.principal(); // #16
+    this.peter(); // #15
+
+
+
   }
 
   cityRight() {
     this.erik(); // #4
     this.kaisa(); // #11
-    this.principal(); // #16
     this.greatRaven(); // #19
-    this.ratKing(); // #17
-    this.ravenLeader(); // #18
-    this.vittra(); //#21
+    this.matilda(); // #14
+    this.bellkeeper(); // #1
 
   }
 
@@ -763,20 +665,22 @@ class Character {
   // Top Right (outskirts): baba, bellkeeper, elfmayor, giant, jellybean, troll
 
   outskirtLeft() {
-    this.deerfoxes(); // #3
+    this.elfmayor(); // #6
     this.elfking(); // #5
-    this.lindworm(); // #13
-    this.wofs(); // #22
+    this.baba(); // #0
     this.woodman(); // #23
+    this.giant(); // #8
+    this.johanna(); // #10
+
   }
 
   outskirtRight() {
-    this.baba(); // #0
-    this.bellkeeper(); // #1
-    this.elfmayor(); // #6
-    this.giant(); // #8
-    this.jellybean(); // #9
+    this.deerfoxes(); // #3
+    this.lindworm(); // #13
     this.troll(); // #24
+    this.vittra(); //#21
+    this.wofs(); // #22
+
 
   }
 
