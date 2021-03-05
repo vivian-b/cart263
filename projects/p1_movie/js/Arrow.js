@@ -6,12 +6,12 @@ class Arrow {
     this.x = x;
     this.y = y;
 
-    this.arrowLeftX = 0;
+    this.arrowLeftX = 25;
     this.arrowLeftY = 385;
     this.arrowLeftY2 = 450;
 
-    this.arrowRightX = width;
-    this.arrowRightY = 385;
+    this.arrowRightX = width-25;
+    this.arrowRightY = 375;
     this.arrowRightY2 = 450;
 
     this.arrowTopX = 97;
@@ -28,31 +28,35 @@ class Arrow {
   }
 
   displayTop() {
-    ellipse(this.arrowTopX, this.arrowTopY, this.size);
+
+    image(arrowImg[1], this.arrowTopX, this.arrowTopY, this.size, this.size)
 
   }
 
   displayBot() {
-    ellipse(this.arrowBottomX, this.arrowBottomY, this.size);
+    image(arrowImg[2], this.arrowBottomX, this.arrowBottomY, this.size, this.size)
 
   }
 
   displayLeft() {
-    ellipse(this.arrowLeftX, this.arrowLeftY, this.size);
-
+    push();
+    image(arrowImg[3], this.arrowLeftX, this.arrowLeftY, this.size, this.size)
+    rotate(PI / 3.0);
+pop();
   }
 
   displayRight() {
-    ellipse(this.arrowRightX, this.arrowRightY, this.size);
+    image(arrowImg[0], this.arrowRightX, this.arrowRightY, this.size, this.size)
+
   }
 
   displayLeft2() {
-    ellipse(this.arrowLeftX, this.arrowLeftY2, this.size);
+    image(arrowImg[3], this.arrowLeftX, this.arrowLeftY2, this.size, this.size)
 
   }
 
   displayRight2() {
-    ellipse(this.arrowRightX, this.arrowRightY2, this.size);
+    image(arrowImg[0], this.arrowRightX, this.arrowRightY2, this.size, this.size)
   }
 
 }

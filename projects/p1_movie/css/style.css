@@ -8,6 +8,7 @@ using the CSS Grid.
 Also hides overflow.
 
 **********************************************/
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 body {
   padding: 0;
@@ -17,4 +18,5 @@ body {
   align-content: center;
   height: 100vh; /* Body is the height of the viewport */
   overflow: hidden; /* Hide anything that goes off the window size */
+  background-color: #ECC78B;
 }

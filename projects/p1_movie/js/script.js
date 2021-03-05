@@ -37,17 +37,26 @@ let images = [];
 let map = [];
 let numImages = 25;
 let numMaps = 4;
+let numArrows = 4;
+
 
 let hildaSprite;
 let hildaNalfurSprite;
 let dialogue;
 
+let arrowImg = [];
 
 /**
 Description of preload
 */
 function preload() {
   dialogueData = loadJSON('data/characterDialogue.json');
+
+
+  for (let i=0; i < numArrows; i++){
+    let loadedImages = loadImage(`assets/images/arrow-${i}.png`);
+    arrowImg.push(loadedImages);
+  }
 
 for (let i=0; i < numImages; i++){
   let loadedImages = loadImage(`assets/images/images-${i}.png`);
@@ -82,7 +91,7 @@ function setup() {
 Description of draw()
 */
 function draw() {
-  // noCursor();
+  textFont(`Indie Flower`); //chosen font
   imageMode(CENTER)
 
 
@@ -107,7 +116,7 @@ function titleScreen() {
 
 function enterGame() {
   if (keyIsDown(32)) {
-    state = `outskirt1`;
+    state = `city2`;
     companion = `alfur`;
   } else if (keyIsDown(13)){
     state = `city2`;

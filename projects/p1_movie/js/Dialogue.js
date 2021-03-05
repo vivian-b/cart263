@@ -19,16 +19,19 @@ class Dialogue {
       this.displayDialogueBox();
 
       push();
-      textSize(35);
-      fill(200);
+      textSize(40);
+      fill(255);
       textAlign(LEFT);
-      text(`${characterName} :`, 100, 550);
-      textSize(25);
-      text(`${dialogue}`, 100, 600);
+      text(`${characterName} :`, 90, 550);
+      textSize(30);
+      text(`${dialogue}`, 90, 600);
       pop();
     } else {
+
+      this.displaySmallDialogueBox();
+
       push();
-      textSize(15);
+      textSize(18);
       textAlign(LEFT);
       text(`${characterName} :`, updateX, updateY - 70);
       text(`${dialogue}`, updateX, updateY - 50);
@@ -38,7 +41,7 @@ class Dialogue {
 
   displayDialogueBox() {
     push();
-    fill(0);
+    fill(40,36,34);
     rectMode(CENTER);
     rect(width / 2, 700, 900, 450, 30);
     pop();
@@ -47,5 +50,12 @@ class Dialogue {
     image(images[characterNumber], 750, 500)
   }
 
-
+  displaySmallDialogueBox() {
+    push();
+    fill(255);
+    noStroke();
+    rectMode(CENTER);
+    rect(updateX + 50, updateY - 65, 120, 55, 10);
+    pop();
+  }
 }
