@@ -49,7 +49,6 @@ let dialogue;
 let chat = false;
 let nearby = false;
 
-let currChara;
 
 /**
 Description of preload
@@ -122,7 +121,7 @@ function titleScreen() {
 
 function enterGame() {
   if (keyIsDown(32)) {
-    state = `outskirt1`;
+    state = `city2`;
     companion = `alfur`;
   } else if (keyIsDown(13)) {
     state = `city2`;

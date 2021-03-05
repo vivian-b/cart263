@@ -96,8 +96,8 @@ class Character {
     // #12 kelly
     this.kelly = {
       n: 12,
-      x: 655,
-      y: 807,
+      x: 200,
+      y: 670,
     }
 
     // #13 lindworm
@@ -424,7 +424,6 @@ class Character {
 
       if (mouseIsPressed) {
         chat = true;
-
         lineNumber = 1;
       }
       characterNumber = this.johanna.n;
@@ -703,11 +702,11 @@ class Character {
 
       updateX = this.woodman.x;
       updateY = this.woodman.y;
-      lineNumber = 1;
+      lineNumber = 0;
 
       if (mouseIsPressed) {
         chat = true;
-        lineNumber = 0;
+        lineNumber = 1;
       }
       characterNumber = this.woodman.n;
     }

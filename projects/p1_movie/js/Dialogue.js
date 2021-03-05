@@ -16,7 +16,7 @@ class Dialogue {
       textSize(40);
       fill(255);
       textAlign(LEFT);
-      text(`${characterName} :`, 90, 550);
+      text(`${characterName}`, 90, 550);
       textSize(30);
       text(`${dialogue}`, 90, 600);
       pop();
@@ -56,7 +56,7 @@ class Dialogue {
     fill(255);
     noStroke();
     rectMode(CENTER);
-    rect(updateX + 50, updateY - 65, 120, 55, 10);
+    rect(updateX + 50, updateY - 65, 138, 55, 10);
     pop();
 
   }

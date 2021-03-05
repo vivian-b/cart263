@@ -18,7 +18,7 @@ class Arrow {
     this.arrowTopY = 193;
 
     this.arrowBottomX = 97;
-    this.arrowBottomY = height;
+    this.arrowBottomY = height-30;
 
   }
 

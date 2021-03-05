@@ -3,24 +3,24 @@
   {
      "name": "Baba",
       "line": [
-        "hello there",
-        "why"
+        "[blabbering]",
+        "baba, ba, b-baaa..."
         ]
 
     },
     {
       "name": "Keeper of the Bell",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Who's there?",
+         "Ah the weird little girl,\nwhat are you doing here kid?"
          ]
     },
 
     {
       "name": "David",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Hilda!",
+         "Is.. is there a bug on me?"
          ]
     },
     {
@@ -33,148 +33,148 @@
     {
       "name": "Erik",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Ah, blue hair",
+         "I am Erik Ahlberg, new Head Officer of\nTrolberg Safety Patrol. Enemy of Trollkind!"
          ]
     },
     {
       "name": "Elf King",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "AHH!",
+         "The giant girl, sworn enemy of me\nand my people!"
          ]
     },
     {
       "name": "Elf Mayor",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "AH !",
+         "Haa... the giant, the menace!"
          ]
     },
     {
       "name": "Frida",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Hey Hilda!",
+         "Caring is my main extracurricular activity.\nLook at all of these badges I have!"
          ]
     },
     {
       "name": "Forest Giant",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Hello little girl",
+         "I'm looking for an old friend..."
          ]
     },
     {
       "name": "Jellybean",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "[rustling]",
+         "[bark]"
          ]
     },
     {
       "name": "Johanna",
        "line": [
          "hello there",
-         "Hi Hilda!"
+         "Are you sure you're going to\nbe okay out there without me?"
          ]
     },
     {
       "name": "Kaisa",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Oh hey",
+         "Don't do anything fishy\nthis time around."
          ]
     },
     {
       "name": "Kelly",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Boo.",
+         "Oh it's you."
          ]
     },
     {
       "name": "Lindworm",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Blue-haired girl!",
+         "Do you have any new\ntreasures of the earth?"
          ]
     },
     {
       "name": "Matilda",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Oh visitors!",
+         "Hello sweetie, call me Tildy.\nTell Kaisa dear I said hello!"
          ]
     },
     {
       "name": "Peter",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Hey!",
+         "You're the future neighbor's kid,\nare you spying on me child?"
          ]
     },
     {
       "name": "Principal",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Oh, hello!",
+         "Welcome to Edmund Ahlberg Elementary\nSchool, I am Principal Magnusson!"
          ]
     },
     {
       "name": "Rat King",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Ah, visitors.",
+         "Have you... secrets to trade\n... with the Rat King?"
          ]
     },
     {
       "name": "Raven Leader",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Hello sparrows!",
+         "Hope you have a great adventure!"
          ]
     },
     {
       "name": "Great Raven",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "[caws]",
+         "I'm not really the Great Raven\nI'm a thunderbird!"
          ]
     },
     {
       "name": "Tontu",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Ah, Hilda.",
+         "No I am not taking you through\nNowhere Space. It's a sacred\nspace for all Nisses"
          ]
     },
     {
       "name": "Vittra",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Hey you!",
+         "Did you dig up my friends?\nWe're not weed, we're Vittras!"
          ]
     },
     {
       "name": "Wofs",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "*rummaging*",
+         "[ woOooOOoaff ]"
          ]
     },
     {
       "name": "Woodman",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "Why hello there",
+         "Eager to leave the woods... city girl?"
          ]
     },
     {
       "name": "Troll",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "...",
+         "( As long as it's daylight, it's just a rock )"
          ]
     }
 
