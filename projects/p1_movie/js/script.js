@@ -49,6 +49,8 @@ let dialogue;
 let chat = false;
 let nearby = false;
 
+let currChara;
+
 /**
 Description of preload
 */
@@ -59,20 +61,20 @@ function preload() {
   hildaNalfurSprite = loadImage(`assets/images/hilda2.png`);
 
 
-  for (let i=0; i < numArrows; i++){
+  for (let i = 0; i < numArrows; i++) {
     let loadedImages = loadImage(`assets/images/arrow-${i}.png`);
     arrowImg.push(loadedImages);
   }
 
-for (let i=0; i < numImages; i++){
-  let loadedImages = loadImage(`assets/images/images-${i}.png`);
-  images.push(loadedImages);
-}
+  for (let i = 0; i < numImages; i++) {
+    let loadedImages = loadImage(`assets/images/images-${i}.png`);
+    images.push(loadedImages);
+  }
 
-for (let i=0; i < numMaps; i++){
-  let loadedImages = loadImage(`assets/images/map-${i}.jpg`);
-  map.push(loadedImages);
-}
+  for (let i = 0; i < numMaps; i++) {
+    let loadedImages = loadImage(`assets/images/map-${i}.jpg`);
+    map.push(loadedImages);
+  }
 
 }
 
@@ -86,7 +88,7 @@ function setup() {
   area = new Area(width / 2, height / 2);
   arrow = new Arrow(width / 2, height / 2);
   characters = new Character();
-  dialogue = new Dialogue ();
+  dialogue = new Dialogue();
 
 }
 
@@ -122,9 +124,9 @@ function enterGame() {
   if (keyIsDown(32)) {
     state = `outskirt1`;
     companion = `alfur`;
-  } else if (keyIsDown(13)){
+  } else if (keyIsDown(13)) {
     state = `city2`;
-companion = `twig`;
+    companion = `twig`;
   }
 }
 
@@ -153,19 +155,19 @@ function areaD() {
 }
 
 function simulation() {
-  if (companion === `twig`){
+  if (companion === `twig`) {
     user.displayTwig();
-  user.displayHilda();
+    user.displayHilda();
 
-} else if (companion === `alfur`){
-  user.displayHilda();
+  } else if (companion === `alfur`) {
+    user.displayHilda();
 
-}
-dialogue.displayDialogue();
+  }
+  dialogue.displayDialogue();
 
 }
 
 function mouseMoved() {
   user.twig();
-user.hilda();
+  user.hilda();
 }

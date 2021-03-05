@@ -11,164 +11,212 @@ class Character {
     // All character coordinates
 
     // #0 baba
-    this.babaN = 0;
-    this.babaX = 829;
-    this.babaY = 217;
+    this.baba = {
+      n: 0,
+      x: 829,
+      y: 217,
+    }
 
     // #1 bellkeeper
-    this.bellkeeperN = 1;
-    this.bellkeeperX = 868;
-    this.bellkeeperY = 213;
+    this.bellkeeper = {
+      n: 1,
+      x: 868,
+      y: 213,
+    }
 
     // #2 david
-    this.davidN = 2;
-    this.davidX = 61;
-    this.davidY = 670;
+    this.david = {
+      n: 2,
+      x: 61,
+      y: 670,
+    }
 
-    // #3 deerfoxes
-    this.deerfoxesN = 3;
-    this.deerfoxesX = 122;
-    this.deerfoxesY = 125;
+    this.deerfoxes = {
+      n: 3,
+      x: 122,
+      y: 125,
+    }
 
     // #4 erik
-    this.erikN = 4;
-    this.erikX = 481;
-    this.erikY = 569;
+    this.erik = {
+      n: 4,
+      x: 481,
+      y: 569,
+    }
 
     // #5 elfking
-    this.elfkingN = 5;
-    this.elfkingX = 142;
-    this.elfkingY = 123;
+    this.elfking = {
+      n: 5,
+      x: 142,
+      y: 123,
+    }
 
     // #6 elfmayor
-    this.elfmayorN = 6;
-    this.elfmayorX = 143;
-    this.elfmayorY = 344;
+    this.elfmayor = {
+      n: 6,
+      x: 143,
+      y: 344,
+    }
 
     // #7 frida
-    this.fridaN = 7;
-    this.fridaX = 51;
-    this.fridaY = 450;
+    this.frida = {
+      n: 7,
+      x: 51,
+      y: 450,
+    }
 
     // #8 giant
-    this.giantN = 8;
-    this.giantX = 675;
-    this.giantY = 172;
+    this.giant = {
+      n: 8,
+      x: 675,
+      y: 172,
+    }
 
     // #9 jellybean
-    this.jellybeanN = 9;
-    this.jellybeanX = 420;
-    this.jellybeanY = 268;
+    this.jellybean = {
+      n: 9,
+      x: 420,
+      y: 268,
+    }
 
     // #10 johanna
-    this.johannaN = 10;
-    this.johannaX = 231;
-    this.johannaY = 351;
+    this.johanna = {
+      n: 10,
+      x: 231,
+      y: 351,
+    }
 
     // #11 kaisa
-    this.kaisaN = 11;
-    this.kaisaX = 812;
-    this.kaisaY = 664;
+    this.kaisa = {
+      n: 11,
+      x: 812,
+      y: 664,
+    }
 
     // #12 kelly
-    this.kellyN = 12;
-    this.kellyX = 655;
-    this.kellyY = 807;
+    this.kelly = {
+      n: 12,
+      x: 655,
+      y: 807,
+    }
 
     // #13 lindworm
-    this.lindwormN = 13;
-    this.lindwormX = 648;
-    this.lindwormY = 110;
+    this.lindworm = {
+      n: 13,
+      x: 648,
+      y: 110,
+    }
 
     // #14 matilda
-    this.matildaN = 14;
-    this.matildaX = 792;
-    this.matildaY = 472;
+    this.matilda = {
+      n: 14,
+      x: 792,
+      y: 472,
+    }
 
     // #15 peter
-    this.peterN = 15;
-    this.peterX = 176;
-    this.peterY = 559;
+    this.peter = {
+      n: 15,
+      x: 176,
+      y: 559,
+    }
 
     // #16 principal
-    this.principalN = 16;
-    this.principalX = 567;
-    this.principalY = 493;
+    this.principal = {
+      n: 16,
+      x: 567,
+      y: 493,
+    }
 
     // #17 ratKing
-    this.ratKingN = 17;
-    this.ratKingX = 458;
-    this.ratKingY = 688;
+    this.ratKingN = {
+      n: 17,
+      x: 458,
+      y: 688,
+    }
 
     // #18 ravenLeader
-    this.ravenLeaderN = 18;
-    this.ravenLeaderX = 82;
-    this.ravenLeaderY = 269;
+    this.ravenLeader = {
+      n: 18,
+      x: 82,
+      y: 269,
+    }
 
     // #19 greatRaven
-    this.greatRavenN = 19;
-    this.greatRavenX = 376;
-    this.greatRavenY = 241;
+    this.greatRaven = {
+      n: 19,
+      x: 376,
+      y: 241,
+    }
 
     // #20 tontu
-    this.tontuN = 20;
-    this.tontuX = 228;
-    this.tontuY = 559;
+    this.tontu = {
+      n: 20,
+      x: 228,
+      y: 559,
+    }
 
     // #21 vittra
-    this.vittraN = 21,
-      this.vittraX = 763;
-    this.vittraY = 643;
+    this.vittra = {
+      n: 21,
+      x: 763,
+      y: 643,
+    }
 
     // #22 wofs
-    this.wofsN = 22;
-    this.wofsX = 886;
-    this.wofsY = 330;
+    this.wofs = {
+      n: 22,
+      x: 886,
+      y: 330,
+    }
 
     // #23 woodman
-    this.woodmanN = 23;
-    this.woodmanX = 126;
-    this.woodmanY = 597;
+    this.woodman = {
+      n: 23,
+      x: 126,
+      y: 597,
+    }
 
     // #24 troll
-    this.trollN = 24;
-    this.trollX = 559;
-    this.trollY = 310;
+    this.troll = {
+      n: 24,
+      x: 559,
+      y: 310,
+    }
 
   }
 
   // Character #0
-  baba() {
+  babaDisplay() {
 
-    d = dist(mouseX, mouseY, this.babaX, this.babaY);
+    d = dist(mouseX, mouseY,  this.baba.x, this.baba.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
-      updateX = this.babaX;
-      updateY = this.babaY;
+      updateX = this.baba.x;
+      updateY = this.baba.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
         chat = true;
         lineNumber = 1;
       }
-      characterNumber = this.babaN;
-    }
-    else{
+      characterNumber = this.baba.n;
+    } else {
       nearby = false;
     }
   }
 
   // Character #1
-  bellkeeper() {
+  bellkeeperDisplay() {
 
-    d = dist(mouseX, mouseY, this.bellkeeperX, this.bellkeeperY);
+    d = dist(mouseX, mouseY, this.bellkeeper.x, this.bellkeeper.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.bellkeeperX;
-      updateY = this.bellkeeperY;
+      updateX = this.bellkeeper.x;
+      updateY = this.bellkeeper.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -177,23 +225,22 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.bellkeeperN;
-    }
-    else{
+      characterNumber = this.bellkeeper.n;
+    } else {
       nearby = false;
     }
   }
 
   // Character #2
-  david() {
+  davidDisplay() {
 
-    d = dist(mouseX, mouseY, this.davidX, this.davidY);
+    d = dist(mouseX, mouseY, this.david.x, this.david.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.davidX;
-      updateY = this.davidY;
+      updateX = this.david.x;
+      updateY = this.david.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -202,23 +249,22 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.davidN;
-    }
-    else{
+      characterNumber = this.david.n;
+    } else {
       nearby = false;
     }
   }
 
   // Character #3
-  deerfoxes() {
+  deerfoxesDisplay() {
 
-    d = dist(mouseX, mouseY, this.deerfoxesX, this.deerfoxesY);
+    d = dist(mouseX, mouseY, this.deerfoxes.x, this.deerfoxes.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.deerfoxesX;
-      updateY = this.deerfoxesY;
+      updateX = this.deerfoxes.x;
+      updateY = this.deerfoxes.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -227,22 +273,21 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.deerfoxesN;
-    }
-    else{
+      characterNumber = this.deerfoxes.n;
+    } else {
       nearby = false;
     }
   }
 
   // Character #4
-  erik() {
+  erikDisplay() {
 
-    d = dist(mouseX, mouseY, this.erikX, this.erikY);
+    d = dist(mouseX, mouseY, this.erik.x, this.erik.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
-      updateX = this.erikX;
-      updateY = this.erikY;
+      updateX = this.erik.x;
+      updateY = this.erik.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -251,19 +296,19 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.erikN;
+      characterNumber = this.erik.n;
     }
   }
 
   // Character #5
-  elfking() {
+  elfkingDisplay() {
 
-    d = dist(mouseX, mouseY, this.elfkingX, this.elfkingY);
+    d = dist(mouseX, mouseY, this.elfking.x, this.elfking.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
-      updateX = this.elfkingX;
-      updateY = this.elfkingY;
+      updateX = this.elfking.x;
+      updateY = this.elfking.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -272,21 +317,21 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.elfkingN;
+      characterNumber = this.elfking.n;
     }
 
   }
 
   // Character #6
-  elfmayor() {
+  elfmayorDisplay() {
 
-    d = dist(mouseX, mouseY, this.elfmayorX, this.elfmayorY);
+    d = dist(mouseX, mouseY, this.elfmayor.x, this.elfmayor.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.elfmayorX;
-      updateY = this.elfmayorY;
+      updateX = this.elfmayor.x;
+      updateY = this.elfmayor.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -295,20 +340,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.elfmayorN;
+      characterNumber = this.elfmayor.n;
     }
   }
 
   // Character #7
-  frida() {
+  fridaDisplay() {
 
-    d = dist(mouseX, mouseY, this.fridaX, this.fridaY);
+    d = dist(mouseX, mouseY, this.frida.x, this.frida.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.fridaX;
-      updateY = this.fridaY;
+      updateX = this.frida.x;
+      updateY = this.frida.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -317,20 +362,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.fridaN;
+      characterNumber = this.frida.n;
     }
   }
 
   // Character #8
-  giant() {
+  giantDisplay() {
 
-    d = dist(mouseX, mouseY, this.giantX, this.giantY);
+    d = dist(mouseX, mouseY, this.giant.x, this.giant.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.giantX;
-      updateY = this.giantY;
+      updateX = this.giant.x;
+      updateY = this.giant.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -339,20 +384,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.giantN;
+      characterNumber = this.giant.n;
     }
   }
 
   // Character #9
-  jellybean() {
+  jellybeanDisplay() {
 
-    d = dist(mouseX, mouseY, this.jellybeanX, this.jellybeanY);
+    d = dist(mouseX, mouseY, this.jellybean.x, this.jellybean.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.jellybeanX;
-      updateY = this.jellybeanY;
+      updateX = this.jellybean.x;
+      updateY = this.jellybean.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -361,20 +406,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.jellybeanN;
+      characterNumber = this.jellybean.n;
     }
   }
 
   // Character #10
-  johanna() {
+  johannaDisplay() {
 
-    d = dist(mouseX, mouseY, this.johannaX, this.johannaY);
+    d = dist(mouseX, mouseY, this.johanna.x, this.johanna.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.johannaX;
-      updateY = this.johannaY;
+      updateX = this.johanna.x;
+      updateY = this.johanna.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -382,20 +427,20 @@ class Character {
 
         lineNumber = 1;
       }
-      characterNumber = this.johannaN;
+      characterNumber = this.johanna.n;
     }
   }
 
   // Character #11
-  kaisa() {
+  kaisaDisplay() {
 
-    d = dist(mouseX, mouseY, this.kaisaX, this.kaisaY);
+    d = dist(mouseX, mouseY, this.kaisa.x, this.kaisa.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.kaisaX;
-      updateY = this.kaisaY;
+      updateX = this.kaisa.x;
+      updateY = this.kaisa.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -404,20 +449,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.kaisaN;
+      characterNumber = this.kaisa.n;
     }
   }
 
   // Character #12
-  kelly() {
+  kellyDisplay() {
 
-    d = dist(mouseX, mouseY, this.kellyX, this.kellyY);
+    d = dist(mouseX, mouseY, this.kelly.x, this.kelly.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.kellyX;
-      updateY = this.kellyY;
+      updateX = this.kelly.x;
+      updateY = this.kelly.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -426,20 +471,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.kellyN;
+      characterNumber = this.kelly.n;
     }
   }
 
   // Character #13
-  lindworm() {
+  lindwormDisplay() {
 
-    d = dist(mouseX, mouseY, this.lindwormX, this.lindwormY);
+    d = dist(mouseX, mouseY, this.lindworm.x, this.lindworm.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.lindwormX;
-      updateY = this.lindwormY;
+      updateX = this.lindworm.x;
+      updateY = this.lindworm.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -448,20 +493,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.lindwormN;
+      characterNumber = this.lindworm.n;
     }
   }
 
   // Character #14
-  matilda() {
+  matildaDisplay() {
 
-    d = dist(mouseX, mouseY, this.matildaX, this.matildaY);
+    d = dist(mouseX, mouseY, this.matilda.x, this.matilda.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.matildaX;
-      updateY = this.matildaY;
+      updateX = this.matilda.x;
+      updateY = this.matilda.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -470,20 +515,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.matildaN;
+      characterNumber = this.matilda.n;
     }
   }
 
   // Character #15
-  peter() {
+  peterDisplay() {
 
-    d = dist(mouseX, mouseY, this.peterX, this.peterY);
+    d = dist(mouseX, mouseY, this.peter.x, this.peter.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.peterX;
-      updateY = this.peterY;
+      updateX = this.peter.x;
+      updateY = this.peter.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -492,20 +537,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.peterN;
+      characterNumber = this.peter.n;
     }
   }
 
   // Character #16
-  principal() {
+  principalDisplay() {
 
-    d = dist(mouseX, mouseY, this.principalX, this.principalY);
+    d = dist(mouseX, mouseY, this.principal.x, this.principal.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.principalX;
-      updateY = this.principalY;
+      updateX = this.principal.x;
+      updateY = this.principal.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -514,20 +559,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.principalN;
+      characterNumber = this.principal.n;
     }
   }
 
   // Character #17
-  ratKing() {
+  ratKingDisplay() {
 
-    d = dist(mouseX, mouseY, this.ratKingX, this.ratKingY);
+    d = dist(mouseX, mouseY, this.ratKing.x, this.ratKing.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.ratKingX;
-      updateY = this.ratKingY;
+      updateX = this.ratKing.x;
+      updateY = this.ratKing.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -536,20 +581,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.ratKingN;
+      characterNumber = this.ratKing.n;
     }
   }
 
   // Character #18
-  ravenLeader() {
+  ravenLeaderDisplay() {
 
-    d = dist(mouseX, mouseY, this.ravenLeaderX, this.ravenLeaderY);
+    d = dist(mouseX, mouseY, this.ravenLeader.x, this.ravenLeader.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.ravenLeaderX;
-      updateY = this.ravenLeaderY;
+      updateX = this.ravenLeader.x;
+      updateY = this.ravenLeader.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -558,20 +603,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.ravenLeaderN;
+      characterNumber = this.ravenLeader.n;
     }
   }
 
   // Character #19
-  greatRaven() {
+  greatRavenDisplay() {
 
-    d = dist(mouseX, mouseY, this.greatRavenX, this.greatRavenY);
+    d = dist(mouseX, mouseY, this.greatRaven.x, this.greatRaven.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.greatRavenX;
-      updateY = this.greatRavenY;
+      updateX = this.greatRaven.x;
+      updateY = this.greatRaven.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -580,20 +625,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.greatRavenN;
+      characterNumber = this.greatRaven.n;
     }
   }
 
   // Character #20
-  tontu() {
+  tontuDisplay() {
 
-    d = dist(mouseX, mouseY, this.tontuX, this.tontuY);
+    d = dist(mouseX, mouseY, this.tontu.x, this.tontu.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.tontuX;
-      updateY = this.tontuY;
+      updateX = this.tontu.x;
+      updateY = this.tontu.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -602,20 +647,20 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.tontuN;
+      characterNumber = this.tontu.n;
     }
   }
 
   // Character #21
-  vittra() {
+  vittraDisplay() {
 
-    d = dist(mouseX, mouseY, this.vittraX, this.vittraY);
+    d = dist(mouseX, mouseY, this.vittra.x, this.vittra.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.vittraX;
-      updateY = this.vittraY;
+      updateX = this.vittra.x;
+      updateY = this.vittra.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -624,19 +669,19 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.vittraN;
+      characterNumber = this.vittra.n;
     }
   }
 
   // Character #22
-  wofs() {
+  wofsDisplay() {
 
-    d = dist(mouseX, mouseY, this.wofsX, this.wofsY);
+    d = dist(mouseX, mouseY, this.wofs.x, this.wofs.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
-      updateX = this.wofsX;
-      updateY = this.wofsY;
+      updateX = this.wofs.x;
+      updateY = this.wofs.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -645,39 +690,39 @@ class Character {
         lineNumber = 1;
       }
 
-      characterNumber = this.wofsN;
+      characterNumber = this.wofs.n;
     }
   }
 
   // Character #23
-  woodman() {
+  woodmanDisplay() {
 
-    d = dist(mouseX, mouseY, this.woodmanX, this.woodmanY);
+    d = dist(mouseX, mouseY, this.woodman.x, this.woodman.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
-      updateX = this.woodmanX;
-      updateY = this.woodmanY;
+      updateX = this.woodman.x;
+      updateY = this.woodman.y;
       lineNumber = 1;
 
       if (mouseIsPressed) {
         chat = true;
         lineNumber = 0;
       }
-      characterNumber = this.woodmanN;
+      characterNumber = this.woodman.n;
     }
   }
 
   // Character #24
-  troll() {
+  trollDisplay() {
 
-    d = dist(mouseX, mouseY, this.trollX, this.trollY);
+    d = dist(mouseX, mouseY, this.troll.x, this.troll.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
 
-      updateX = this.trollX;
-      updateY = this.trollY;
+      updateX = this.troll.x;
+      updateY = this.troll.y;
       lineNumber = 0;
 
       if (mouseIsPressed) {
@@ -685,7 +730,7 @@ class Character {
 
         lineNumber = 1;
       }
-      characterNumber = this.trollN;
+      characterNumber = this.troll.n;
     }
 
   }
@@ -699,16 +744,16 @@ class Character {
 
   cityLeft() {
 
-    this.david(); // #2
+    this.davidDisplay(); // #2
 
-    this.frida(); // #7
-    this.kelly(); // #12
-    this.tontu(); // #20
-    this.jellybean(); // #9
-    this.ratKing(); // #17
-    this.ravenLeader(); // #18
-    this.principal(); // #16
-    this.peter(); // #15
+    this.fridaDisplay(); // #7
+    this.kellyDisplay(); // #12
+    this.tontuDisplay(); // #20
+    this.jellybeanDisplay(); // #9
+    this.ratKingDisplay(); // #17
+    this.ravenLeaderDisplay(); // #18
+    this.principalDisplay(); // #16
+    this.peterDisplay(); // #15
 
 
 
@@ -716,12 +761,12 @@ class Character {
   }
 
   cityRight() {
-    this.bellkeeper(); // #1
+    this.bellkeeperDisplay(); // #1
 
-    this.erik(); // #4
-    this.kaisa(); // #11
-    this.greatRaven(); // #19
-    this.matilda(); // #14
+    this.erikDisplay(); // #4
+    this.kaisaDisplay(); // #11
+    this.greatRavenDisplay(); // #19
+    this.matildaDisplay(); // #14
 
 
   }
@@ -730,25 +775,25 @@ class Character {
   // Top Right (outskirts): baba, bellkeeper, elfmayor, giant, jellybean, troll
 
   outskirtLeft() {
-    this.baba(); // #0
+    this.babaDisplay(); // #0
 
-    this.woodman(); // #23
-    this.johanna(); // #10
-    this.giant(); // #8
-    this.elfmayor(); // #6
-    this.elfking(); // #5
+    this.woodmanDisplay(); // #23
+    this.johannaDisplay(); // #10
+    this.giantDisplay(); // #8
+    this.elfmayorDisplay(); // #6
+    this.elfkingDisplay(); // #5
 
 
   }
 
 
   outskirtRight() {
-    this.deerfoxes(); // #3
+    this.deerfoxesDisplay(); // #3
 
-    this.troll(); // #24
-    this.wofs(); // #22
-    this.vittra(); //#21
-    this.lindworm(); // #13
+    this.trollDisplay(); // #24
+    this.wofsDisplay(); // #22
+    this.vittraDisplay(); //#21
+    this.lindwormDisplay(); // #13
 
 
 
