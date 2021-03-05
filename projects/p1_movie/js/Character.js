@@ -139,10 +139,10 @@ class Character {
 
   // Character #0
   baba() {
-    image(sprites[0], this.babaX, this.babaY, this.size, this.size)
 
     d = dist(mouseX, mouseY, this.babaX, this.babaY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.babaX;
       updateY = this.babaY;
@@ -151,17 +151,17 @@ class Character {
         lineNumber = 1;
       }
       characterNumber = this.babaN;
-      this.displayDialogue();
+      //
 
     }
   }
 
   // Character #1
   bellkeeper() {
-    image(sprites[1], this.bellkeeperX, this.bellkeeperY, this.size, this.size)
 
     d = dist(mouseX, mouseY, this.bellkeeperX, this.bellkeeperY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.bellkeeperX;
       updateY = this.bellkeeperY;
@@ -171,16 +171,16 @@ class Character {
       }
 
       characterNumber = this.bellkeeperN;
-      this.displayDialogue();
+      //
     }
   }
 
   // Character #2
   david() {
-    image(sprites[2], this.davidX, this.davidY, this.size, this.size)
 
     d = dist(mouseX, mouseY, this.davidX, this.davidY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.davidX;
       updateY = this.davidY;
@@ -190,7 +190,7 @@ class Character {
       }
 
       characterNumber = this.davidN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -199,6 +199,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.deerfoxesX, this.deerfoxesY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.deerfoxesX;
       updateY = this.deerfoxesY;
@@ -208,18 +209,16 @@ class Character {
       }
 
       characterNumber = this.deerfoxesN;
-      this.displayDialogue();
+      //
     }
   }
 
   // Character #4
   erik() {
-    image(sprites[4], this.erikX, this.erikY, this.size, this.size)
-
 
     d = dist(mouseX, mouseY, this.erikX, this.erikY);
     if (d < user.size / 2 + user.size / 2) {
-
+      dialogue.displayDialogue();
       updateX = this.erikX;
       updateY = this.erikY;
       lineNumber = 0;
@@ -228,17 +227,16 @@ class Character {
       }
 
       characterNumber = this.erikN;
-      this.displayDialogue();
+      //
     }
   }
 
   // Character #5
   elfking() {
-    image(sprites[4], this.elfkingX, this.elfkingY, this.size, this.size)
 
     d = dist(mouseX, mouseY, this.elfkingX, this.elfkingY);
     if (d < user.size / 2 + user.size / 2) {
-
+      dialogue.displayDialogue();
       updateX = this.elfkingX;
       updateY = this.elfkingY;
       lineNumber = 0;
@@ -247,7 +245,7 @@ class Character {
       }
 
       characterNumber = this.elfkingN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -256,6 +254,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.elfmayorX, this.elfmayorY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.elfmayorX;
       updateY = this.elfmayorY;
@@ -265,7 +264,7 @@ class Character {
       }
 
       characterNumber = this.elfmayorN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -274,6 +273,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.fridaX, this.fridaY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.fridaX;
       updateY = this.fridaY;
@@ -283,7 +283,7 @@ class Character {
       }
 
       characterNumber = this.fridaN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -292,6 +292,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.giantX, this.giantY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.giantX;
       updateY = this.giantY;
@@ -301,7 +302,7 @@ class Character {
       }
 
       characterNumber = this.giantN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -310,6 +311,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.jellybeanX, this.jellybeanY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.jellybeanX;
       updateY = this.jellybeanY;
@@ -319,7 +321,7 @@ class Character {
       }
 
       characterNumber = this.jellybeanN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -328,6 +330,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.johannaX, this.johannaY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.johannaX;
       updateY = this.johannaY;
@@ -336,7 +339,7 @@ class Character {
         lineNumber = 1;
       }
       characterNumber = this.johannaN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -345,6 +348,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.kaisaX, this.kaisaY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.kaisaX;
       updateY = this.kaisaY;
@@ -354,7 +358,7 @@ class Character {
       }
 
       characterNumber = this.kaisaN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -363,6 +367,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.kellyX, this.kellyY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.kellyX;
       updateY = this.kellyY;
@@ -372,7 +377,7 @@ class Character {
       }
 
       characterNumber = this.kellyN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -381,6 +386,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.lindwormX, this.lindwormY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.lindwormX;
       updateY = this.lindwormY;
@@ -390,7 +396,7 @@ class Character {
       }
 
       characterNumber = this.lindwormN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -399,6 +405,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.matildaX, this.matildaY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.matildaX;
       updateY = this.matildaY;
@@ -408,7 +415,7 @@ class Character {
       }
 
       characterNumber = this.matildaN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -417,6 +424,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.peterX, this.peterY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.peterX;
       updateY = this.peterY;
@@ -426,7 +434,7 @@ class Character {
       }
 
       characterNumber = this.peterN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -435,6 +443,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.principalX, this.principalY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.principalX;
       updateY = this.principalY;
@@ -444,7 +453,7 @@ class Character {
       }
 
       characterNumber = this.principalN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -453,6 +462,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.ratKingX, this.ratKingY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.ratKingX;
       updateY = this.ratKingY;
@@ -462,7 +472,7 @@ class Character {
       }
 
       characterNumber = this.ratKingN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -471,6 +481,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.ravenLeaderX, this.ravenLeaderY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.ravenLeaderX;
       updateY = this.ravenLeaderY;
@@ -480,7 +491,7 @@ class Character {
       }
 
       characterNumber = this.ravenLeaderN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -489,6 +500,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.greatRavenX, this.greatRavenY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.greatRavenX;
       updateY = this.greatRavenY;
@@ -498,7 +510,7 @@ class Character {
       }
 
       characterNumber = this.greatRavenN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -507,6 +519,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.tontuX, this.tontuY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.tontuX;
       updateY = this.tontuY;
@@ -516,7 +529,7 @@ class Character {
       }
 
       characterNumber = this.tontuN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -525,6 +538,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.vittraX, this.vittraY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.vittraX;
       updateY = this.vittraY;
@@ -534,7 +548,7 @@ class Character {
       }
 
       characterNumber = this.vittraN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -543,6 +557,7 @@ class Character {
 
     d = dist(mouseX, mouseY, this.wofsX, this.wofsY);
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
 
       updateX = this.wofsX;
       updateY = this.wofsY;
@@ -552,7 +567,7 @@ class Character {
       }
 
       characterNumber = this.wofsN;
-      this.displayDialogue();
+      //
     }
   }
 
@@ -562,6 +577,8 @@ class Character {
     d = dist(mouseX, mouseY, this.woodmanX, this.woodmanY);
 
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
+
       updateX = this.woodmanX;
       updateY = this.woodmanY;
       lineNumber = 1;
@@ -569,7 +586,7 @@ class Character {
         lineNumber = 0;
       }
       characterNumber = this.woodmanN;
-      this.displayDialogue();
+      //
     }
 
   }
@@ -578,8 +595,9 @@ class Character {
   troll() {
 
     d = dist(mouseX, mouseY, this.trollX, this.trollY);
-
     if (d < user.size / 2 + user.size / 2) {
+      dialogue.displayDialogue();
+
       updateX = this.trollX;
       updateY = this.trollY;
       lineNumber = 0;
@@ -587,49 +605,12 @@ class Character {
         lineNumber = 1;
       }
       characterNumber = this.trollN;
-      this.displayDialogue();
+      //
     }
 
   }
 
-  displayDialogue() {
 
-    let characterName = dialogueData.characters[characterNumber].name;
-    let dialogue = dialogueData.characters[characterNumber].line[lineNumber];
-
-
-    if (mouseIsPressed) {
-      this.displayDialogueBox();
-
-      push();
-      textSize(35);
-      fill(200);
-      textAlign(LEFT);
-      text(`${characterName} :`, 100, 550);
-      textSize(25);
-      text(`${dialogue}`, 100, 600);
-      pop();
-    } else {
-      push();
-      textSize(15);
-      textAlign(LEFT);
-      text(`${characterName} :`, updateX, updateY - 70);
-      text(`${dialogue}`, updateX, updateY - 50);
-      pop();
-    }
-
-  }
-
-  displayDialogueBox() {
-    push();
-    fill(0);
-    rectMode(CENTER);
-    rect(width / 2, 700, 900, 450, 30);
-    pop();
-
-    imageMode(CENTER)
-    image(images[characterNumber], 750, 500)
-  }
 
 
   // Bottom Left (city): david, frida, johanna, kelly, matilda, peter, tontu

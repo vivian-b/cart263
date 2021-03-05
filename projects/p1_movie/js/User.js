@@ -12,7 +12,9 @@ class User {
     this.vx = 2;
     this.vy = 2;
     this.speed = 5;
+
   }
+
 
 displayHilda(){
   push();
@@ -36,6 +38,7 @@ this.wander();
 
 
 hilda(){
+
   if (mouseX > this.hildaX) {
     this.vx = this.speed;
   } else if (mouseX < this.hildaX) {
@@ -49,8 +52,8 @@ hilda(){
   let distX = mouseX - this.hildaX;
   let distY = mouseY - this.hildaY;
 
-  this.hildaX += distX / 5;
-  this.hildaY += distY / 5;
+  this.hildaX += distX / 10;
+  this.hildaY += distY / 10;
 }
 
   twig() {
@@ -84,8 +87,5 @@ hilda(){
    this.y += this.vy;
 
   }
-
-
-
 
 }

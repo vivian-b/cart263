@@ -2,7 +2,7 @@
 
 /**
 Exploring Trolberg
-Vivianbui
+Vivian Bui
 
 description
 */
@@ -34,14 +34,14 @@ let characterNumber = 0;
 let mapNumber = 0;
 
 let images = [];
-let sprites = [];
 let map = [];
 let numImages = 25;
-let numSprites = 5;
 let numMaps = 4;
 
 let hildaSprite;
 let hildaNalfurSprite;
+let dialogue;
+
 
 /**
 Description of preload
@@ -52,11 +52,6 @@ function preload() {
 for (let i=0; i < numImages; i++){
   let loadedImages = loadImage(`assets/images/images-${i}.png`);
   images.push(loadedImages);
-}
-
-for (let i=0; i < numSprites; i++){
-  let loadedImages = loadImage(`assets/images/sprites-${i}.png`);
-  sprites.push(loadedImages);
 }
 
 for (let i=0; i < numMaps; i++){
@@ -76,6 +71,7 @@ function setup() {
   area = new Area(width / 2, height / 2);
   arrow = new Arrow(width / 2, height / 2);
   characters = new Character();
+  dialogue = new Dialogue ();
 
   hildaSprite = loadImage(`assets/images/hilda.png`);
   hildaNalfurSprite = loadImage(`assets/images/hilda2.png`);
@@ -141,18 +137,22 @@ function areaD() {
   area.city2();
   simulation();
 
+
 }
 
 function simulation() {
   if (companion === `twig`){
+    user.displayTwig();
   user.displayHilda();
-  user.displayTwig();
+
 } else if (companion === `alfur`){
   user.displayHilda();
+
 }
 
-// console.log(mouseX);
-// console.log(mouseY);
+if (mouseIsPressed){
+  dialogue.displayDialogue();
+}
 
 }
 
