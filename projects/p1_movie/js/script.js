@@ -34,23 +34,29 @@ let characterNumber = 0;
 let mapNumber = 0;
 
 let images = [];
-let map = [];
 let numImages = 25;
-let numMaps = 4;
-let numArrows = 4;
 
+let map = [];
+let numMaps = 4;
+
+let arrowImg = [];
+let numArrows = 4;
 
 let hildaSprite;
 let hildaNalfurSprite;
 let dialogue;
 
-let arrowImg = [];
+let chat = false;
+let nearby = false;
 
 /**
 Description of preload
 */
 function preload() {
   dialogueData = loadJSON('data/characterDialogue.json');
+
+  hildaSprite = loadImage(`assets/images/hilda.png`);
+  hildaNalfurSprite = loadImage(`assets/images/hilda2.png`);
 
 
   for (let i=0; i < numArrows; i++){
@@ -82,8 +88,6 @@ function setup() {
   characters = new Character();
   dialogue = new Dialogue ();
 
-  hildaSprite = loadImage(`assets/images/hilda.png`);
-  hildaNalfurSprite = loadImage(`assets/images/hilda2.png`);
 }
 
 
@@ -116,7 +120,7 @@ function titleScreen() {
 
 function enterGame() {
   if (keyIsDown(32)) {
-    state = `city2`;
+    state = `outskirt1`;
     companion = `alfur`;
   } else if (keyIsDown(13)){
     state = `city2`;
@@ -146,7 +150,6 @@ function areaD() {
   area.city2();
   simulation();
 
-
 }
 
 function simulation() {
@@ -158,10 +161,7 @@ function simulation() {
   user.displayHilda();
 
 }
-
-if (mouseIsPressed){
-  dialogue.displayDialogue();
-}
+dialogue.displayDialogue();
 
 }
 

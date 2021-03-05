@@ -1,21 +1,15 @@
 class Dialogue {
 
   constructor(x, y) {
-
   }
 
-  display() {
-    fill(40);
-    noStroke();
-  }
 
   displayDialogue() {
 
     let characterName = dialogueData.characters[characterNumber].name;
     let dialogue = dialogueData.characters[characterNumber].line[lineNumber];
 
-
-    if (mouseIsPressed) {
+    if (mouseIsPressed && nearby) {
       this.displayDialogueBox();
 
       push();
@@ -26,8 +20,8 @@ class Dialogue {
       textSize(30);
       text(`${dialogue}`, 90, 600);
       pop();
-    } else {
-
+    }
+     else if (nearby){
       this.displaySmallDialogueBox();
 
       push();
@@ -36,10 +30,15 @@ class Dialogue {
       text(`${characterName} :`, updateX, updateY - 70);
       text(`${dialogue}`, updateX, updateY - 50);
       pop();
+
+    }
+    if (!nearby){
+      chat = false;
     }
   }
 
   displayDialogueBox() {
+    if (chat){
     push();
     fill(40,36,34);
     rectMode(CENTER);
@@ -48,14 +47,17 @@ class Dialogue {
 
     imageMode(CENTER)
     image(images[characterNumber], 750, 500)
+    }
   }
 
   displaySmallDialogueBox() {
+
     push();
     fill(255);
     noStroke();
     rectMode(CENTER);
     rect(updateX + 50, updateY - 65, 120, 55, 10);
     pop();
+
   }
 }

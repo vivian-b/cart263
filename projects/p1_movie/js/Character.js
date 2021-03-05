@@ -117,7 +117,7 @@ class Character {
 
     // #21 vittra
     this.vittraN = 21,
-    this.vittraX = 763;
+      this.vittraX = 763;
     this.vittraY = 643;
 
     // #22 wofs
@@ -142,17 +142,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.babaX, this.babaY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
 
       updateX = this.babaX;
       updateY = this.babaY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
         lineNumber = 1;
       }
       characterNumber = this.babaN;
-      //
-
+    }
+    else{
+      nearby = false;
     }
   }
 
@@ -161,17 +164,23 @@ class Character {
 
     d = dist(mouseX, mouseY, this.bellkeeperX, this.bellkeeperY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.bellkeeperX;
       updateY = this.bellkeeperY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.bellkeeperN;
-      //
+    }
+    else{
+      nearby = false;
     }
   }
 
@@ -180,17 +189,23 @@ class Character {
 
     d = dist(mouseX, mouseY, this.davidX, this.davidY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.davidX;
       updateY = this.davidY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.davidN;
-      //
+    }
+    else{
+      nearby = false;
     }
   }
 
@@ -199,17 +214,23 @@ class Character {
 
     d = dist(mouseX, mouseY, this.deerfoxesX, this.deerfoxesY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.deerfoxesX;
       updateY = this.deerfoxesY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.deerfoxesN;
-      //
+    }
+    else{
+      nearby = false;
     }
   }
 
@@ -218,16 +239,19 @@ class Character {
 
     d = dist(mouseX, mouseY, this.erikX, this.erikY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
       updateX = this.erikX;
       updateY = this.erikY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.erikN;
-      //
     }
   }
 
@@ -236,17 +260,21 @@ class Character {
 
     d = dist(mouseX, mouseY, this.elfkingX, this.elfkingY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
       updateX = this.elfkingX;
       updateY = this.elfkingY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.elfkingN;
-      //
     }
+
   }
 
   // Character #6
@@ -254,17 +282,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.elfmayorX, this.elfmayorY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.elfmayorX;
       updateY = this.elfmayorY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.elfmayorN;
-      //
     }
   }
 
@@ -273,17 +304,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.fridaX, this.fridaY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.fridaX;
       updateY = this.fridaY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.fridaN;
-      //
     }
   }
 
@@ -292,17 +326,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.giantX, this.giantY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.giantX;
       updateY = this.giantY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.giantN;
-      //
     }
   }
 
@@ -311,17 +348,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.jellybeanX, this.jellybeanY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.jellybeanX;
       updateY = this.jellybeanY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.jellybeanN;
-      //
     }
   }
 
@@ -330,16 +370,19 @@ class Character {
 
     d = dist(mouseX, mouseY, this.johannaX, this.johannaY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.johannaX;
       updateY = this.johannaY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
       characterNumber = this.johannaN;
-      //
     }
   }
 
@@ -348,17 +391,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.kaisaX, this.kaisaY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.kaisaX;
       updateY = this.kaisaY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.kaisaN;
-      //
     }
   }
 
@@ -367,17 +413,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.kellyX, this.kellyY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.kellyX;
       updateY = this.kellyY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.kellyN;
-      //
     }
   }
 
@@ -386,17 +435,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.lindwormX, this.lindwormY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.lindwormX;
       updateY = this.lindwormY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.lindwormN;
-      //
     }
   }
 
@@ -405,17 +457,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.matildaX, this.matildaY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.matildaX;
       updateY = this.matildaY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.matildaN;
-      //
     }
   }
 
@@ -424,17 +479,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.peterX, this.peterY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.peterX;
       updateY = this.peterY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.peterN;
-      //
     }
   }
 
@@ -443,17 +501,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.principalX, this.principalY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.principalX;
       updateY = this.principalY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.principalN;
-      //
     }
   }
 
@@ -462,17 +523,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.ratKingX, this.ratKingY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.ratKingX;
       updateY = this.ratKingY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.ratKingN;
-      //
     }
   }
 
@@ -481,17 +545,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.ravenLeaderX, this.ravenLeaderY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.ravenLeaderX;
       updateY = this.ravenLeaderY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.ravenLeaderN;
-      //
     }
   }
 
@@ -500,17 +567,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.greatRavenX, this.greatRavenY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.greatRavenX;
       updateY = this.greatRavenY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.greatRavenN;
-      //
     }
   }
 
@@ -519,17 +589,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.tontuX, this.tontuY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.tontuX;
       updateY = this.tontuY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.tontuN;
-      //
     }
   }
 
@@ -538,17 +611,20 @@ class Character {
 
     d = dist(mouseX, mouseY, this.vittraX, this.vittraY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.vittraX;
       updateY = this.vittraY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.vittraN;
-      //
     }
   }
 
@@ -557,17 +633,19 @@ class Character {
 
     d = dist(mouseX, mouseY, this.wofsX, this.wofsY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
 
       updateX = this.wofsX;
       updateY = this.wofsY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
 
       characterNumber = this.wofsN;
-      //
     }
   }
 
@@ -575,20 +653,19 @@ class Character {
   woodman() {
 
     d = dist(mouseX, mouseY, this.woodmanX, this.woodmanY);
-
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
 
       updateX = this.woodmanX;
       updateY = this.woodmanY;
       lineNumber = 1;
+
       if (mouseIsPressed) {
+        chat = true;
         lineNumber = 0;
       }
       characterNumber = this.woodmanN;
-      //
     }
-
   }
 
   // Character #24
@@ -596,16 +673,19 @@ class Character {
 
     d = dist(mouseX, mouseY, this.trollX, this.trollY);
     if (d < user.size / 2 + user.size / 2) {
-      dialogue.displayDialogue();
+      nearby = true;
+
 
       updateX = this.trollX;
       updateY = this.trollY;
       lineNumber = 0;
+
       if (mouseIsPressed) {
+        chat = true;
+
         lineNumber = 1;
       }
       characterNumber = this.trollN;
-      //
     }
 
   }
@@ -620,6 +700,7 @@ class Character {
   cityLeft() {
 
     this.david(); // #2
+
     this.frida(); // #7
     this.kelly(); // #12
     this.tontu(); // #20
@@ -631,14 +712,17 @@ class Character {
 
 
 
+
   }
 
   cityRight() {
+    this.bellkeeper(); // #1
+
     this.erik(); // #4
     this.kaisa(); // #11
     this.greatRaven(); // #19
     this.matilda(); // #14
-    this.bellkeeper(); // #1
+
 
   }
 
@@ -646,21 +730,26 @@ class Character {
   // Top Right (outskirts): baba, bellkeeper, elfmayor, giant, jellybean, troll
 
   outskirtLeft() {
+    this.baba(); // #0
+
+    this.woodman(); // #23
+    this.johanna(); // #10
+    this.giant(); // #8
     this.elfmayor(); // #6
     this.elfking(); // #5
-    this.baba(); // #0
-    this.woodman(); // #23
-    this.giant(); // #8
-    this.johanna(); // #10
+
 
   }
 
+
   outskirtRight() {
     this.deerfoxes(); // #3
-    this.lindworm(); // #13
+
     this.troll(); // #24
-    this.vittra(); //#21
     this.wofs(); // #22
+    this.vittra(); //#21
+    this.lindworm(); // #13
+
 
 
   }

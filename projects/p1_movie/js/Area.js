@@ -11,6 +11,7 @@ class Area {
 
     characters.outskirtLeft();
 
+
     d = dist(mouseX, mouseY, arrow.arrowRightX, arrow.arrowRightY2);
     if ((d < arrow.size / 2 + user.size / 2) && (mouseIsPressed)) {
       state = `outskirt2`;
