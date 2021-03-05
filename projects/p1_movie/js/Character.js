@@ -129,7 +129,7 @@ class Character {
     }
 
     // #17 ratKing
-    this.ratKingN = {
+    this.ratKing = {
       n: 17,
       x: 458,
       y: 688,
