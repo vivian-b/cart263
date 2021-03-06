@@ -1,10 +1,8 @@
 class Arrow {
 
-  constructor(x, y) {
+  constructor() {
     this.size = 35;
 
-    this.x = x;
-    this.y = y;
 
     this.arrowLeftX = 25;
     this.arrowLeftY = 385;
@@ -22,15 +20,8 @@ class Arrow {
 
   }
 
-  display() {
-    fill(40);
-    noStroke();
-  }
-
   displayTop() {
-
     image(arrowImg[1], this.arrowTopX, this.arrowTopY, this.size, this.size)
-
   }
 
   displayBot() {
@@ -39,10 +30,7 @@ class Arrow {
   }
 
   displayLeft() {
-    push();
     image(arrowImg[3], this.arrowLeftX, this.arrowLeftY, this.size, this.size)
-    rotate(PI / 3.0);
-pop();
   }
 
   displayRight() {

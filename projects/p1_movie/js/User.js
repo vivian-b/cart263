@@ -18,9 +18,9 @@ class User {
       height: 25,
     }
 
-    this.vx = 2;
-    this.vy = 2;
-    this.speed = 5;
+    this.vx = 1.5;
+    this.vy = 1.5;
+    this.speed = 2;
 
   }
 
@@ -82,17 +82,14 @@ hildaMove(){
   }
 
   wander(){
-  let change = random(0, 4);
+  let change = random(0, 5);
    if (change < .2) {
-
-     this.vx = random(-this.speed/4, this.speed/4);
-     this.vy = random(-this.speed/4, this.speed/4);
-
+     this.vx = random(-this.speed, this.speed);
+     this.vy = random(-this.speed, this.speed);
    }
 
    this.twig.x += this.vx;
    this.twig.y += this.vy;
 
   }
-
 }

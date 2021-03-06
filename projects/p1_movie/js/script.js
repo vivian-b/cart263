@@ -116,18 +116,21 @@ function draw() {
 }
 
 function titleScreen() {
-  background(0);
+titleDisplay.display();
   user.displayHilda();
   enterGame();
 }
 
 function enterGame() {
-  if (keyIsDown(32)) {
-    state = `outskirt1`;
+
+  if (keyIsDown(65)) {
     companion = `alfur`;
-  } else if (keyIsDown(13)) {
-    state = `city2`;
+    state = `outskirt1`;
+
+  } else if (keyIsDown(84)) {
     companion = `twig`;
+    state = `outskirt1`;
+
   }
 }
 

@@ -1,8 +1,19 @@
 class Dialogue {
 
-  constructor(x, y) {
-  }
+  constructor() {
+    this.bigTextName = 40;
+    this.bigTextSpeech = 30;
 
+    this.smallTextName = 18;
+    this.smallTextSpeech = 16;
+
+    this.indent = 90;
+
+    this.image = {
+      x: 750,
+      y: 500,
+    }
+  }
 
   displayDialogue() {
 
@@ -13,25 +24,29 @@ class Dialogue {
       this.displayDialogueBox();
 
       push();
-      textSize(40);
       fill(255);
       textAlign(LEFT);
-      text(`${characterName}`, 90, 550);
-      textSize(30);
-      text(`${dialogue}`, 90, 600);
+
+      textSize(this.bigTextName);
+      text(`${characterName}`, this.indent, 550);
+
+      textSize(this.bigTextSpeech);
+      text(`${dialogue}`, this.indent, 600);
       pop();
     }
      else if (nearby){
       this.displaySmallDialogueBox();
 
       push();
-      textSize(18);
       textAlign(LEFT);
+
+      textSize(this.smallTextName);
       text(`${characterName} :`, updateX, updateY - 70);
+
+      textSize(this.smallTextSpeech);
       text(`${dialogue}`, updateX, updateY - 50);
       pop();
-
-    }
+   }
     if (!nearby){
       chat = false;
     }
@@ -46,7 +61,7 @@ class Dialogue {
     pop();
 
     imageMode(CENTER)
-    image(images[characterNumber], 750, 500)
+    image(images[characterNumber], this.image.x, this.image.y)
     }
   }
 
@@ -56,7 +71,7 @@ class Dialogue {
     fill(255);
     noStroke();
     rectMode(CENTER);
-    rect(updateX + 50, updateY - 65, 138, 55, 10);
+    rect(updateX + 55, updateY - 65, 135, 55, 10);
     pop();
 
   }

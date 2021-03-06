@@ -1,6 +1,5 @@
 class Area {
   constructor() {
-
   }
 
   outskirt1() {
@@ -26,7 +25,6 @@ class Area {
     arrow.displayBot();
 
     characters.outskirtRight();
-
 
     d = dist(mouseX, mouseY, arrow.arrowLeftX, arrow.arrowLeftY2);
     if ((d < arrow.size / 2 + user.size / 2) && (mouseIsPressed)) {
@@ -62,7 +60,6 @@ class Area {
     arrow.displayLeft();
 
     characters.cityRight();
-
 
     d = dist(mouseX, mouseY, arrow.arrowTopX, arrow.arrowTopY);
     if ((d < arrow.size / 2 + user.size) / 2 && (mouseIsPressed)) {

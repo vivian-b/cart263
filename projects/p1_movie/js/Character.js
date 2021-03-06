@@ -1,6 +1,7 @@
 // updated X/Y coordinates depending on the selected character
 let updateX;
 let updateY;
+let shift = 65;
 
 class Character {
   constructor() {
@@ -214,8 +215,7 @@ class Character {
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
-
-      updateX = this.bellkeeper.x;
+      updateX = this.bellkeeper.x -shift;
       updateY = this.bellkeeper.y;
       lineNumber = 0;
 
@@ -503,7 +503,6 @@ class Character {
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
-
       updateX = this.matilda.x;
       updateY = this.matilda.y;
       lineNumber = 0;
@@ -524,7 +523,6 @@ class Character {
     d = dist(mouseX, mouseY, this.peter.x, this.peter.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
-
 
       updateX = this.peter.x;
       updateY = this.peter.y;
@@ -569,7 +567,6 @@ class Character {
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
-
       updateX = this.ratKing.x;
       updateY = this.ratKing.y;
       lineNumber = 0;
@@ -590,7 +587,6 @@ class Character {
     d = dist(mouseX, mouseY, this.ravenLeader.x, this.ravenLeader.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
-
 
       updateX = this.ravenLeader.x;
       updateY = this.ravenLeader.y;
@@ -613,7 +609,6 @@ class Character {
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
-
       updateX = this.greatRaven.x;
       updateY = this.greatRaven.y;
       lineNumber = 0;
@@ -634,7 +629,6 @@ class Character {
     d = dist(mouseX, mouseY, this.tontu.x, this.tontu.y);
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
-
 
       updateX = this.tontu.x;
       updateY = this.tontu.y;
@@ -667,7 +661,6 @@ class Character {
 
         lineNumber = 1;
       }
-
       characterNumber = this.vittra.n;
     }
   }
@@ -679,7 +672,7 @@ class Character {
     if (d < user.size / 2 + user.size / 2) {
       nearby = true;
 
-      updateX = this.wofs.x;
+      updateX = this.wofs.x - shift;
       updateY = this.wofs.y;
       lineNumber = 0;
 
