@@ -3,11 +3,20 @@ class User {
   constructor(x, y) {
     this.size = 45;
 
-    this.x = x;
-    this.y = y;
 
-    this.hildaX = x;
-    this.hildaY = y;
+    this.hilda = {
+      x: x,
+      y: y,
+      width: 45,
+      height: 65,
+    }
+
+    this.twig = {
+      x: x,
+      y: y,
+      width: 35,
+      height: 25,
+    }
 
     this.vx = 2;
     this.vy = 2;
@@ -18,10 +27,10 @@ class User {
 
 displayHilda(){
   push();
-  if (companion === `twig`){
-  image(hildaSprite, this.hildaX, this.hildaY, this.size, this.size+30)
+  if (companion === `alfur`){
+    image(hildaNalfurSprite, this.hilda.x, this.hilda.y, this.hilda.width, this.hilda.height)
 } else {
-  image(hildaNalfurSprite, this.hildaX, this.hildaY, this.size, this.size+30)
+  image(hildaSprite, this.hilda.x, this.hilda.y, this.hilda.width, this.hilda.height)
 
 }
   pop();
@@ -29,49 +38,47 @@ displayHilda(){
 
   displayTwig() {
     push();
-    fill(255);
-    noStroke();
-    ellipse(this.x, this.y, this.size/2);
+    image(twigSprite, this.twig.x, this.twig.y, this.twig.width, this.twig.height)
     pop();
 this.wander();
   }
 
 
-hilda(){
+hildaMove(){
 
-  if (mouseX > this.hildaX) {
+  if (mouseX > this.hilda.x) {
     this.vx = this.speed;
-  } else if (mouseX < this.hildaX) {
+  } else if (mouseX < this.hilda.x) {
     this.vx = -this.speed;
-  } else if (mouseX < this.hildaY) {
+  } else if (mouseX < this.hilda.y) {
     this.vy = this.speed;
-  } else if (mouseX > this.hildaY) {
+  } else if (mouseX > this.hilda.y) {
     this.vy = -this.speed;
   }
 
-  let distX = mouseX - this.hildaX;
-  let distY = mouseY - this.hildaY;
+  let distX = mouseX - this.hilda.x;
+  let distY = mouseY - this.hilda.y;
 
-  this.hildaX += distX / 10;
-  this.hildaY += distY / 10;
+  this.hilda.x += distX / 10;
+  this.hilda.y += distY / 10;
 }
 
-  twig() {
-    if (mouseX > this.x) {
+  twigMove() {
+    if (mouseX > this.twig.x) {
       this.vx = this.speed;
-    } else if (mouseX < this.x) {
+    } else if (mouseX < this.twig.x) {
       this.vx = -this.speed;
-    } else if (mouseX < this.y) {
+    } else if (mouseX < this.twig.y) {
       this.vy = this.speed;
-    } else if (mouseX > this.y) {
+    } else if (mouseX > this.twig.y) {
       this.vy = -this.speed;
     }
 
-    let distX = mouseX - this.x;
-    let distY = mouseY - this.y;
+    let distX = mouseX - this.twig.x;
+    let distY = mouseY - this.twig.y;
 
-    this.x += distX / 20;
-    this.y += distY / 20;
+    this.twig.x += distX / 20;
+    this.twig.y += distY / 20;
   }
 
   wander(){
@@ -83,8 +90,8 @@ hilda(){
 
    }
 
-   this.x += this.vx;
-   this.y += this.vy;
+   this.twig.x += this.vx;
+   this.twig.y += this.vy;
 
   }
 

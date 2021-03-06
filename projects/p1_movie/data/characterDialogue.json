@@ -24,10 +24,10 @@
          ]
     },
     {
-      "name": "Deer-fox Herd",
+      "name": "Deerfox",
        "line": [
-         "hello there",
-         "Hi Hilda!"
+         "...",
+         "..."
          ]
     },
     {
@@ -125,7 +125,7 @@
       "name": "Rat King",
        "line": [
          "Ah, visitors.",
-         "Have you... secrets to trade\n... with the Rat King?"
+         "Have you... secrets to\ntrade with the Rat King?"
          ]
     },
     {
@@ -174,7 +174,7 @@
       "name": "Troll",
        "line": [
          "...",
-         "( As long as it's daylight, it's just a rock )"
+         "( As long as it's daylight,\nit's just a rock )"
          ]
     }
 

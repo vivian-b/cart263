@@ -45,10 +45,12 @@ let numArrows = 4;
 let hildaSprite;
 let hildaNalfurSprite;
 let dialogue;
+let twigSprite;
 
 let chat = false;
 let nearby = false;
 
+let titleDisplay;
 
 /**
 Description of preload
@@ -58,7 +60,7 @@ function preload() {
 
   hildaSprite = loadImage(`assets/images/hilda.png`);
   hildaNalfurSprite = loadImage(`assets/images/hilda2.png`);
-
+twigSprite = loadImage(`assets/images/twig.png`)
 
   for (let i = 0; i < numArrows; i++) {
     let loadedImages = loadImage(`assets/images/arrow-${i}.png`);
@@ -88,7 +90,7 @@ function setup() {
   arrow = new Arrow(width / 2, height / 2);
   characters = new Character();
   dialogue = new Dialogue();
-
+  titleDisplay = new Titlescreen();
 }
 
 
@@ -121,7 +123,7 @@ function titleScreen() {
 
 function enterGame() {
   if (keyIsDown(32)) {
-    state = `city2`;
+    state = `outskirt1`;
     companion = `alfur`;
   } else if (keyIsDown(13)) {
     state = `city2`;
@@ -160,13 +162,12 @@ function simulation() {
 
   } else if (companion === `alfur`) {
     user.displayHilda();
-
   }
   dialogue.displayDialogue();
 
 }
 
 function mouseMoved() {
-  user.twig();
-  user.hilda();
+  user.twigMove();
+  user.hildaMove();
 }
