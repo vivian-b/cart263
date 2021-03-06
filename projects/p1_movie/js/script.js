@@ -7,50 +7,53 @@ Vivian Bui
 description
 */
 
-let d;
-let d2;
 
 //user control
 let user;
 let companion;
 
+// canvas size
 let width = 950;
 let height = 700;
 
-// map layout
-let area;
-
-//elements
-let arrow;
-let characters;
-// let tester;
-
-let state = 'title';
-
+// JSON file for all written dialogues
 let dialogueData;
 
+// objects
+let dialogue; // dialogue boxes, text and images
+let arrow; // arrows for map indicators
+let characters; // all characters control (display, coordinates, interactions)
+let area; //control the maps
+
+let state = 'title'; //starting title screen
+let titleDisplay; // display title screen
+
+// images
+let hildaSprite; //user single
+let hildaNalfurSprite; //user with companion1: alfur
+let twigSprite; // user's companion2: twig
+
+// image arrays control
+// character images
+let images = [];
+let numImages = 25;
+
+// map images
+let map = [];
+let numMaps = 4;
+
+// arrow images
+let arrowImg = [];
+let numArrows = 4;
+
+// selector (inside an array)
 let lineNumber = 0;
 let characterNumber = 0;
 let mapNumber = 0;
 
-let images = [];
-let numImages = 25;
-
-let map = [];
-let numMaps = 4;
-
-let arrowImg = [];
-let numArrows = 4;
-
-let hildaSprite;
-let hildaNalfurSprite;
-let dialogue;
-let twigSprite;
-
-let chat = false;
-let nearby = false;
-
-let titleDisplay;
+// distance variable
+let d;
+let d2;
 
 /**
 Description of preload
@@ -76,9 +79,7 @@ twigSprite = loadImage(`assets/images/twig.png`)
     let loadedImages = loadImage(`assets/images/map-${i}.jpg`);
     map.push(loadedImages);
   }
-
 }
-
 
 /**
 Description of setup
@@ -93,14 +94,12 @@ function setup() {
   titleDisplay = new Titlescreen();
 }
 
-
 /**
 Description of draw()
 */
 function draw() {
   textFont(`Indie Flower`); //chosen font
   imageMode(CENTER)
-
 
   if (state === `title`) {
     titleScreen();
@@ -137,25 +136,21 @@ function enterGame() {
 function areaA() {
   area.outskirt1();
   simulation();
-
 }
 
 function areaB() {
   area.outskirt2();
   simulation();
-
 }
 
 function areaC() {
   area.city1();
   simulation();
-
 }
 
 function areaD() {
   area.city2();
   simulation();
-
 }
 
 function simulation() {

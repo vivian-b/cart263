@@ -1,7 +1,14 @@
+
 // updated X/Y coordinates depending on the selected character
 let updateX;
 let updateY;
+
+//shifting coordinates (for dialogue boxes going off canvas)
 let shift = 65;
+
+//user interactions
+let chat = false; //click character
+let nearby = false; //hover near character
 
 class Character {
   constructor() {
@@ -190,110 +197,118 @@ class Character {
   // Character #0
   babaDisplay() {
 
-    d = dist(mouseX, mouseY,  this.baba.x, this.baba.y);
-    if (d < user.size / 2 + user.size / 2) {
-      nearby = true;
 
+    d = dist(mouseX, mouseY, this.baba.x, this.baba.y); // distance between the user's mouse and the character coordinates
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
+      nearby = true;
+      //updated coordinates to correspond with character
       updateX = this.baba.x;
       updateY = this.baba.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+      if (mouseIsPressed) { //interacting with the character
         chat = true;
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
       }
       characterNumber = this.baba.n;
     } else {
-      nearby = false;
+      nearby = false; // mouse away from characters
+
     }
   }
 
   // Character #1
   bellkeeperDisplay() {
 
-    d = dist(mouseX, mouseY, this.bellkeeper.x, this.bellkeeper.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+    d = dist(mouseX, mouseY, this.bellkeeper.x, this.bellkeeper.y); // distance between the user's mouse and the character coordinates
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
-
-      updateX = this.bellkeeper.x -shift;
+      //updated coordinates to correspond with character
+      updateX = this.bellkeeper.x - shift;
       updateY = this.bellkeeper.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+      if (mouseIsPressed) { //interacting with the character
         chat = true;
-
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
       }
 
       characterNumber = this.bellkeeper.n;
     } else {
-      nearby = false;
+      nearby = false; // mouse away from characters
+
     }
   }
 
   // Character #2
   davidDisplay() {
 
-    d = dist(mouseX, mouseY, this.david.x, this.david.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+    d = dist(mouseX, mouseY, this.david.x, this.david.y); // distance between the user's mouse and the character coordinates
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
-
-
+      //updated coordinates to correspond with character
       updateX = this.david.x;
       updateY = this.david.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+      if (mouseIsPressed) { //interacting with the character
         chat = true;
-
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
       }
 
       characterNumber = this.david.n;
     } else {
-      nearby = false;
+      nearby = false; // mouse away from characters
+
     }
   }
 
   // Character #3
   deerfoxesDisplay() {
 
-    d = dist(mouseX, mouseY, this.deerfoxes.x, this.deerfoxes.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+    d = dist(mouseX, mouseY, this.deerfoxes.x, this.deerfoxes.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
-
-
+      //updated coordinates to correspond with character
       updateX = this.deerfoxes.x;
       updateY = this.deerfoxes.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+      if (mouseIsPressed) { //interacting with the character
         chat = true;
-
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
       }
 
       characterNumber = this.deerfoxes.n;
     } else {
-      nearby = false;
+      nearby = false; // mouse away from characters
+
     }
   }
 
   // Character #4
   erikDisplay() {
 
-    d = dist(mouseX, mouseY, this.erik.x, this.erik.y);
-    if (d < user.size / 2 + user.size / 2) {
-      nearby = true;
 
+    d = dist(mouseX, mouseY, this.erik.x, this.erik.y); // distance between the user's mouse and the character coordinates
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
+      nearby = true;
+      //updated coordinates to correspond with character
       updateX = this.erik.x;
       updateY = this.erik.y;
-      lineNumber = 0;
-
-      if (mouseIsPressed) {
+      lineNumber = 0; //first chosen line from JSON file
+      if (mouseIsPressed) { //interacting with the character
         chat = true;
-
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
       }
 
       characterNumber = this.erik.n;
@@ -303,18 +318,22 @@ class Character {
   // Character #5
   elfkingDisplay() {
 
-    d = dist(mouseX, mouseY, this.elfking.x, this.elfking.y);
-    if (d < user.size / 2 + user.size / 2) {
-      nearby = true;
+    d = dist(mouseX, mouseY, this.elfking.x, this.elfking.y); // distance between the user's mouse and the character coordinates
 
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
+      nearby = true;
+      //updated coordinates to correspond with character
       updateX = this.elfking.x;
       updateY = this.elfking.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
 
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
+
       }
 
       characterNumber = this.elfking.n;
@@ -325,19 +344,22 @@ class Character {
   // Character #6
   elfmayorDisplay() {
 
-    d = dist(mouseX, mouseY, this.elfmayor.x, this.elfmayor.y);
-    if (d < user.size / 2 + user.size / 2) {
+    d = dist(mouseX, mouseY, this.elfmayor.x, this.elfmayor.y); // distance between the user's mouse and the character coordinates
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
 
-
+      //updated coordinates to correspond with character
       updateX = this.elfmayor.x;
       updateY = this.elfmayor.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
+        lineNumber = 1; //second chosen line from JSON file
 
-        lineNumber = 1;
       }
 
       characterNumber = this.elfmayor.n;
@@ -347,19 +369,28 @@ class Character {
   // Character #7
   fridaDisplay() {
 
-    d = dist(mouseX, mouseY, this.frida.x, this.frida.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+
+    d = dist(mouseX, mouseY, this.frida.x, this.frida.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
+      //updated coordinates to correspond with character
+
 
 
       updateX = this.frida.x;
       updateY = this.frida.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
 
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
+
       }
 
       characterNumber = this.frida.n;
@@ -369,19 +400,28 @@ class Character {
   // Character #8
   giantDisplay() {
 
-    d = dist(mouseX, mouseY, this.giant.x, this.giant.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+
+    d = dist(mouseX, mouseY, this.giant.x, this.giant.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
+      //updated coordinates to correspond with character
+
 
 
       updateX = this.giant.x;
       updateY = this.giant.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
 
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
+
       }
 
       characterNumber = this.giant.n;
@@ -391,19 +431,25 @@ class Character {
   // Character #9
   jellybeanDisplay() {
 
-    d = dist(mouseX, mouseY, this.jellybean.x, this.jellybean.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+
+    d = dist(mouseX, mouseY, this.jellybean.x, this.jellybean.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
-
-
+      //updated coordinates to correspond with character
       updateX = this.jellybean.x;
       updateY = this.jellybean.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
 
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
+
       }
 
       characterNumber = this.jellybean.n;
@@ -413,18 +459,25 @@ class Character {
   // Character #10
   johannaDisplay() {
 
-    d = dist(mouseX, mouseY, this.johanna.x, this.johanna.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+
+    d = dist(mouseX, mouseY, this.johanna.x, this.johanna.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
+      //updated coordinates to correspond with character
+
 
 
       updateX = this.johanna.x;
       updateY = this.johanna.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+      if (mouseIsPressed) { //interacting with the character
         chat = true;
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
+
       }
       characterNumber = this.johanna.n;
     }
@@ -433,21 +486,19 @@ class Character {
   // Character #11
   kaisaDisplay() {
 
-    d = dist(mouseX, mouseY, this.kaisa.x, this.kaisa.y);
-    if (d < user.size / 2 + user.size / 2) {
+    d = dist(mouseX, mouseY, this.kaisa.x, this.kaisa.y); // distance between the user's mouse and the character coordinates
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
-
-
+      //updated coordinates to correspond with character
       updateX = this.kaisa.x;
       updateY = this.kaisa.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+      if (mouseIsPressed) { //interacting with the character
         chat = true;
-
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
       }
-
       characterNumber = this.kaisa.n;
     }
   }
@@ -455,19 +506,18 @@ class Character {
   // Character #12
   kellyDisplay() {
 
-    d = dist(mouseX, mouseY, this.kelly.x, this.kelly.y);
-    if (d < user.size / 2 + user.size / 2) {
+    d = dist(mouseX, mouseY, this.kelly.x, this.kelly.y); // distance between the user's mouse and the character coordinates
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
-
-
+      //updated coordinates to correspond with character
       updateX = this.kelly.x;
       updateY = this.kelly.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+      if (mouseIsPressed) { //interacting with the character
         chat = true;
-
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
       }
 
       characterNumber = this.kelly.n;
@@ -477,19 +527,24 @@ class Character {
   // Character #13
   lindwormDisplay() {
 
-    d = dist(mouseX, mouseY, this.lindworm.x, this.lindworm.y);
-    if (d < user.size / 2 + user.size / 2) {
-      nearby = true;
 
+    d = dist(mouseX, mouseY, this.lindworm.x, this.lindworm.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
+      nearby = true;
+      //updated coordinates to correspond with character
 
       updateX = this.lindworm.x;
       updateY = this.lindworm.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
+        lineNumber = 1; //second chosen line from JSON file
 
-        lineNumber = 1;
       }
 
       characterNumber = this.lindworm.n;
@@ -499,18 +554,24 @@ class Character {
   // Character #14
   matildaDisplay() {
 
-    d = dist(mouseX, mouseY, this.matilda.x, this.matilda.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+    d = dist(mouseX, mouseY, this.matilda.x, this.matilda.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
+      //updated coordinates to correspond with character
 
       updateX = this.matilda.x;
       updateY = this.matilda.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
+        lineNumber = 1; //second chosen line from JSON file
 
-        lineNumber = 1;
       }
 
       characterNumber = this.matilda.n;
@@ -520,18 +581,25 @@ class Character {
   // Character #15
   peterDisplay() {
 
-    d = dist(mouseX, mouseY, this.peter.x, this.peter.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+    d = dist(mouseX, mouseY, this.peter.x, this.peter.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
+      //updated coordinates to correspond with character
+
 
       updateX = this.peter.x;
       updateY = this.peter.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
+        lineNumber = 1; //second chosen line from JSON file
 
-        lineNumber = 1;
       }
 
       characterNumber = this.peter.n;
@@ -541,19 +609,24 @@ class Character {
   // Character #16
   principalDisplay() {
 
-    d = dist(mouseX, mouseY, this.principal.x, this.principal.y);
-    if (d < user.size / 2 + user.size / 2) {
-      nearby = true;
 
+    d = dist(mouseX, mouseY, this.principal.x, this.principal.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
+      nearby = true;
+      //updated coordinates to correspond with character
 
       updateX = this.principal.x;
       updateY = this.principal.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
+        lineNumber = 1; //second chosen line from JSON file
 
-        lineNumber = 1;
       }
 
       characterNumber = this.principal.n;
@@ -563,18 +636,24 @@ class Character {
   // Character #17
   ratKingDisplay() {
 
-    d = dist(mouseX, mouseY, this.ratKing.x, this.ratKing.y);
-    if (d < user.size / 2 + user.size / 2) {
+    d = dist(mouseX, mouseY, this.ratKing.x, this.ratKing.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
+      //updated coordinates to correspond with character
 
       updateX = this.ratKing.x;
       updateY = this.ratKing.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
 
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
+
       }
 
       characterNumber = this.ratKing.n;
@@ -584,18 +663,25 @@ class Character {
   // Character #18
   ravenLeaderDisplay() {
 
-    d = dist(mouseX, mouseY, this.ravenLeader.x, this.ravenLeader.y);
-    if (d < user.size / 2 + user.size / 2) {
+    d = dist(mouseX, mouseY, this.ravenLeader.x, this.ravenLeader.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
+      //updated coordinates to correspond with character
+
 
       updateX = this.ravenLeader.x;
       updateY = this.ravenLeader.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
 
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
+
       }
 
       characterNumber = this.ravenLeader.n;
@@ -605,18 +691,23 @@ class Character {
   // Character #19
   greatRavenDisplay() {
 
-    d = dist(mouseX, mouseY, this.greatRaven.x, this.greatRaven.y);
-    if (d < user.size / 2 + user.size / 2) {
+    d = dist(mouseX, mouseY, this.greatRaven.x, this.greatRaven.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
 
+      //updated coordinates to correspond with character
       updateX = this.greatRaven.x;
       updateY = this.greatRaven.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
+        lineNumber = 1; //second chosen line from JSON file
 
-        lineNumber = 1;
       }
 
       characterNumber = this.greatRaven.n;
@@ -626,18 +717,24 @@ class Character {
   // Character #20
   tontuDisplay() {
 
-    d = dist(mouseX, mouseY, this.tontu.x, this.tontu.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+    d = dist(mouseX, mouseY, this.tontu.x, this.tontu.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
 
+      //updated coordinates to correspond with character
       updateX = this.tontu.x;
       updateY = this.tontu.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
+        lineNumber = 1; //second chosen line from JSON file
 
-        lineNumber = 1;
       }
 
       characterNumber = this.tontu.n;
@@ -647,19 +744,24 @@ class Character {
   // Character #21
   vittraDisplay() {
 
-    d = dist(mouseX, mouseY, this.vittra.x, this.vittra.y);
-    if (d < user.size / 2 + user.size / 2) {
-      nearby = true;
 
+    d = dist(mouseX, mouseY, this.vittra.x, this.vittra.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
+      nearby = true;
+      //updated coordinates to correspond with character
 
       updateX = this.vittra.x;
       updateY = this.vittra.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
+        lineNumber = 1; //second chosen line from JSON file
 
-        lineNumber = 1;
       }
       characterNumber = this.vittra.n;
     }
@@ -668,18 +770,23 @@ class Character {
   // Character #22
   wofsDisplay() {
 
-    d = dist(mouseX, mouseY, this.wofs.x, this.wofs.y);
-    if (d < user.size / 2 + user.size / 2) {
+
+    d = dist(mouseX, mouseY, this.wofs.x, this.wofs.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
 
+      //updated coordinates to correspond with character
       updateX = this.wofs.x - shift;
       updateY = this.wofs.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
+        lineNumber = 1; //second chosen line from JSON file
 
-        lineNumber = 1;
       }
 
       characterNumber = this.wofs.n;
@@ -689,17 +796,22 @@ class Character {
   // Character #23
   woodmanDisplay() {
 
-    d = dist(mouseX, mouseY, this.woodman.x, this.woodman.y);
-    if (d < user.size / 2 + user.size / 2) {
+    d = dist(mouseX, mouseY, this.woodman.x, this.woodman.y); // distance between the user's mouse and the character coordinates
+
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
+      //updated coordinates to correspond with character
 
       updateX = this.woodman.x;
       updateY = this.woodman.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
-        lineNumber = 1;
+        lineNumber = 1; //second chosen line from JSON file
+
       }
       characterNumber = this.woodman.n;
     }
@@ -708,50 +820,65 @@ class Character {
   // Character #24
   trollDisplay() {
 
-    d = dist(mouseX, mouseY, this.troll.x, this.troll.y);
-    if (d < user.size / 2 + user.size / 2) {
+    d = dist(mouseX, mouseY, this.troll.x, this.troll.y); // distance between the user's mouse and the character coordinates
+
+    if (d < user.size / 2 + user.size / 2) { //user hovering character
       nearby = true;
 
-
+      //updated coordinates to correspond with character
       updateX = this.troll.x;
       updateY = this.troll.y;
-      lineNumber = 0;
+      lineNumber = 0; //first chosen line from JSON file
 
-      if (mouseIsPressed) {
+      if (mouseIsPressed) { //interacting with the character
+
         chat = true;
+        lineNumber = 1; //second chosen line from JSON file
 
-        lineNumber = 1;
       }
       characterNumber = this.troll.n;
     }
-
   }
 
+// character appearances in each map
 
+    // characters appearing in top left map (outskirt1)
+    outskirtLeft() {
+      this.babaDisplay(); // #0
 
+      this.woodmanDisplay(); // #23
+      this.johannaDisplay(); // #10
+      this.giantDisplay(); // #8
+      this.elfmayorDisplay(); // #6
+      this.elfkingDisplay(); // #5
+    }
 
-  // Bottom Left (city): david, frida, johanna, kelly, matilda, peter, tontu
-  // Bottom Right (city): erik, kaisa, principal, greatRaven, ratKing, ravenLeader, vittra
+    // characters appearing in top right map (outskirt2)
+    outskirtRight() {
+      this.deerfoxesDisplay(); // #3
 
+      this.trollDisplay(); // #24
+      this.wofsDisplay(); // #22
+      this.vittraDisplay(); //#21
+      this.lindwormDisplay(); // #13
+    }
 
+// characters appearing in bottom left map (city1)
   cityLeft() {
 
     this.davidDisplay(); // #2
 
     this.fridaDisplay(); // #7
-    this.kellyDisplay(); // #12
-    this.tontuDisplay(); // #20
     this.jellybeanDisplay(); // #9
+    this.kellyDisplay(); // #12
+    this.peterDisplay(); // #15
+    this.principalDisplay(); // #16
     this.ratKingDisplay(); // #17
     this.ravenLeaderDisplay(); // #18
-    this.principalDisplay(); // #16
-    this.peterDisplay(); // #15
-
-
-
-
+    this.tontuDisplay(); // #20
   }
 
+  // characters appearing in bottom right map (city2)
   cityRight() {
     this.bellkeeperDisplay(); // #1
 
@@ -759,36 +886,6 @@ class Character {
     this.kaisaDisplay(); // #11
     this.greatRavenDisplay(); // #19
     this.matildaDisplay(); // #14
-
-
-  }
-
-  // Top Left (outskirts): deerfoxes, elfking, lindworm, wofs, woodman
-  // Top Right (outskirts): baba, bellkeeper, elfmayor, giant, jellybean, troll
-
-  outskirtLeft() {
-    this.babaDisplay(); // #0
-
-    this.woodmanDisplay(); // #23
-    this.johannaDisplay(); // #10
-    this.giantDisplay(); // #8
-    this.elfmayorDisplay(); // #6
-    this.elfkingDisplay(); // #5
-
-
-  }
-
-
-  outskirtRight() {
-    this.deerfoxesDisplay(); // #3
-
-    this.trollDisplay(); // #24
-    this.wofsDisplay(); // #22
-    this.vittraDisplay(); //#21
-    this.lindwormDisplay(); // #13
-
-
-
   }
 
 
