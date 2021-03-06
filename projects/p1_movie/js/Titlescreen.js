@@ -4,7 +4,7 @@ Bacground and text display for start of simulation
 */
 
 // instruction text stringes
-let instruction1 = `Explore the outskirts and the city !\nInteract with creatures and people by clicking on them. `
+let instruction1 = `Explore the outskirts and the city !\nInteract with creatures and people by pressing click on them. `
 let instruction2 = `"press A" to go on an adventure with Alfur\nor "press T" to go with Twig !`
 
 class Titlescreen {

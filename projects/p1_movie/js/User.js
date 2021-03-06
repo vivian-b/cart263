@@ -2,7 +2,6 @@
 User: controls and displays of the user's chosen sprite
 that follows their cursor + Twig controls (extra sprite that follows user)
 */
-
 class User {
 
   constructor(x, y) {

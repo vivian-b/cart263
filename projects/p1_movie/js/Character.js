@@ -1,6 +1,5 @@
 /**
 Characters:
-
 controls all characters coordinates(to interact with user)
 and dialogue(select corresponding characters and character lines from JSON)
 */

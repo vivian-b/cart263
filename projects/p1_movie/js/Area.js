@@ -1,3 +1,12 @@
+/**
+Area:
+control and display the different four differents areas in the simulation (outskirt 1&2 + city 1&2)
+each map has different cast of characters and arrows that lets the user navigate between the areas when clicked on.
+*/
+
+//second distance variable for double arrows in a single area
+let d2;
+
 class Area {
   constructor() {}
 

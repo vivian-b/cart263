@@ -1,6 +1,5 @@
 /**
 Dialogue
-
 Display and select images/dialogues to match the character the user interacts with's interactions
 Different dialogue boxes for when hovering and when clicking
 */
@@ -47,7 +46,7 @@ class Dialogue {
     }
     // extra space to the left of the text inside the boxes
     this.indent = 90;
-    
+
     // character image size
     this.image = {
       x: 750,

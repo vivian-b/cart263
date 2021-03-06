@@ -31,6 +31,7 @@ let arrow; // arrows for map indicators
 let characters; // all characters control (display, coordinates, interactions)
 let area; //control the maps
 
+//title screen
 let state = 'title'; //starting title screen
 let titleDisplay; // display title screen
 
@@ -40,14 +41,13 @@ let hildaNalfurSprite; //user with companion1: alfur
 let twigSprite; // user's companion2: twig
 
 // image arrays control
+
 // character images
 let images = [];
 let numImages = 25;
-
 // map images
 let map = [];
 let numMaps = 4;
-
 // arrow images
 let arrowImg = [];
 let numArrows = 4;
@@ -59,8 +59,6 @@ let mapNumber = 0;
 
 // distance variable
 let d;
-let d2;
-
 
 /**
 Description of preload
