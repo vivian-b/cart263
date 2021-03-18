@@ -1,0 +1,54 @@
+/*********************************************
+
+Here is a description of any special CSS used.
+In this case it's just padding and margin to 0
+and then centring the canvas (and anything else)
+using the CSS Grid.
+
+Also hides overflow.
+
+**********************************************/
+
+#secret-document {
+  font-family: Courier, monospace;
+  color: #b59191;
+  font-size: 1rem;
+  width: 80vw;
+  margin: auto;
+}
+
+.redacted {
+  background-color: black;
+  color: black;
+  user-select: none;
+}
+
+.revealed {
+  color: #9e5555;
+}
+
+.important{
+  color: #eb3f00;
+}
+
+body{
+  background-color: #342424;
+}
+
+.box{
+width: 70vw;
+height: 2px;
+background-color: white;
+}
+
+button{
+  background-color: white;
+    border: none;
+    color: red;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+
+}
