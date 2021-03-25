@@ -26,6 +26,7 @@ $(`.secret`).one(`mouseover`, function(event) {
   });
 });
 
+
 $(`#answer`).droppable({
   drop: function(event, ui) {
     let letter = ui.draggable.text();
@@ -33,7 +34,7 @@ $(`#answer`).droppable({
     ui.draggable.draggable(`disable`);
     ui.draggable.removeClass(`found`); //remove highlight
     // Check if they got it
-    if ($(this).text() === `Theremin`) {
+    if ($(this).text() === `T`) {
       $(`#solved-dialog`).dialog(`open`);
     }
   }
