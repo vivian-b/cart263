@@ -15,11 +15,11 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   </head>
 
-  <body><!-- The poem secret letters are in spans with class "secret" -->
-    <!-- The poem secret letters are in spans with class "secret" -->
-    <section id="poem">
+  <body>
+    <!-- The words that are food are in spans with class "good" -->
+    <!-- The words that are non-eddible objects are in spans with class "bad" -->
+    <section id="words">
       <h2>Feed me food!</h2>
-
       <span class="good"><p>apples</p></span>
       <span class="good"><p>pears</p></span>
       <span class="bad"><p>shoe</p></span>
@@ -27,25 +27,17 @@
       <span class="bad"><p>poop</p></span>
       <span class="bad"><p>poison</p></span>
       <span class="good"><p>peaches</p></span>
-
     </section>
 
-
         <!-- The secret answer area-->
-
  <section id="answer"></section>
 
-
         <div id="solved-dialog" title="Yum!">
-          <p>
-            Thanks for the food!!!
-          </p>
+          <p>  Thanks for the food!!!  </p>
         </div>
 
         <div id="wrong-dialog" title="Ew!">
-          <p>
-            That's not food!!!
-          </p>
+          <p>    That's not food!!!  </p>
         </div>
 
     <script src="js/script.js"></script>
