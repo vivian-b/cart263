@@ -14,9 +14,12 @@ Also hides overflow.
 }
 
 #answer {
-  width: 10rem;
-  height: 2rem;
-  border: 1px dashed black;
+  width: 30vw;
+  height: 30vh;
+  background-image: url("/assets/images/tongue.png");
+ background-position: center;
+ background-repeat: no-repeat;
+  background-color: black;
 }
 
 .want {
@@ -27,6 +30,7 @@ Also hides overflow.
   color: red;
 }
 
-.eaten {
-  color: grey;
+img{
+  width: 20%;
+  height: 20%;
 }
