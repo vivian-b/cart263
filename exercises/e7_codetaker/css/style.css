@@ -10,7 +10,7 @@ Also hides overflow.
 **********************************************/
 
 #poem {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 #answer {
@@ -19,6 +19,14 @@ Also hides overflow.
   border: 1px dashed black;
 }
 
-.found {
+.want {
+  color: blue;
+}
+
+.reject {
   color: red;
+}
+
+.eaten {
+  color: grey;
 }

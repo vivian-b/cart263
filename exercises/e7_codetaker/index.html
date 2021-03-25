@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <meta name="viewport" width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=0>
 
-    <title>Code Taker</title>
+    <title>Food Taker</title>
 
     <!-- CSS stylesheet(s) -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -15,38 +15,34 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   </head>
 
-  <body><!-- The poem, secret letters are in spans with class "secret" -->
-    <!-- The poem, secret letters are in spans with class "secret" -->
+  <body><!-- The poem secret letters are in spans with class "secret" -->
+    <!-- The poem secret letters are in spans with class "secret" -->
     <section id="poem">
-      <h2><span class="secret">T</span>his Is Just To Say</h2>
-      <p>
-        I <span class="secret">h</span>ave eaten<br />
-        the plums<br />
-        that wer<span class="secret">e</span> in<br />
-        the icebox
-      </p>
-      <p>
-        and which<br />
-        you we<span class="secret">r</span>e probably<br />
-        saving<br />
-        for br<span class="secret">e</span>akfast
-      </p>
-      <p>
-        Forgive <span class="secret">m</span>e<br />
-        they were del<span class="secret">i</span>cious<br />
-        so sweet<br />
-        a<span class="secret">n</span>d so cold
-      </p>
-      <h4>William Carlos Williams</h4>
+      <h2>Feed me food!</h2>
+
+      <span class="good"><p>apples</p></span>
+      <span class="good"><p>pears</p></span>
+      <span class="bad"><p>shoe</p></span>
+      <span class="good"><p>grapes</p></span>
+      <span class="bad"><p>poop</p></span>
+      <span class="bad"><p>poison</p></span>
+      <span class="good"><p>peaches</p></span>
+
     </section>
 
 
         <!-- The secret answer area-->
         <section id="answer"></section>
 
-        <div id="solved-dialog" title="Da Vinci?!">
+        <div id="solved-dialog" title="Yum!">
           <p>
-            You are soooooo smart!
+            Thanks for the food!!!
+          </p>
+        </div>
+
+        <div id="wrong-dialog" title="Ew!">
+          <p>
+            That's not food!!!
           </p>
         </div>
 
