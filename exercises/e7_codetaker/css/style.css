@@ -25,7 +25,7 @@ body {
 #answer {
   width: 30vw;
   height: 30vh;
-  background-image: url("/assets/images/tongue.png");
+  background-image: url("https://raw.githubusercontent.com/vivian-b/cart263/master/exercises/e7_codetaker/assets/images/tongue.png");
  background-position: center;
  background-repeat: no-repeat;
   background-color: black;
