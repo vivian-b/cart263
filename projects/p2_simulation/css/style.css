@@ -30,7 +30,6 @@ padding: 5vmin;
  grid-template-rows: 5vh 40vh 10vh 30vh;
  grid-gap: 2vmin;
 }
-
 .window{
   background-color: black;
   border-style: solid;
@@ -63,12 +62,15 @@ padding: 5vmin;
   width: 40vw;
   grid-column: 2 / 2;
   grid-row: 2 / 3;
-
+  background-color: grey;
 }
-
 
 #metersWindow {
   width: 40vw;
   grid-column: 2 / 2;
   grid-row: 3 / 5;
+}
+
+img{
+  margin: 50px;
 }

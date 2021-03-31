@@ -20,7 +20,7 @@ function preload() {
 Description of setup
 */
 function setup() {
-
+  createCanvas(400, 400);
 }
 
 
@@ -28,5 +28,13 @@ function setup() {
 Description of draw()
 */
 function draw() {
+background(255)
+  }
+
+function petDisplay(){
 
 }
+
+$( function() {
+    $( "#tabs" ).tabs();
+  } );
