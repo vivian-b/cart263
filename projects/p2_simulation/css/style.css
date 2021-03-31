@@ -27,7 +27,7 @@ width: 100vw;
 padding: 5vmin;
  display: grid;
  grid-template-columns: 1fr 1fr ;
- grid-template-rows: 5vh 40vh 10vh 20vh;
+ grid-template-rows: 5vh 40vh 10vh 30vh;
  grid-gap: 2vmin;
 }
 
