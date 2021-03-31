@@ -12,9 +12,63 @@ Also hides overflow.
 body {
   padding: 0;
   margin: 0;
-  display: grid; /* Set up the grid and justify/align to center */
-  justify-content: center;
-  align-content: center;
   height: 100vh; /* Body is the height of the viewport */
-  overflow: hidden; /* Hide anything that goes off the window size */
+  overflow: hidden;  /* Hide anything that goes off the window size*/
+  background-color: darkgrey;
+
+}
+p{
+  color: white;
+  margin-left: 10px;
+}
+
+.grid{
+width: 100vw;
+padding: 5vmin;
+ display: grid;
+ grid-template-columns: 1fr 1fr ;
+ grid-template-rows: 5vh 40vh 10vh 20vh;
+ grid-gap: 2vmin;
+}
+
+.window{
+  background-color: black;
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+}
+
+#interactionsWindow {
+  width: 45vw;
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+
+}
+
+#logWindow {
+  width: 45vw;
+  grid-column: 1 / 2;
+  grid-row: 4 / 4;
+
+}
+
+#nameWindow {
+  width: 40vw;
+  grid-column: 2 / 2;
+  grid-row: 1 / 1;
+
+}
+
+#petWindow {
+  width: 40vw;
+  grid-column: 2 / 2;
+  grid-row: 2 / 3;
+
+}
+
+
+#metersWindow {
+  width: 40vw;
+  grid-column: 2 / 2;
+  grid-row: 3 / 5;
 }

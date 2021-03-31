@@ -1,8 +1,8 @@
 "use strict";
 
 /**
-Title of Project
-Author Name
+Virtual Blob
+Vivian Bui
 
 This is a template. You must fill in the title,
 author, and this description to match your project!
