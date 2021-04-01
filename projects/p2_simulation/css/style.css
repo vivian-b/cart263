@@ -8,29 +8,31 @@ using the CSS Grid.
 Also hides overflow.
 
 **********************************************/
-
 body {
   padding: 0;
   margin: 0;
-  height: 100vh; /* Body is the height of the viewport */
-  overflow: hidden;  /* Hide anything that goes off the window size*/
+  height: 100vh;
+  /* Body is the height of the viewport */
+  overflow: hidden;
+  /* Hide anything that goes off the window size*/
   background-color: darkgrey;
-
 }
-p{
+
+p {
   color: red;
   margin-left: 10px;
 }
 
-.grid{
-width: 100vw;
-padding: 5vmin;
- display: grid;
- grid-template-columns: 1fr 1fr ;
- grid-template-rows: 5vh 40vh 10vh 30vh;
- grid-gap: 2vmin;
+.grid {
+  width: 100vw;
+  padding: 5vmin;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5vh 40vh 10vh 30vh;
+  grid-gap: 2vmin;
 }
-.window{
+
+.window {
   background-color: black;
   border-style: solid;
   border-color: white;
@@ -38,28 +40,26 @@ padding: 5vmin;
   padding: 20px;
 }
 
-.actionItem{
+.actionItem {
   display: block;
 }
+
 #interactionsWindow {
   width: 45vw;
   grid-column: 1 / 2;
   grid-row: 1 / 4;
-
 }
 
 #logWindow {
   width: 45vw;
   grid-column: 1 / 2;
   grid-row: 4 / 4;
-
 }
 
 #nameWindow {
   width: 40vw;
   grid-column: 2 / 2;
   grid-row: 1 / 1;
-
 }
 
 #petWindow {
@@ -75,25 +75,37 @@ padding: 5vmin;
   grid-row: 3 / 5;
 }
 
-#btnReset{
+#btnReset {
   width: 80px;
   grid-column: 2 / 2;
   grid-row: 1 / 1;
-margin-left: auto;
-margin-right: 70px;
+  margin-left: auto;
+  margin-right: 70px;
 }
-img{
+
+img {
   margin: 50px;
 }
 
 fieldset {
-      border: 0;
+  border: 0;
+}
 
-    }
-    label {
-      display: block;
-      margin: 30px 0 0 0;
-    }
-    .overflow {
-      height: 200px;
-    }
+label {
+  display: block;
+  margin: 30px 0 0 0;
+}
+
+.overflow {
+  height: 200px;
+}
+
+/* #recap {
+  position: absolute;
+  top: 12%;
+  left: 2%;
+  width: 90%;
+  height: 85%;
+  overflow: scroll;
+  overflow-x: hidden;
+} */
