@@ -29,38 +29,32 @@ function setup() {
 Description of draw()
 */
 function draw() {
-  background(255)
 }
 
 $(function() {
   $("#tabs").tabs();
 
-});
-
-$(function() {
   $("#number")
     .selectmenu()
     .selectmenu("menuWidget")
     .addClass("overflow");
-});
 
-
-$(function() {
-  $(".dialog").dialog({
-    autoOpen: false,
-    resizable: false,
-    height: "auto",
-    width: 400,
-    modal: true,
-    buttons: {
-      "Reset": function() {
-        $(this).dialog("close");
-      },
-      Cancel: function() {
-        $(this).dialog("close");
+    $(".dialog").dialog({
+      autoOpen: false,
+      resizable: false,
+      height: "auto",
+      width: 400,
+      modal: true,
+      buttons: {
+        Reset: function() {
+          $(this).dialog("close");
+          restart();
+        },
+        Cancel: function() {
+          $(this).dialog("close");
+        }
       }
-    }
-  });
+});
 
   let button = document.getElementById(`btnReset`);
 
@@ -70,49 +64,55 @@ $(function() {
   });
 });
 
-let hungerBar;
-
-  $(function() {
-let feedingFood = document.getElementById(`feedApple`);
-
-feedingFood.addEventListener(`click`, function(event) {
-  hungerBar = 20;
-});
-});
-
-  $(function() {
-    $(".progressbar1").progressbar({
-      value: hungerBar
-    });
-    // $(".progressbar2").progressbar({
-    //   value: happyBar
-    // });
-    // $(".progressbar3").progressbar({
-    //   value: cleanBar
-    // });
-  });
-  //
-  // let happyBar = 50;
-  // let cleanBar = 50;
 
 // function actions(){
 //
-//   actionSummary = `aw`;
+//   actionSummary = `test`;
 //
 //   // Display the action recap in the match history
 //     $("#recap").append(`<p>${actionSummary}</p>`);
 //     // Adjust the overflow to see what was just added without scrolling
-//     updateScroll();
+//     updateLog();
 // }
 //
-// function updateScroll() {
+// function updateLog() {
 //   // Scroll to the bottom of the recap div
 //   let log = document.getElementById("recap");
 //   log.scrollTop = log.scrollHeight;
 // }
 
-let slider = document.getElementById(`slider`);
-// Listen for changes to the slider
-slider.addEventListener(`change`, function(event) {
-  let value = event.target.value;
+let happyBar;
+let hungryBar = 50;
+
+
+$("#playingToy").one("click", (event) => {
+  happyBar += 20;
+})
+
+$(function() {
+  $(".progressbar1").progressbar({
+    value: happyBar,
+  });
+  $(".progressbar2").progressbar({
+    value: hungryBar,
+  });
+
 });
+
+// let hungry = 4;
+//
+// $("#playingToy").one("click", (event) => {
+//   hungry += 20;
+// })
+//
+// $(function() {
+//   $(".progressbar2").progressbar({
+//     value: hungry,
+//   });
+// });
+
+// let slider = document.getElementById(`slider`);
+// // Listen for changes to the slider
+// slider.addEventListener(`change`, function(event) {
+//   let value = event.target.value;
+// });
