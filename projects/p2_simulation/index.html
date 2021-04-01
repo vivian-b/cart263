@@ -44,12 +44,12 @@
       <li><a href="#tabs-3">Items</a></li>
     </ul>
     <div id="tabs-1">
-      <p>test1</p>
+
 
       <div class="demo">
 
       <form action="#">
-        <div id="slider"></div>
+        <input id="slider" type="range" value="0" min="0" max="100">
 
         <fieldset>
 
@@ -70,15 +70,13 @@
       </div>
     </div>
     <div id="tabs-2">
-      <p>test2</p>
               <ul class="foodlist">
-                  <button class="actionItem foodItem"><li>apple</li></button>
+                  <button class="actionItem" id="feedApple"><li>apple</li></button>
                   <button class="actionItem foodItem"><li>jam</li></button>
                   <button class="actionItem foodItem"><li>pie</li></button>
               </ul>
     </div>
     <div id="tabs-3">
-      <p>test3</p>
       <ul class="foodlist">
           <button class="actionItem itemItem"><li>Brush</li></button>
           <button class="actionItem itemItem"><li>Toy</li></button>
@@ -99,7 +97,7 @@
 
     <div id="logWindow" class="window">
       <p>log</p>
-      <span id="drawAction"></p>
+      <div id="recap"></div>
 
       </div>
 

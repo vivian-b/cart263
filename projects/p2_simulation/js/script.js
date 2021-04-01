@@ -32,12 +32,9 @@ function draw() {
 background(255)
   }
 
-function petDisplay(){
-rect(20)
-}
-
 $( function() {
     $( "#tabs" ).tabs();
+
   } );
 
   $( function() {
@@ -47,23 +44,22 @@ $( function() {
         .addClass( "overflow" );
   } );
 
+let hungerBar = 50;
+let happyBar = 50;
+let cleanBar = 50;
+
   $( function() {
       $( ".progressbar1" ).progressbar({
-        value: 37
+        value: hungerBar
       });
       $( ".progressbar2" ).progressbar({
-        value: 47
+        value: happyBar
       });
       $( ".progressbar3" ).progressbar({
-        value: 67
+        value: cleanBar
       });
     } );
 
-    $( function() {
-  $( "#slider" ).slider();
-} );
-
-let button = document.getElementById(`btnReset`);
 
 $( function() {
    $( ".dialog" ).dialog({
@@ -82,8 +78,25 @@ $( function() {
      }
    });
 
-   $( "#btnReset" ).on( "click", function() {
+   let button = document.getElementById(`btnReset`);
+
+   button.addEventListener(`click`, function(event) {
      $( ".dialog" ).dialog( "open" );
 
    });
  } );
+
+
+     let slider = document.getElementById(`slider`);
+
+     // Listen for changes to the slider
+     slider.addEventListener(`change`, function(event) {
+       let value = event.target.value;
+     });
+
+
+              let feedingFood = document.getElementById(`feedApple`);
+
+              feedingFood.addEventListener(`click`, function(event) {
+                hungerBar = 90;
+              });
