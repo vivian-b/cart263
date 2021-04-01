@@ -32,9 +32,32 @@ background(255)
   }
 
 function petDisplay(){
-
+rect(20)
 }
 
 $( function() {
     $( "#tabs" ).tabs();
   } );
+
+  $( function() {
+    $( "#number" )
+      .selectmenu()
+      .selectmenu( "menuWidget" )
+        .addClass( "overflow" );
+  } );
+
+  $( function() {
+      $( ".progressbar1" ).progressbar({
+        value: 37
+      });
+      $( ".progressbar2" ).progressbar({
+        value: 47
+      });
+      $( ".progressbar3" ).progressbar({
+        value: 67
+      });
+    } );
+
+    $( function() {
+  $( "#slider" ).slider();
+} );

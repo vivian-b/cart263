@@ -9,12 +9,16 @@
     <!-- CSS stylesheet(s) -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <link rel="stylesheet" href="/resources/demos/style.css">
+
     <!-- Library script(s) -->
     <script src="js/libraries/p5.min.js"></script>
     <script src="js/libraries/p5.sound.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <!-- My script(s) -->
     <script src="js/script.js"></script>
     <script src="js/pet.js"></script>
@@ -24,17 +28,41 @@
   <body>
 
 <section class="grid">
+  <button id="opener">Restart</button>
+
 <div id="interactionsWindow" class="window">
   <p>interaction</p>
   <div id="tabs">
     <ul>
-      <li><a href="#tabs-1">Nunc tincidunt</a></li>
-      <li><a href="#tabs-2">Proin dolor</a></li>
-      <li><a href="#tabs-3">Aenean lacinia</a></li>
+      <li><a href="#tabs-1">Customize</a></li>
+      <li><a href="#tabs-2">Food</a></li>
+      <li><a href="#tabs-3">Items</a></li>
     </ul>
     <div id="tabs-1">
       <p>test1</p>
 
+      <div class="demo">
+
+      <form action="#">
+        <div id="slider"></div>
+
+        <fieldset>
+
+          <label for="number">Select a number</label>
+          <select name="number" id="number">
+            <option>1</option>
+            <option selected="selected">2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+
+          </select>
+        </fieldset>
+
+      </form>
+
+      </div>
     </div>
     <div id="tabs-2">
       <p>test2</p>
@@ -63,6 +91,10 @@
 
       <div id="metersWindow" class="window">
         <p>meters</p>
+        <div class="progressbar1"></div>
+        <div class="progressbar2"></div>
+        <div class="progressbar3"></div>
+
         </div>
 
 </div>
