@@ -28,7 +28,12 @@
   <body>
 
 <section class="grid">
-  <button id="opener">Restart</button>
+
+<button id="btnReset">reset</button>
+
+  <div id="dialog-confirm" class="dialog" title="Restart with a new pet?">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Current pet will be permanently deleted and cannot be recovered. Are you sure?</p>
+  </div>
 
 <div id="interactionsWindow" class="window">
   <p>interaction</p>
@@ -66,10 +71,19 @@
     </div>
     <div id="tabs-2">
       <p>test2</p>
-
+              <ul class="foodlist">
+                  <button class="actionItem foodItem"><li>apple</li></button>
+                  <button class="actionItem foodItem"><li>jam</li></button>
+                  <button class="actionItem foodItem"><li>pie</li></button>
+              </ul>
     </div>
     <div id="tabs-3">
       <p>test3</p>
+      <ul class="foodlist">
+          <button class="actionItem itemItem"><li>Brush</li></button>
+          <button class="actionItem itemItem"><li>Toy</li></button>
+          <button class="actionItem itemItem"><li>Flower</li></button>
+      </ul>
     </div>
   </div>
   </div>
@@ -98,6 +112,7 @@
         </div>
 
 </div>
+</section>
   </body>
 
 </html>

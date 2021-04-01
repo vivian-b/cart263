@@ -18,7 +18,7 @@ body {
 
 }
 p{
-  color: white;
+  color: red;
   margin-left: 10px;
 }
 
@@ -38,6 +38,9 @@ padding: 5vmin;
   padding: 20px;
 }
 
+.actionItem{
+  display: block;
+}
 #interactionsWindow {
   width: 45vw;
   grid-column: 1 / 2;
@@ -72,7 +75,7 @@ padding: 5vmin;
   grid-row: 3 / 5;
 }
 
-#opener{
+#btnReset{
   width: 80px;
   grid-column: 2 / 2;
   grid-row: 1 / 1;
