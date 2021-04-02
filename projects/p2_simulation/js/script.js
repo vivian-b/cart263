@@ -118,6 +118,8 @@ function restart(){
  // document.getElementById("progressbar").value= v1 + 10;
  //  });
 
+ // document.getElementById("myBtn").onclick = decreaseHunger;
+
 function addMood() {
 var v2=document.getElementById('progressbar2').value;
 document.getElementById("progressbar2").value= v2 + 5;
