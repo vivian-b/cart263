@@ -28,8 +28,7 @@ function setup() {
 /**
 Description of draw()
 */
-function draw() {
-}
+function draw() {}
 
 $(function() {
   $("#tabs").tabs();
@@ -39,22 +38,22 @@ $(function() {
     .selectmenu("menuWidget")
     .addClass("overflow");
 
-    $(".dialog").dialog({
-      autoOpen: false,
-      resizable: false,
-      height: "auto",
-      width: 400,
-      modal: true,
-      buttons: {
-        Reset: function() {
-          $(this).dialog("close");
-          restart();
-        },
-        Cancel: function() {
-          $(this).dialog("close");
-        }
+  $(".dialog").dialog({
+    autoOpen: false,
+    resizable: false,
+    height: "auto",
+    width: 400,
+    modal: true,
+    buttons: {
+      Reset: function() {
+        $(this).dialog("close");
+        restart();
+      },
+      Cancel: function() {
+        $(this).dialog("close");
       }
-});
+    }
+  });
 
   let button = document.getElementById(`btnReset`);
 
