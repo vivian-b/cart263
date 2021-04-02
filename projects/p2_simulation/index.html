@@ -65,16 +65,16 @@
       </div>
     </div>
     <div id="tabs-2">
-                <input type=button value='Apple' onClick='addHunger();'>
-                <input type=button value='Broccoli' onClick='decreaseHunger();'>
-                <input type=button value='Candy' onClick='addHunger();'>
-                <input type=button value='Dust' onClick='decreaseHunger();'>
+                <input type=button value='Apple' onClick='decreaseHunger();'>
+                <input type=button value='Broccoli' onClick='decreaseHunger(); decreaseMood();'>
+                <input type=button value='Candy' onClick='decreaseHunger(); addMood(); decreaseHealth();'>
+                <input type=button value='Water' onClick='decreaseHunger(); addHealth();'>
     </div>
     <div id="tabs-3">
-          <input type=button value='Brush' onClick='addMood();'>
+          <input type=button value='Brush' onClick='addMood(); addHealth();'>
           <input type=button value='Book' onClick='decreaseMood();'>
           <input type=button value='Ball' onClick='addMood();'>
-          <input type=button value='Needle' onClick='decreaseMood();'>
+          <input type=button value='Needle' onClick='decreaseMood(); addHealth();'>
     </div>
   </div>
   </div>
@@ -95,10 +95,14 @@
       </div>
 
       <div id="metersWindow" class="window">
-        <p>meters</p>
 
+<p class="tage"> Hunger</p>
         <progress value = "50" max = "100" min= "0" id="progressbar"></progress>
+        <p class="tage"> Mood</p>
+
         <progress value = "50" max = "100" min= "0" id="progressbar2"></progress>
+        <p class="tage"> Health</p>
+
         <progress value = "50" max = "100" min= "0" id="progressbar3"></progress>
 
 

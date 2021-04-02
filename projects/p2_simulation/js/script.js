@@ -23,7 +23,6 @@ function preload() {
 Description of setup
 */
 function setup() {
-  createCanvas(400, 400);
 }
 
 
@@ -66,6 +65,13 @@ $(function() {
 
 
 });
+
+function restart(){
+  document.getElementById('progressbar').value = 50
+  document.getElementById('progressbar2').value = 50
+  document.getElementById('progressbar3').value = 50
+
+}
 
 // let happyBar;
 // let hungryBar = 50;
@@ -139,6 +145,20 @@ positiveReact();
 
 }
 
+function addHealth() {
+var v3=document.getElementById('progressbar3').value;
+document.getElementById("progressbar3").value= v3 + 5;
+negativeReact();
+
+}
+
+function decreaseHealth() {
+var v3=document.getElementById('progressbar3').value;
+document.getElementById("progressbar3").value= v3 - 5;
+positiveReact();
+
+}
+
 function positiveReact(){
   document.getElementById("pet").src = "assets/images/animal1.png";
 }
@@ -160,5 +180,4 @@ function negativeReact(){
 // function updateLog() {
 //   // Scroll to the bottom of the recap div
 //   let log = document.getElementById("recap");
-//   log.scrollTop = log.scrollHeight;
 // }
