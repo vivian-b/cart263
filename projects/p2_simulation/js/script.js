@@ -81,9 +81,10 @@ $(function() {
 //   $("#progressbar2").progressbar({
 //     value: hungryBar,
 //   });
-//
 // });
 //
+
+
 // $( function() {
 //
 //     $( "button" ).on( "click", function( event ) {
@@ -111,29 +112,39 @@ $(function() {
  // document.getElementById("progressbar").value= v1 + 10;
  //  });
 
-// $(function() {
-// let v1=document.getElementById('progressbar').value;
-// document.getElementById("progressbar").value= v1 + 10;
-// });
-
 function addMood() {
 var v2=document.getElementById('progressbar2').value;
 document.getElementById("progressbar2").value= v2 + 5;
+positiveReact();
 }
 
 function decreaseMood() {
 var v2=document.getElementById('progressbar2').value;
 document.getElementById("progressbar2").value= v2 - 5;
+negativeReact();
+
 }
 
 function addHunger() {
 var v1=document.getElementById('progressbar').value;
 document.getElementById("progressbar").value= v1 + 5;
+negativeReact();
+
 }
 
 function decreaseHunger() {
 var v1=document.getElementById('progressbar').value;
 document.getElementById("progressbar").value= v1 - 5;
+positiveReact();
+
+}
+
+function positiveReact(){
+  document.getElementById("pet").src = "assets/images/animal1.png";
+}
+
+function negativeReact(){
+  document.getElementById("pet").src = "assets/images/animal0.png";
 }
 
 // function actions(){
