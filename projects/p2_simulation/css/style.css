@@ -100,12 +100,9 @@ label {
   height: 200px;
 }
 
-/* #recap {
-  position: absolute;
-  top: 12%;
-  left: 2%;
-  width: 90%;
-  height: 85%;
-  overflow: scroll;
-  overflow-x: hidden;
-} */
+progress {
+    min-width: 400px;
+    height: 25px;
+    margin: 8px;
+    display: block;
+}

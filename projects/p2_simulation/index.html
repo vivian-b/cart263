@@ -66,18 +66,16 @@
       </div>
     </div>
     <div id="tabs-2">
-              <ul class="foodlist">
-                  <button id="feedApple"><li>apple</li></button>
-                  <button class="actionItem foodItem"><li>jam</li></button>
-                  <button class="actionItem foodItem"><li>pie</li></button>
-              </ul>
+                <input type=button value='Apple' onClick='addHunger();'>
+                <input type=button value='Broccoli' onClick='decreaseHunger();'>
+                <input type=button value='Candy' onClick='addHunger();'>
+                <input type=button value='Dust' onClick='decreaseHunger();'>
     </div>
     <div id="tabs-3">
-      <ul class="foodlist">
-          <button id="playingToy"><li>Toy</li></button>
-          <button class="actionItem itemItem"><li>Brush</li></button>
-          <button class="actionItem itemItem"><li>Flower</li></button>
-      </ul>
+          <input type=button value='Brush' onClick='addMood();'>
+          <input type=button value='Book' onClick='decreaseMood();'>
+          <input type=button value='Ball' onClick='addMood();'>
+          <input type=button value='Needle' onClick='decreaseMood();'>
     </div>
   </div>
   </div>
@@ -99,9 +97,15 @@
 
       <div id="metersWindow" class="window">
         <p>meters</p>
-        <div class="progressbar1"></div>
-        <div class="progressbar2"></div>
-        <div class="progressbar3"></div>
+
+        <progress value = "50" max = "100" min= "0" id="progressbar"></progress>
+        <progress value = "50" max = "100" min= "0" id="progressbar2"></progress>
+        <progress value = "50" max = "100" min= "0" id="progressbar3"></progress>
+
+
+        <!-- <div id="progressbar1"></div> -->
+        <div id="progressbar2"></div>
+        <div id="progressbar3"></div>
 
         </div>
 

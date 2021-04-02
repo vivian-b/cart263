@@ -1,4 +1,3 @@
-"use strict";
 
 /**
 Virtual Blob
@@ -7,6 +6,9 @@ Vivian Bui
 This is a template. You must fill in the title,
 author, and this description to match your project!
 */
+
+"use strict";
+
 
 
 /**
@@ -61,8 +63,78 @@ $(function() {
     $(".dialog").dialog("open");
 
   });
+
+
 });
 
+// let happyBar;
+// let hungryBar = 50;
+//
+// $("#eatFood").one("click", function(event)  {
+//   happyBar = 20;
+// })
+//
+// $(function() {
+//   $("#progressbar1").progressbar({
+//     value: happyBar,
+//   });
+//   $("#progressbar2").progressbar({
+//     value: hungryBar,
+//   });
+//
+// });
+//
+// $( function() {
+//
+//     $( "button" ).on( "click", function( event ) {
+//
+//       var target = $( event.target ),
+//         progressbar = $( "#progressbar" );
+//       //   progressbarValue = progressbar.find( ".ui-progressbar-value" );
+//
+//       if ( target.is( "#feedButton" ) ) {
+//         progressbar.progressbar( "option","value", value + 10 );
+// // value +=1
+//       } else if ( target.is( "#playButton" ) ) {
+//         progressbar.progressbar( "option", {
+//           value: 40
+//         });
+//
+//       } else if ( target.is( "#falseButton" ) ) {
+//         progressbar.progressbar( "option", "value", false );
+//       }
+//     });
+//   } );
+
+ //  $( "#feedButton" ).addEventListener(`click`, function(event) {
+ //    var v1=document.getElementById('progressbar').value;
+ // document.getElementById("progressbar").value= v1 + 10;
+ //  });
+
+// $(function() {
+// let v1=document.getElementById('progressbar').value;
+// document.getElementById("progressbar").value= v1 + 10;
+// });
+
+function addMood() {
+var v2=document.getElementById('progressbar2').value;
+document.getElementById("progressbar2").value= v2 + 5;
+}
+
+function decreaseMood() {
+var v2=document.getElementById('progressbar2').value;
+document.getElementById("progressbar2").value= v2 - 5;
+}
+
+function addHunger() {
+var v1=document.getElementById('progressbar').value;
+document.getElementById("progressbar").value= v1 + 5;
+}
+
+function decreaseHunger() {
+var v1=document.getElementById('progressbar').value;
+document.getElementById("progressbar").value= v1 - 5;
+}
 
 // function actions(){
 //
@@ -79,39 +151,3 @@ $(function() {
 //   let log = document.getElementById("recap");
 //   log.scrollTop = log.scrollHeight;
 // }
-
-let happyBar;
-let hungryBar = 50;
-
-
-$("#playingToy").one("click", (event) => {
-  happyBar += 20;
-})
-
-$(function() {
-  $(".progressbar1").progressbar({
-    value: happyBar,
-  });
-  $(".progressbar2").progressbar({
-    value: hungryBar,
-  });
-
-});
-
-// let hungry = 4;
-//
-// $("#playingToy").one("click", (event) => {
-//   hungry += 20;
-// })
-//
-// $(function() {
-//   $(".progressbar2").progressbar({
-//     value: hungry,
-//   });
-// });
-
-// let slider = document.getElementById(`slider`);
-// // Listen for changes to the slider
-// slider.addEventListener(`change`, function(event) {
-//   let value = event.target.value;
-// });
