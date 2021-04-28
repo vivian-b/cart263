@@ -9,116 +9,44 @@ author, and this description to match your project!
 
 "use strict";
 
+$("#tabs").tabs();
+
+$("#number")
+  .selectmenu()
+  .selectmenu("menuWidget")
+  .addClass("overflow");
 
 
-/**
-Description of preload
-*/
-function preload() {
 
-}
+let button = document.getElementById(`btnReset`);
 
+button.addEventListener(`click`, function(event) {
+  $(".dialog").dialog("open");
 
-/**
-Description of setup
-*/
-function setup() {
-}
+});
 
-
-/**
-Description of draw()
-*/
-function draw() {}
-
-$(function() {
-  $("#tabs").tabs();
-
-  $("#number")
-    .selectmenu()
-    .selectmenu("menuWidget")
-    .addClass("overflow");
-
-  $(".dialog").dialog({
-    autoOpen: false,
-    resizable: false,
-    height: "auto",
-    width: 400,
-    modal: true,
-    buttons: {
-      Reset: function() {
-        $(this).dialog("close");
-        restart();
-      },
-      Cancel: function() {
-        $(this).dialog("close");
-      }
+$(".dialog").dialog({
+  autoOpen: false,
+  resizable: false,
+  height: "auto",
+  width: 400,
+  modal: true,
+  buttons: {
+    Reset: function() {
+      $(this).dialog("close");
+      restart();
+    },
+    Cancel: function() {
+      $(this).dialog("close");
     }
-  });
-
-  let button = document.getElementById(`btnReset`);
-
-  button.addEventListener(`click`, function(event) {
-    $(".dialog").dialog("open");
-
-  });
-
-
+  }
 });
 
 function restart(){
   document.getElementById('progressbar').value = 50
   document.getElementById('progressbar2').value = 50
   document.getElementById('progressbar3').value = 50
-
 }
-
-// let happyBar;
-// let hungryBar = 50;
-//
-// $("#eatFood").one("click", function(event)  {
-//   happyBar = 20;
-// })
-//
-// $(function() {
-//   $("#progressbar1").progressbar({
-//     value: happyBar,
-//   });
-//   $("#progressbar2").progressbar({
-//     value: hungryBar,
-//   });
-// });
-//
-
-
-// $( function() {
-//
-//     $( "button" ).on( "click", function( event ) {
-//
-//       var target = $( event.target ),
-//         progressbar = $( "#progressbar" );
-//       //   progressbarValue = progressbar.find( ".ui-progressbar-value" );
-//
-//       if ( target.is( "#feedButton" ) ) {
-//         progressbar.progressbar( "option","value", value + 10 );
-// // value +=1
-//       } else if ( target.is( "#playButton" ) ) {
-//         progressbar.progressbar( "option", {
-//           value: 40
-//         });
-//
-//       } else if ( target.is( "#falseButton" ) ) {
-//         progressbar.progressbar( "option", "value", false );
-//       }
-//     });
-//   } );
-
- //  $( "#feedButton" ).addEventListener(`click`, function(event) {
- //    var v1=document.getElementById('progressbar').value;
- // document.getElementById("progressbar").value= v1 + 10;
- //  });
-
- // document.getElementById("myBtn").onclick = decreaseHunger;
 
 function addMood() {
 var v2=document.getElementById('progressbar2').value;
@@ -168,18 +96,3 @@ function positiveReact(){
 function negativeReact(){
   document.getElementById("pet").src = "assets/images/animal0.png";
 }
-
-// function actions(){
-//
-//   actionSummary = `test`;
-//
-//   // Display the action recap in the match history
-//     $("#recap").append(`<p>${actionSummary}</p>`);
-//     // Adjust the overflow to see what was just added without scrolling
-//     updateLog();
-// }
-//
-// function updateLog() {
-//   // Scroll to the bottom of the recap div
-//   let log = document.getElementById("recap");
-// }
