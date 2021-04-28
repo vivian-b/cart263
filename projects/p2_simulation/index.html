@@ -50,6 +50,22 @@
       <form action="#">
         <input id="slider" type="range" value="0" min="0" max="100">
 
+        <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+          <span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"></span>
+          Simple Colorpicker
+        </p>
+
+        <div id="red"></div>
+        <div id="green"></div>
+        <div id="blue"></div>
+
+        <p>
+          <label for="amount">hi</label>
+          <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+        </p>
+
+        <div id="slider-range-min"></div>
+
         <fieldset>
           <label for="number">Select a number</label>
           <select name="number" id="number">
@@ -84,9 +100,8 @@
     <span id="petName"></span>
     <p contenteditable="true">name</p>
 </div>
-  <div id="petWindow"  class="window">
-  <img src="assets/images/animal0.png" alt="petImage" id="pet">
-    <p>pet</p>
+    <div id="swatch" class="ui-widget-content ui-corner-all">
+  <img src="assets/images/animal0.png" width="250" height="250" alt="petImage" id="pet">
     </div>
 
     <div id="logWindow" class="window">

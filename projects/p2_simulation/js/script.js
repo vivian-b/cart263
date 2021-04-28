@@ -9,19 +9,23 @@ author, and this description to match your project!
 
 "use strict";
 
-$("#tabs").tabs();
+$(function() {
+  $("#tabs").tabs();
 
-$("#number")
-  .selectmenu()
-  .selectmenu("menuWidget")
-  .addClass("overflow");
+  $("#number")
+    .selectmenu()
+    .selectmenu("menuWidget")
+    .addClass("overflow");
 
 
 
-let button = document.getElementById(`btnReset`);
+  let button = document.getElementById(`btnReset`);
 
-button.addEventListener(`click`, function(event) {
-  $(".dialog").dialog("open");
+  button.addEventListener(`click`, function(event) {
+    $(".dialog").dialog("open");
+
+  });
+
 
 });
 
@@ -96,3 +100,54 @@ function positiveReact(){
 function negativeReact(){
   document.getElementById("pet").src = "assets/images/animal0.png";
 }
+
+$( function() {
+    function hexFromRGB(r, g, b) {
+      var hex = [
+        r.toString( 16 ),
+        g.toString( 16 ),
+        b.toString( 16 )
+      ];
+      $.each( hex, function( nr, val ) {
+        if ( val.length === 1 ) {
+          hex[ nr ] = "0" + val;
+        }
+      });
+      return hex.join( "" ).toUpperCase();
+    }
+    function refreshSwatch() {
+      var red = $( "#red" ).slider( "value" ),
+        green = $( "#green" ).slider( "value" ),
+        blue = $( "#blue" ).slider( "value" ),
+        hex = hexFromRGB( red, green, blue );
+      $( "#swatch" ).css( "background-color", "#" + hex );
+    }
+
+    $( "#red, #green, #blue" ).slider({
+      orientation: "horizontal",
+      range: "min",
+      max: 255,
+      value: 127,
+      slide: refreshSwatch,
+      change: refreshSwatch
+    });
+    $( "#red" ).slider( "value", 255 );
+    $( "#green" ).slider( "value", 140 );
+    $( "#blue" ).slider( "value", 60 );
+  } );
+
+  $( function() {
+    $( "#slider-range-min" ).slider({
+      range: "min",
+      value: 250,
+      min: 150,
+      max: 350,
+      slide: function( event, ui ) {
+        $( "#amount" ).val(  ui.value );
+        document.getElementById("pet").width = ui.value;
+        document.getElementById("pet").height = ui.value;
+
+      }
+    });
+    $( "#amount" ).val( $( "#slider-range-min" ).slider( "value" ) );
+  } );
