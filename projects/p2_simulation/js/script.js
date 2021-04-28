@@ -12,11 +12,6 @@ author, and this description to match your project!
 $(function() {
   $("#tabs").tabs();
 
-  $("#number")
-    .selectmenu()
-    .selectmenu("menuWidget")
-    .addClass("overflow");
-
 
 
   let button = document.getElementById(`btnReset`);
@@ -28,6 +23,21 @@ $(function() {
 
 
 });
+
+
+$(document).ready(function(){
+   $("#petType").change(function(){
+     $("img[name=image-swap]").attr("src",$(this).val());
+
+   });
+   // $("#petType")
+   //   .selectmenu()
+   //   .selectmenu("menuWidget")
+   //   .addClass("overflow");
+
+
+});
+
 
 $(".dialog").dialog({
   autoOpen: false,
@@ -141,7 +151,7 @@ $( function() {
       range: "min",
       value: 250,
       min: 150,
-      max: 350,
+      max: 300,
       slide: function( event, ui ) {
         $( "#amount" ).val(  ui.value );
         document.getElementById("pet").width = ui.value;
