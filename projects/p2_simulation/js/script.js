@@ -11,7 +11,6 @@ author, and this description to match your project!
 $(function() {
   $("#tabs").tabs();
 
-
   let button = document.getElementById(`btnReset`);
 
   button.addEventListener(`click`, function(event) {
@@ -40,6 +39,8 @@ $(function() {
 
 
 $(document).ready(function() {
+
+
   $("#petType").change(function() {
     $("img[name=image-swap]").attr("src", $(this).val());
 
@@ -49,20 +50,18 @@ $(document).ready(function() {
   //   .selectmenu("menuWidget")
   //   .addClass("overflow");
 
+  $("#toggleColor").click(function() {
 
 
-$("#toggleColor").click(function(){
+    if ($("#toggleColor").val() == "Light") {
+      $("#toggleColor").val("Dark");
+    } else {
+      $("#toggleColor").val("Light");
+    }
 
+    $("img").toggleClass("filter");
 
-  if ( $("#toggleColor").val() == "Light" ) {
-    $("#toggleColor").val("Dark");
-  } else {
-    $("#toggleColor").val("Light");
-  }
-
-   $("img").toggleClass("filter");
-
- });
+  });
 
   var timer = null;
   $("#nameInput").keydown(function() {
@@ -70,10 +69,13 @@ $("#toggleColor").click(function(){
     timer = setTimeout(doStuff, 1000)
   });
 
+
+
   function doStuff() {
     let namedPet = $("#nameInput").val();
 
     $("#log").append("You renamed your pet to " + namedPet + "<br>");
+    updateScroll();
   }
 
   $('.cooldown').click(function() {
@@ -89,9 +91,9 @@ $("#toggleColor").click(function(){
 
 
 function restart() {
-  document.getElementById('progressbar').value = 50
-  document.getElementById('progressbar2').value = 50
-  document.getElementById('progressbar3').value = 50
+  document.getElementById('progressbar').value = 50,
+  document.getElementById('progressbar2').value = 50,
+  document.getElementById('progressbar3').value = 50,
 
   $("#red").slider("value", 255);
   $("#green").slider("value", 255);
@@ -106,54 +108,54 @@ function restart() {
 
 function addHunger() {
   var v1 = document.getElementById('progressbar').value;
-  document.getElementById("progressbar").value = v1 + 5;
-
-
+  document.getElementById("progressbar").value = v1 + amount;
   negativeReact();
 
 }
 
-function decreaseHunger() {
+function decreaseHunger(amount) {
   var v1 = document.getElementById('progressbar').value;
-  document.getElementById("progressbar").value = v1 - 5;
+  document.getElementById("progressbar").value = v1 - amount;
   positiveReact();
 }
 
 
-function addMood() {
+function addMood(amount) {
   var v2 = document.getElementById('progressbar2').value;
-  document.getElementById("progressbar2").value = v2 + 15;
+  document.getElementById("progressbar2").value = v2 + amount;
   positiveReact();
+
 }
 
-function decreaseMood() {
+function decreaseMood(amount) {
   var v2 = document.getElementById('progressbar2').value;
-  document.getElementById("progressbar2").value = v2 - 5;
+  document.getElementById("progressbar2").value = v2 - amount;
   negativeReact();
 
 }
 
-function addHealth() {
+function addHealth(amount) {
   var v3 = document.getElementById('progressbar3').value;
-  document.getElementById("progressbar3").value = v3 + 5;
+  document.getElementById("progressbar3").value = v3 + amount;
   negativeReact();
 
 }
 
-function decreaseHealth() {
+function decreaseHealth(amount) {
   var v3 = document.getElementById('progressbar3').value;
-  document.getElementById("progressbar3").value = v3 - 5;
+  document.getElementById("progressbar3").value = v3 - amount;
   positiveReact();
 
 }
 
 function positiveReact() {
-  document.getElementById("pet").src = "assets/images/animal1.png";
+  // document.getElementById("pet").src = "assets/images/animal1.png";
 }
 
 function negativeReact() {
-  document.getElementById("pet").src = "assets/images/animal0.png";
+  // document.getElementById("pet").src = "assets/images/animal0.png";
 }
+
 
 
 $(function() {
@@ -222,38 +224,130 @@ $(function() {
   });
 });
 
+function updatePetting() {
+  document.getElementById("pet").animate({left: "-=30px"}, 9000);
+
+  var v2 = document.getElementById('progressbar2').value;
+  document.getElementById("progressbar2").value = v2 + 0.1;
+
+  let namedPet = $("#nameInput").val();
+
+  $("#log").append("You pat " + namedPet +" !<br>");
+  updateScroll();
+
+
+}
 
 function updateText(item) {
   let namedPet = $("#nameInput").val();
 
   $("#log").append("You gave " + namedPet + " " + item.value + "<br>");
-updateScroll();
+  updateScroll();
 
-var v1 = document.getElementById('progressbar').value;
-if (v1 <= 0){
-  $("#log").append(namedPet +" is full! <br>");
-  decreaseMood();
-updateScroll();
-}
+  var v1 = document.getElementById('progressbar').value;
+  var v2 = document.getElementById('progressbar2').value;
 
-var v2 = document.getElementById('progressbar2').value;
-if (v2 <= 0){
-  $("#log").append(namedPet +" is upset... <br>");
-updateScroll();
-}
 
-var v3 = document.getElementById('progressbar3').value;
-if ((v1 <= 0)&&(v2 <= 0)&&(v3 <= 0)){
-  $("#log").append(namedPet +" is gone... <br>");
-updateScroll();
-}
+  if ((v1 <= 0) && (v2 >= 1)) {
+    $("#log").append(namedPet + " is full! <br>");
+    decreaseMood(2);
+    updateScroll();
+  }
+  updateBar();
+
 }
 
 function updateTextItem(item) {
   let namedPet = $("#nameInput").val();
 
   $("#log").append("You gave " + namedPet + " a " + item.value + "<br>");
-updateScroll();
+  updateScroll();
+
+  var v1 = document.getElementById('progressbar').value;
+  var v2 = document.getElementById('progressbar2').value;
+
+  if ((v1 >= 1) && (v2 <= 0)) {
+    $("#log").append(namedPet + " is upset... <br>");
+    updateScroll();
+  }
+
+updateBar();
+
+}
+
+function updateBar(){
+  let namedPet = $("#nameInput").val();
+  var v1 = document.getElementById('progressbar').value;
+  var b2 = document.getElementById('progressbar2').value;
+  var v3 = document.getElementById('progressbar3').value;
+
+  if ((v1 <= 0) && (b2 <= 0)) {
+    $("#log").append(namedPet + "  is full and upset... <br>");
+    updateScroll();
+  }
+  if (v3 <= 0) {
+    $("#log").append(namedPet + " is gone... <br>");
+    updateScroll();
+  }
+
+}
+
+
+var myVar = setInterval(losePoints, 1000);
+
+function losePoints(){
+  var v1 = document.getElementById('progressbar').value;
+  var v2 = document.getElementById('progressbar2').value;
+  var v3 = document.getElementById('progressbar3').value;
+
+  document.getElementById("progressbar").value = v1 + 0.5;
+
+  document.getElementById("progressbar2").value = v2 - 0.2;
+
+  document.getElementById("progressbar3").value = v3 - 0.01;
+
+  if (v1 <= 0){
+    document.getElementById("progressbar3").value = v3 - 0.5;
+    document.getElementById("progressbar2").value = v2 - 2;
+  }
+
+  if ((v1 >= 90) && (v2 <= 0)) {
+    document.getElementById("progressbar3").value = v3 - 3;
+  }
+
+  if (v2 <= 0) {
+    document.getElementById("progressbar3").value = v3 - 1;
+
+  }
+
+  if (v3 <= 0) {
+
+    document.getElementById("progressbar").value = 0;
+    document.getElementById("progressbar2").value = 0;
+
+freeze();
+
+  }
+}
+
+function freeze(){
+  $("#toggleColor").val("Dark");
+  document.getElementById("pet").src = "assets/images/animal2.png";
+
+  $(".dialogForced").dialog({
+    autoOpen: true,
+    resizable: false,
+    closeOnEscape: false,
+    height: "auto",
+    width: 400,
+    modal: true,
+    buttons: {
+      OK: function() {
+        $(this).dialog("close");
+        restart();
+      },
+    }
+  });
 }
 
 function updateScroll() {

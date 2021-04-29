@@ -111,7 +111,16 @@ progress {
     height: 25px;
     margin: 8px;
     display: block;
+
 }
+/*
+progress {
+        background-color: #eee;
+    }
+
+    progress::-moz-progress-bar {
+        background-color: #039603;
+    } */
 
 #log{
   height: 17vw;
@@ -135,3 +144,7 @@ progress {
   #green .ui-slider-handle { border-color: #8ae234; }
   #blue .ui-slider-range { background: #729fcf; }
   #blue .ui-slider-handle { border-color: #729fcf; }
+
+  .ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+    display: none;
+}

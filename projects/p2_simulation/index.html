@@ -35,6 +35,10 @@
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Current pet will be permanently deleted and cannot be recovered. Are you sure?</p>
   </div>
 
+  <div id="dialog-confirm" class="dialogForced" title="Oh no!">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Your pet is gone. <br> Press OK to restart with a new pet.</p>
+  </div>
+
 <div id="interactionsWindow" class="window">
   <p>interaction</p>
 
@@ -81,28 +85,28 @@
 
       <!-- <button id="hide">Hide</button> -->
       <!-- <button id="myBtn">test</button> -->
-                <input type=button class="eventText " value='apple' onClick='decreaseHunger(); updateText(this);'>
-                <input type=button class="eventText cooldown" value='broccoli' onClick='decreaseHunger(); decreaseMood(); updateText(this);'>
-                <input type=button class="eventText cooldown" value='candy' onClick='decreaseHunger(); addMood(); decreaseHealth(); updateText(this);'>
-                <input type=button class="eventText cooldown" value='water' onClick='decreaseHunger(); addHealth(); updateText(this);'>
+                <input type=button class="eventText " value='apple' onClick='decreaseHunger(3); updateText(this);'>
+                <input type=button class="eventText cooldown" value='broccoli' onClick='decreaseHunger(3); decreaseMood(1); updateText(this);'>
+                <input type=button class="eventText " value='candy' onClick='decreaseHunger(1); addMood(3); decreaseHealth(25); updateText(this);'>
+                <input type=button class="eventText cooldown" value='water' onClick='addHealth(2); updateText(this);'>
                 <!-- <p id="poo" class="drag">poop</p> -->
 
     </div>
 
     <div id="tabs-3">
-          <input type=button class="eventText cooldown" value='brush' onClick='addMood(); addHealth(); updateTextItem(this);'>
-          <input type=button class="eventText cooldown" value='book' onClick='decreaseMood();  updateTextItem(this);'>
-          <input type=button class="eventText cooldown" value='ball' onClick='addMood(); updateTextItem(this);'>
-          <input type=button class="eventText cooldown" value='needle' onClick='decreaseMood(); addHealth(); updateTextItem(this);'>
+          <input type=button class="eventText cooldown" value='brush' onClick='addMood(2); addHealth(1); updateTextItem(this);'>
+          <input type=button class="eventText cooldown" value='book' onClick='decreaseMood(3);  updateTextItem(this);'>
+          <input type=button class="eventText " value='ball' onClick='addMood(5); addHunger(2); updateTextItem(this);'>
+          <input type=button class="eventText " value='needle' onClick='decreaseMood(10); addHealth(10); updateTextItem(this);'>
     </div>
   </div>
   </div>
 
   <div id="nameWindow">
-   <input type="text" id="nameInput"  minlength="4" maxlength="18" size="25">
+   <input type="text" id="nameInput"  minlength="4" maxlength="18" size="25" value="your pet">
 </div>
     <div id="swatch" class="ui-widget-content ui-corner-all">
-  <img src="assets/images/animal0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap" class="filter">
+  <img src="assets/images/animal0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap" class="filter" onClick='updatePetting();'>
   <!-- <div id="droppable" class="ui-widget-header"> </div> -->
     </div>
 
