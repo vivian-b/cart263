@@ -80,7 +80,7 @@
 
       <!-- <button id="hide">Hide</button> -->
       <!-- <button id="myBtn">test</button> -->
-                <input type=button class="eventText cooldown" value='apple' onClick='decreaseHunger(); updateText(this);'>
+                <input type=button class="eventText " value='apple' onClick='decreaseHunger(); updateText(this);'>
                 <input type=button class="eventText cooldown" value='broccoli' onClick='decreaseHunger(); decreaseMood(); updateText(this);'>
                 <input type=button class="eventText cooldown" value='candy' onClick='decreaseHunger(); addMood(); decreaseHealth(); updateText(this);'>
                 <input type=button class="eventText cooldown" value='water' onClick='decreaseHunger(); addHealth(); updateText(this);'>
@@ -98,7 +98,7 @@
   </div>
 
   <div id="nameWindow">
-   <input type="text" id="nameInput">
+   <input type="text" id="nameInput"  minlength="4" maxlength="18" size="25">
 </div>
     <div id="swatch" class="ui-widget-content ui-corner-all">
   <img src="assets/images/animal0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap">

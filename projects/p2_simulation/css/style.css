@@ -108,6 +108,11 @@ progress {
     margin: 8px;
     display: block;
 }
+
+#log{
+  height: 17vw;
+  overflow:auto;
+}
 /* tests */
 
 #red, #green, #blue {
