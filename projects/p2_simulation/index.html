@@ -80,38 +80,33 @@
 
       <!-- <button id="hide">Hide</button> -->
       <!-- <button id="myBtn">test</button> -->
-                <input type=button value='Apple' onClick='decreaseHunger();'>
-                <input type=button value='Broccoli' onClick='decreaseHunger(); decreaseMood();'>
-                <input type=button value='Candy' onClick='decreaseHunger(); addMood(); decreaseHealth();'>
-                <input type=button value='Water' onClick='decreaseHunger(); addHealth();'>
+                <input type=button class="eventText cooldown" value='apple' onClick='decreaseHunger(); updateText(this);'>
+                <input type=button class="eventText cooldown" value='broccoli' onClick='decreaseHunger(); decreaseMood(); updateText(this);'>
+                <input type=button class="eventText cooldown" value='candy' onClick='decreaseHunger(); addMood(); decreaseHealth(); updateText(this);'>
+                <input type=button class="eventText cooldown" value='water' onClick='decreaseHunger(); addHealth(); updateText(this);'>
                 <!-- <p id="poo" class="drag">poop</p> -->
 
     </div>
 
     <div id="tabs-3">
-          <input type=button value='Brush' onClick='addMood(); addHealth();'>
-          <input type=button value='Book' onClick='decreaseMood();'>
-          <input type=button value='Ball' onClick='addMood();'>
-          <input type=button value='Needle' onClick='decreaseMood(); addHealth();'>
+          <input type=button class="eventText cooldown" value='brush' onClick='addMood(); addHealth(); updateTextItem(this);'>
+          <input type=button class="eventText cooldown" value='book' onClick='decreaseMood();  updateTextItem(this);'>
+          <input type=button class="eventText cooldown" value='ball' onClick='addMood(); updateTextItem(this);'>
+          <input type=button class="eventText cooldown" value='needle' onClick='decreaseMood(); addHealth(); updateTextItem(this);'>
     </div>
   </div>
   </div>
 
   <div id="nameWindow">
-    <span id="petName"></span>
-    <p contenteditable="true">name</p>
+   <input type="text" id="nameInput">
 </div>
     <div id="swatch" class="ui-widget-content ui-corner-all">
   <img src="assets/images/animal0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap">
-  <div id="droppable" class="ui-widget-header">
-    <p>Drop here</p>
-  </div>
+  <!-- <div id="droppable" class="ui-widget-header"> </div> -->
     </div>
 
     <div id="logWindow" class="window">
-      <p>log</p>
-      <div id="recap"></div>
-
+      <p id="log"></p>
       </div>
 
       <div id="metersWindow" class="window">

@@ -52,6 +52,26 @@ $(document).ready(function(){
      $("#poo").toggle();
    });
 
+   var timer = null;
+           $("#nameInput").keydown(function(){
+              clearTimeout(timer);
+              timer = setTimeout(doStuff, 1000)
+           });
+
+           function doStuff() {
+             let namedPet = $("#nameInput").val();
+
+             $("#log").append("You renamed your pet to " + namedPet +"<br>");
+           }
+
+           $('.cooldown').click(function(){
+             var btn = $(this);
+             btn.prop('disabled', true);
+             setTimeout(function(){
+               btn.prop('disabled', false);
+             },8000);
+           });
+
 });
 
 
@@ -113,6 +133,7 @@ function positiveReact(){
 function negativeReact(){
   document.getElementById("pet").src = "assets/images/animal0.png";
 }
+
 
 $( function() {
     function hexFromRGB(r, g, b) {
@@ -178,3 +199,18 @@ $( function() {
 
       });
     } );
+
+
+function updateText(item){
+let namedPet = $("#nameInput").val();
+
+    $("#log").append("You gave " + namedPet +" "+ item.value + "<br>");
+
+}
+
+function updateTextItem(item){
+let namedPet = $("#nameInput").val();
+
+    $("#log").append("You gave " + namedPet +" a "+ item.value + "<br>");
+
+}
