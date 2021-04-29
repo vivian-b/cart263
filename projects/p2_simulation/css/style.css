@@ -89,6 +89,10 @@ margin-left: auto;
 margin-right: auto;
 }
 
+.filter {
+  filter: invert(1);
+}
+
 fieldset {
   border: 0;
 }

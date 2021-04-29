@@ -49,9 +49,20 @@ $(document).ready(function() {
   //   .selectmenu("menuWidget")
   //   .addClass("overflow");
 
-  $("#hide").click(function() {
-    $("#poo").toggle();
-  });
+
+
+$("#toggleColor").click(function(){
+
+
+  if ( $("#toggleColor").val() == "Light" ) {
+    $("#toggleColor").val("Dark");
+  } else {
+    $("#toggleColor").val("Light");
+  }
+
+   $("img").toggleClass("filter");
+
+ });
 
   var timer = null;
   $("#nameInput").keydown(function() {
