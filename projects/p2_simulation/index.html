@@ -37,6 +37,7 @@
 
 <div id="interactionsWindow" class="window">
   <p>interaction</p>
+
   <div id="tabs">
     <ul>
       <li><a href="#tabs-1">Customize</a></li>
@@ -46,33 +47,29 @@
     <div id="tabs-1">
 
       <div class="demo">
-
+<fieldset>
       <form action="#">
-        <input id="slider" type="range" value="0" min="0" max="100">
-
-        <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
-          <span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"></span>
-          Simple Colorpicker
+        <p>
+        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
         </p>
 
+        <div id="slider-range-min"></div>
         <div id="red"></div>
         <div id="green"></div>
         <div id="blue"></div>
 
-        <p>
-          <label for="amount">hi</label>
-          <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-        </p>
 
-        <div id="slider-range-min"></div>
-
-        <fieldset>
 
         <label for="number">please</label>
-<select name="radius" id="petType">
+<select id="petType">
     <option value="assets/images/animal0.png" selected="selected">zero</option>
     <option value="assets/images/animal1.png">one</option>
     <option value="assets/images/animal2.png">two</option>
+    <option value="assets/images/animal3.png">three</option>
+    <!-- <option value="assets/images/animal4.png">four</option>
+    <option value="assets/images/animal5.png">five</option> -->
+
+
 </select>
         </fieldset>
       </form>
@@ -80,12 +77,17 @@
       </div>
     </div>
     <div id="tabs-2">
+
+      <!-- <button id="hide">Hide</button> -->
       <!-- <button id="myBtn">test</button> -->
                 <input type=button value='Apple' onClick='decreaseHunger();'>
                 <input type=button value='Broccoli' onClick='decreaseHunger(); decreaseMood();'>
                 <input type=button value='Candy' onClick='decreaseHunger(); addMood(); decreaseHealth();'>
                 <input type=button value='Water' onClick='decreaseHunger(); addHealth();'>
+                <!-- <p id="poo" class="drag">poop</p> -->
+
     </div>
+
     <div id="tabs-3">
           <input type=button value='Brush' onClick='addMood(); addHealth();'>
           <input type=button value='Book' onClick='decreaseMood();'>
@@ -101,6 +103,9 @@
 </div>
     <div id="swatch" class="ui-widget-content ui-corner-all">
   <img src="assets/images/animal0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap">
+  <div id="droppable" class="ui-widget-header">
+    <p>Drop here</p>
+  </div>
     </div>
 
     <div id="logWindow" class="window">

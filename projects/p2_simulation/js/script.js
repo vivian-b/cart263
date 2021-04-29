@@ -13,15 +13,28 @@ $(function() {
   $("#tabs").tabs();
 
 
+    let button = document.getElementById(`btnReset`);
 
-  let button = document.getElementById(`btnReset`);
+    button.addEventListener(`click`, function(event) {
+      $(".dialog").dialog("open");
+    });
 
-  button.addEventListener(`click`, function(event) {
-    $(".dialog").dialog("open");
-
-  });
-
-
+    $(".dialog").dialog({
+      autoOpen: false,
+      resizable: false,
+      height: "auto",
+      width: 400,
+      modal: true,
+      buttons: {
+        Reset: function() {
+          $(this).dialog("close");
+          restart();
+        },
+        Cancel: function() {
+          $(this).dialog("close");
+        }
+      }
+    });
 });
 
 
@@ -35,31 +48,21 @@ $(document).ready(function(){
    //   .selectmenu("menuWidget")
    //   .addClass("overflow");
 
+   $("#hide").click(function(){
+     $("#poo").toggle();
+   });
 
 });
 
-
-$(".dialog").dialog({
-  autoOpen: false,
-  resizable: false,
-  height: "auto",
-  width: 400,
-  modal: true,
-  buttons: {
-    Reset: function() {
-      $(this).dialog("close");
-      restart();
-    },
-    Cancel: function() {
-      $(this).dialog("close");
-    }
-  }
-});
 
 function restart(){
   document.getElementById('progressbar').value = 50
   document.getElementById('progressbar2').value = 50
   document.getElementById('progressbar3').value = 50
+
+  $( "#red" ).slider( "value", 255 );
+  $( "#green" ).slider( "value", 255 );
+  $( "#blue" ).slider( "value", 255 );
 }
 
 function addMood() {
@@ -142,8 +145,8 @@ $( function() {
       change: refreshSwatch
     });
     $( "#red" ).slider( "value", 255 );
-    $( "#green" ).slider( "value", 140 );
-    $( "#blue" ).slider( "value", 60 );
+    $( "#green" ).slider( "value", 255 );
+    $( "#blue" ).slider( "value", 255 );
   } );
 
   $( function() {
@@ -156,8 +159,22 @@ $( function() {
         $( "#amount" ).val(  ui.value );
         document.getElementById("pet").width = ui.value;
         document.getElementById("pet").height = ui.value;
-
       }
     });
     $( "#amount" ).val( $( "#slider-range-min" ).slider( "value" ) );
   } );
+
+  $( function() {
+      $( ".drag" ).draggable({
+        revert: "invalid",
+
+      });
+      $( "#droppable" ).droppable({
+        drop: function( event, ui ) {
+          $( this )
+            .find( "p" )
+              $("#poo").hide();
+        }
+
+      });
+    } );
