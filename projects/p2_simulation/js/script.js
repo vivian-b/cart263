@@ -34,6 +34,8 @@ $(function() {
       }
     }
   });
+
+
 });
 
 
@@ -71,6 +73,7 @@ $(document).ready(function() {
     }, 8000);
   });
 
+
 });
 
 
@@ -82,24 +85,19 @@ function restart() {
   $("#red").slider("value", 255);
   $("#green").slider("value", 255);
   $("#blue").slider("value", 255);
+
+  $("#log").text("");
+  $("#nameInput").val("")
 }
 
-function addMood() {
-  var v2 = document.getElementById('progressbar2').value;
-  document.getElementById("progressbar2").value = v2 + 5;
-  positiveReact();
-}
 
-function decreaseMood() {
-  var v2 = document.getElementById('progressbar2').value;
-  document.getElementById("progressbar2").value = v2 - 5;
-  negativeReact();
 
-}
 
 function addHunger() {
   var v1 = document.getElementById('progressbar').value;
   document.getElementById("progressbar").value = v1 + 5;
+
+
   negativeReact();
 
 }
@@ -108,6 +106,19 @@ function decreaseHunger() {
   var v1 = document.getElementById('progressbar').value;
   document.getElementById("progressbar").value = v1 - 5;
   positiveReact();
+}
+
+
+function addMood() {
+  var v2 = document.getElementById('progressbar2').value;
+  document.getElementById("progressbar2").value = v2 + 15;
+  positiveReact();
+}
+
+function decreaseMood() {
+  var v2 = document.getElementById('progressbar2').value;
+  document.getElementById("progressbar2").value = v2 - 5;
+  negativeReact();
 
 }
 
@@ -206,6 +217,25 @@ function updateText(item) {
 
   $("#log").append("You gave " + namedPet + " " + item.value + "<br>");
 updateScroll();
+
+var v1 = document.getElementById('progressbar').value;
+if (v1 <= 0){
+  $("#log").append(namedPet +" is full! <br>");
+  decreaseMood();
+updateScroll();
+}
+
+var v2 = document.getElementById('progressbar2').value;
+if (v2 <= 0){
+  $("#log").append(namedPet +" is upset... <br>");
+updateScroll();
+}
+
+var v3 = document.getElementById('progressbar3').value;
+if ((v1 <= 0)&&(v2 <= 0)&&(v3 <= 0)){
+  $("#log").append(namedPet +" is gone... <br>");
+updateScroll();
+}
 }
 
 function updateTextItem(item) {
