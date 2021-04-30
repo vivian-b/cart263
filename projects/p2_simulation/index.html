@@ -33,7 +33,7 @@
   <section class="grid">
 
     <!-- reset button (top right) -->
-    <button id="btnReset" class="ui-button buttonSound"  onClick="openReset">RESET</button>
+    <button id="btnReset" class="ui-button buttonSound" onClick="openReset">RESET</button>
 
     <!-- Dialog (1): confirmation from reset button (on click) -->
     <div id="dialog-confirm" class="dialog" title="Restart with a new pet?">
@@ -74,18 +74,44 @@
             <fieldset>
               <form action="#">
 
-                <!-- Room customization: color sliders -->
-                <p title="change the color of the room">Room</p>
-                <div id="red" class="sliderSizing"></div>
-                <div id="green" class="sliderSizing"></div>
-                <div id="blue" class="sliderSizing"></div>
+                <div class="customizeTools">
+                  <!-- Pet customization: scale -->
+                  <p class="customizeTitles">Pet</p>
+                  <div id="slider" class="sliderSizing" title="change the size of your pet"></div></a>
 
-                <div class="spacing"> </div> <!-- spacing block -->
+                  <!-- Room customization: color sliders -->
+                  <p title="change the color of the room" class="customizeTitles">Room</p>
+                  <div class="colorSliders">
+                    <div id="red" class="sliderSizing"></div>
+                    <div id="green" class="sliderSizing"></div>
+                    <div id="blue" class="sliderSizing"></div>
+                  </div>
 
-                <!-- Pet customization: scale -->
-                <p title="change pet's size and appearance">Pet</p>
-                <div id="slider" class="sliderSizing"></div></a>
+                  <select id="petAcc" class="ui-button" title="Give your pet an accessory!">
+                    <option value="assets/images/accessory0.png"selected="selected">None</option>
+                    <option value="assets/images/accessory1.png">Bowtie</option>
+                    <option value="assets/images/accessory2.png">Glasses</option>
+                    <option value="assets/images/accessory4.png">Blush</option>
+                    <option value="assets/images/accessory8.png">Clown</option>
+                    <option value="assets/images/accessory9.png">Bow</option>
+                  </select>
 
+                  <select id="petMouth" class="ui-button" title="Change your pet's mouth">
+                    <option value="assets/images/accessory0.png"selected="selected">None</option>
+                    <option value="assets/images/accessory3.png"> X shape</option>
+                    <option value="assets/images/accessory5.png"> Smiling</option>
+                    <option value="assets/images/accessory6.png"> Frowning</option>
+                    <option value="assets/images/accessory7.png"> Moustache</option>
+                  </select>
+
+        <!-- <label for="radio-1">Bow</label>
+<input value="assets/images/accessory0.png" type="radio" name="radio-1" id="radio-1">
+<label for="radio-2">Hat</label>
+<input value="assets/images/accessory1.png" type="radio" name="radio-1" id="radio-2">
+<label for="radio-3">Glasses</label>
+<input value="assets/images/accessory2.png" type="radio" name="radio-1" id="radio-3"> -->
+
+                </div>
             </fieldset>
 
             <!-- Pet customization: image (pet's look)change -->
@@ -154,14 +180,18 @@
     <!-- Window (3): top right of layout -->
     <div id="swatch" class="window">
       <!-- Pet room background (editable color from sliders) -->
-      <img src="assets/images/type0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap" class="filter" >
-      <img src="assets/images/eye0.png" width="250" height="250" alt="petEyes" id="eyes" class="filter" onClick='updatePetting(); positiveReact(this);'>
+      <img src="assets/images/accessory0.png" width="250" height="250" alt="petAccessory" id="equip" name="accessory-swap">
+      <img src="assets/images/accessory0.png" width="250" height="250" alt="petMouth" id="mouth" name="mouth-swap">
+      <img src="assets/images/type0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap" class="invertedColor filter">
+      <img src="assets/images/eye0.png" width="250" height="250" alt="petEyes" id="eyes" class="invertedColor filter" onClick='updatePetting(); positiveReact(this);'>
 
     </div>
 
     <!-- Window (4): bottom left of layout -->
     <div id="logWindow" class="window">
-      <h1>  <p title="history of interactions of you and your pet!">Logs</p> </h1>
+      <h1>
+        <p title="history of interactions of you and your pet!">Logs</p>
+      </h1>
       <!-- Displays all messages (interactions history) -->
       <p id="log"></p>
 
@@ -169,7 +199,9 @@
 
     <!-- Window (5): bottom right of layout -->
     <div id="metersWindow" class="window">
-      <h1><p title="progress bars of your pet">Status</p></h1>
+      <h1>
+        <p title="progress bars of your pet">Status</p>
+      </h1>
 
       <!-- Displays all bars (1-hunger 2-mood 3-health) -->
       <div class="window">

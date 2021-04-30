@@ -19,7 +19,6 @@ $(function() {
     sfx1.play();
   });
 
-
   var sfx2 = document.createElement('audio');
   sfx2.setAttribute('src', "assets/sounds/dland.wav");
   // source: Freesound -> https://freesound.org/people/dland/sounds/320181/
@@ -47,11 +46,23 @@ $(function() {
     $(".dialog").dialog("open");
   });
 
-  // change image of the pet depending on the chosen option
+  // change look of the pet depending on the chosen options
   // answer taken online -> https://stackoverflow.com/questions/36666334/jquery-change-image-when-select-changes
+  // change pet's look (figure)
   $("#petType").change(function() {
     $("img[name=image-swap]").attr("src", $(this).val());
   });
+
+  // change pet's mouths
+  $("#petMouth").change(function() {
+    $("img[name=mouth-swap]").attr("src", $(this).val());
+  });
+
+  // change pet's accessory
+  $("#petAcc").change(function() {
+    $("img[name=accessory-swap]").attr("src", $(this).val());
+  });
+
 
   //Button to alternate pet image colors
   // answer taken online -> https://codepen.io/rvsanches/pen/djydEj
@@ -61,7 +72,7 @@ $(function() {
     } else {
       $("#toggleColor").val("Dark");
     }
-    $("img").toggleClass("filter");
+    $(".invertedColor").toggleClass("filter");
 
   });
 
@@ -99,6 +110,11 @@ $(function() {
     setTimeout(function() {
       btn.prop('disabled', false);
     }, 30000); //30 seconds
+
+
+    $("input").checkboxradio({
+      icon: false
+    });
   });
 
   //Dialog Box pop up
@@ -183,7 +199,7 @@ $(function() {
   });
 
   //Default sliders value
-  $("#red, #green, #blue").slider("value", 255);
+  $("#red, #green, #blue").slider("value", 230);
 
   // $(".drag").draggable({
   //   revert: "invalid",
@@ -212,6 +228,11 @@ $(function() {
       document.getElementById("eyes").width = ui.value;
       document.getElementById("eyes").height = ui.value;
 
+      document.getElementById("equip").width = ui.value;
+      document.getElementById("equip").height = ui.value;
+
+      document.getElementById("mouth").width = ui.value;
+      document.getElementById("mouth").height = ui.value;
     }
   });
   $("#amount").val($("#slider").slider("value"));
@@ -304,7 +325,7 @@ function updateTextItem(item) {
     updateScroll();
   }
 
-// Play sound on click
+  // Play sound on click
   sfx1.play();
 
 }
@@ -321,7 +342,7 @@ function positiveReact(item) {
   }, 1000); //1 seconds
 
   // update text log (happy)
-  $("#log").append(namedPet+ " liked the "+ item.value +"!<br>");
+  $("#log").append(namedPet + " liked the " + item.value + "!<br>");
   updateScroll();
 
 }
@@ -338,8 +359,8 @@ function negativeReact(item) {
     document.getElementById("eyes").src = "assets/images/eye0.png";
   }, 1000); //1 seconds
 
-// update text log (unhappy)
-  $("#log").append(namedPet+ " did not like the "+ item.value +" ...<br>");
+  // update text log (unhappy)
+  $("#log").append(namedPet + " did not like the " + item.value + " ...<br>");
   updateScroll();
 }
 
@@ -368,6 +389,7 @@ function updateBar() {
 
 // 3s Interval in decrease/increase bars
 var myVar = setInterval(losePoints, 3000);
+
 function losePoints() {
   //Recall bars from the HTML
   var v1 = document.getElementById('progressbar').value;
@@ -457,15 +479,17 @@ function updateBackground() {
 // Resets the simulation (pet, progress bars, customization, logs)
 function restart() {
 
-//Reset Pet Image
-  document.getElementById("pet").src = "assets/images/type0.png";
-  document.getElementById("eyes").src = "assets/images/eye0.png";
+  //Reset Pet Image
+  document.getElementById("pet").src = "assets/images/type0.png"; //appearance reset
+  document.getElementById("eyes").src = "assets/images/eye0.png"; //eyes reset
+  document.getElementById("mouth").src = "assets/images/accessory0.png"; //mouth reset
+  document.getElementById("equip").src = "assets/images/accessory0.png"; //accessories reset
 
   //Reset Pet Color
-    document.getElementById("toggleColor").val = "Dark"; //reset to light mode
-    if ($("#toggleColor").val() == "Dark") {
-      $("img").toggleClass("filter");
-    }
+  document.getElementById("toggleColor").val = "Dark"; //reset to light mode
+  if ($("#toggleColor").val() == "Dark") {
+    $(".invertedColor").toggleClass("filter");
+  }
 
   // Resets Progress Bar's values back to original value (50)
   document.getElementById('progressbar').value = 50, //hunger bar
@@ -473,9 +497,9 @@ function restart() {
     document.getElementById('progressbar3').value = 50, //health bar
 
     //Resets all sliders back to original value (255)
-    $("#red").slider("value", 255);
-  $("#green").slider("value", 255);
-  $("#blue").slider("value", 255);
+    $("#red").slider("value", 230);
+  $("#green").slider("value", 230);
+  $("#blue").slider("value", 230);
 
   //Resets Text Log history
   $("#log").text("");

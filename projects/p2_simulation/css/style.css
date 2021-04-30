@@ -95,9 +95,17 @@ p {
   grid-row: 1;
 }
 
-#eyes{
+#eyes, #equip, #mouth{
 grid-column: 1;
 grid-row: 1;
+}
+
+#equip{
+  z-index: 3
+}
+
+#mouth{
+ z-index: 2
 }
 
 img{
@@ -146,7 +154,7 @@ progress {
 #red, #green, #blue {
   float: left;
   clear: left;
-  margin: 8px;
+  margin: 10px;
 }
 
 /* Sliders Display */
@@ -191,6 +199,8 @@ progress {
 /* pet scale slider */
 #slider {
   margin-left: 8px;
+  grid-column:  1/2
+
 }
 
 #slider .ui-slider-handle {
@@ -198,15 +208,44 @@ progress {
   background-color: #e0e0e0;
 }
 
-/* spacing div */
-.spacing {
-  height: 100px;
-}
 
 /* Sliders box height */
 fieldset {
   height: 30vh;
+  border: none;
 }
+
+.customizeTools{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 30% 1fr;
+
+}
+.customizeTitles{
+  grid-row:  1/2;
+}
+
+#petAcc{
+  grid-column:  1/2;
+  grid-row:  3/3;
+  width: 60%;
+  height: 70%;
+}
+
+#petMouth{
+  grid-column:  1/2;
+  grid-row:  4/4;
+  width: 60%;
+  height: 70%;
+}
+
+
+.colorSliders{
+  grid-column:  2/2;
+  grid-row:  2/2;
+
+}
+
 
 /* hide close button on dialog UI */
 .ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
