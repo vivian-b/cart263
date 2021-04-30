@@ -110,11 +110,6 @@ $(function() {
     setTimeout(function() {
       btn.prop('disabled', false);
     }, 30000); //30 seconds
-
-
-    $("input").checkboxradio({
-      icon: false
-    });
   });
 
   //Dialog Box pop up
@@ -283,6 +278,14 @@ function updatePetting() {
   let namedPet = $("#nameInput").val();
   $("#log").append("You pat " + namedPet + "!<br>");
   updateScroll();
+  
+  // happy face
+  document.getElementById("eyes").src = "assets/images/eye1.png";
+  //Return to neutral eyes after a second
+  setTimeout(function() {
+    document.getElementById("eyes").src = "assets/images/eye0.png";
+  }, 1000); //1 seconds
+
 
   // Sound played when petting
   var sfx = document.createElement('audio');
@@ -300,14 +303,8 @@ function updateText(item) {
   $("#log").append("You gave " + namedPet + " " + item.value + "<br>");
   updateScroll();
 
-  // When hunger bar(1) is high [bad] + mood bar(2) is high [good]
-  // warning text for hunger bar(1)
-  if ((v1 >= 0) && (v2 >= 1)) {
-    $("#log").append(namedPet + " is full! <br>");
-    decreaseMood(2);
-    updateScroll();
-  }
-  updateBar(); //check if pet is gone
+  updateBar();
+
 }
 
 // Update text in the log depending on item interacted with
@@ -317,13 +314,6 @@ function updateTextItem(item) {
   //Text message in log: interacted item +  pet name mentionned
   $("#log").append("You gave " + namedPet + " a " + item.value + "<br>");
   updateScroll();
-
-  // When hunger bar(1) is low [good] + mood bar(2) is low [bad]
-  // warning text for mood bar(2)
-  if ((v1 <= 1) && (v2 <= 0)) {
-    $("#log").append(namedPet + " is upset... <br>");
-    updateScroll();
-  }
 
   // Play sound on click
   sfx1.play();
@@ -344,6 +334,7 @@ function positiveReact(item) {
   // update text log (happy)
   $("#log").append(namedPet + " liked the " + item.value + "!<br>");
   updateScroll();
+  updateBar();
 
 }
 
@@ -362,27 +353,48 @@ function negativeReact(item) {
   // update text log (unhappy)
   $("#log").append(namedPet + " did not like the " + item.value + " ...<br>");
   updateScroll();
+  updateBar();
 }
-
-// function petReaction(item){
-//   let namedPet = $("#nameInput").val();
-//   if(item.value ="apple"){
-//   $("#log").append(namedPet +": nom! <br><br>");
-// }else {
-//   $("#log").append(namedPet +": grr! <br><br>");
-//
-// }
-//   updateScroll();
-// }
 
 
 // Check if pet is gone (health bar at 0)
 function updateBar() {
   let namedPet = $("#nameInput").val();
 
-  //Final message when health bar reaches 0 (death of pet)
+  var v1 = document.getElementById('progressbar').value; // hunger (1)
+  var v2 = document.getElementById('progressbar2').value; // hunger (1)
+  var v3 = document.getElementById('progressbar3').value; // hunger (1)
+
+  // When hunger bar(1) is high [bad] + mood bar(2) is high [good]
+  // warning text for hunger bar(1)
+  if ((v1 <= 0) && (v2 >= 1)) {
+    $("#log").append("[warning] " + namedPet + " is full! Don't feed too much food! <br>");
+    decreaseMood(3);
+    updateScroll();
+  }
+  // When hunger bar(1) is low [good] + mood bar(2) is low [bad]
+  // warning text for mood bar(2)
+  if ((v1 >= 1) && (v2 <= 5)) {
+    $("#log").append("[warning] " + namedPet + " is upset. Cheer it up! <br>");
+    updateScroll();
+  }
+
+  // When hunger bar(1) is low [good] + mood bar(2) is low [bad]
+  // warning text for mood bar(2)
+  if (v1 >= 90){
+    $("#log").append("[warning] " + namedPet + " is hungry. <br>");
+    updateScroll();
+  }
+
+  // When hunger bar(1) is high [bad] + mood bar(2) is low [bad]
+  // warning text for both bars(2)
+  if ((v1 >= 90) && (v2 <= 5)) {
+    $("#log").append("[warning] " + namedPet + " wants to run away. <br>");
+    updateScroll();
+  }
+
   if (v3 <= 0) {
-    $("#log").append(namedPet + " is gone... <br>");
+    $("#log").append("[warning] " + namedPet + " ran away! <br>");
     updateScroll();
   }
 }
@@ -404,14 +416,14 @@ function losePoints() {
   //if hunger bar (1) is at 0
   //faster decrease on mood bar (2) && health bar (3)
   if (v1 <= 0) {
+    document.getElementById("progressbar2").value = v2 - 3;
     document.getElementById("progressbar3").value = v3 - 0.5;
-    document.getElementById("progressbar2").value = v2 - 2;
   }
 
   //if hunger bar (1) is nearing 100 && mood bar (2) is at 0
   //faster decrease on health bar (3)
   if ((v1 >= 90) && (v2 <= 0)) {
-    document.getElementById("progressbar3").value = v3 - 3;
+    document.getElementById("progressbar3").value = v3 - 5;
   }
 
   //if mood bar (2) is at 0

@@ -104,30 +104,25 @@
                     <option value="assets/images/accessory7.png"> Moustache</option>
                   </select>
 
-        <!-- <label for="radio-1">Bow</label>
-<input value="assets/images/accessory0.png" type="radio" name="radio-1" id="radio-1">
-<label for="radio-2">Hat</label>
-<input value="assets/images/accessory1.png" type="radio" name="radio-1" id="radio-2">
-<label for="radio-3">Glasses</label>
-<input value="assets/images/accessory2.png" type="radio" name="radio-1" id="radio-3"> -->
-
                 </div>
+
+                <!-- Pet customization: image (pet's look)change -->
+                <select id="petType" class="ui-button">
+                  <option value="assets/images/type0.png" selected="selected">None</option>
+                  <option value="assets/images/type1.png">option 1</option>
+                  <option value="assets/images/type2.png">option 2</option>
+                  <option value="assets/images/type3.png">option 3</option>
+                  <option value="assets/images/type4.png">option 4</option>
+                  <option value="assets/images/type5.png">option 5</option>
+                  <option value="assets/images/type6.png">option 6</option>
+
+                  <!-- Pet customization: image color change -->
+                  <input type=button id="toggleColor" class="ui-button buttonSound" value="Light">
+
+                </select>
             </fieldset>
 
-            <!-- Pet customization: image (pet's look)change -->
-            <select id="petType" class="ui-button">
-              <option value="assets/images/type0.png" selected="selected">None</option>
-              <option value="assets/images/type1.png">option 1</option>
-              <option value="assets/images/type2.png">option 2</option>
-              <option value="assets/images/type3.png">option 3</option>
-              <option value="assets/images/type4.png">option 4</option>
-              <option value="assets/images/type5.png">option 5</option>
-              <option value="assets/images/type6.png">option 6</option>
 
-              <!-- Pet customization: image color change -->
-              <input type=button id="toggleColor" class="ui-button buttonSound" value="Light">
-
-            </select>
             </form>
 
           </div>
@@ -135,10 +130,11 @@
 
         <!-- All Button Interactions (FOOD) -->
         <div id="tabs-2">
-          <input type=button class="ui-button itemButtonP cooldown" value='apple' onClick='addHunger(-3); addHealth(1); updateText(this);'>
-          <input type=button class="ui-button itemButtonN cooldown" value='broccoli' onClick='addHunger(-3); addMood(-1);addHealth(1); negativeReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='apple' onClick='addHunger(-3); addHealth(1); updateText(this); '>
+          <input type=button class="ui-button itemButtonN cooldown" value='broccoli' onClick='addHunger(-1); addMood(-1);addHealth(2); negativeReact(this);'>
           <input type=button class="ui-button itemButtonP cooldown" value='candy' onClick='addHunger(-1); addMood(3); addHealth(-2); positiveReact(this); '>
           <input type=button class="ui-button itemButtonP cooldown" value='water' onClick='addHealth(2); updateText(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='treats' onClick='addHunger(-1); addMood(3); positiveReact(this); '>
           <input type=button class="ui-button itemButtonP cooldown" value='banana' onClick='addHunger(-3); addHealth(1); updateText(this);'>
           <input type=button class="ui-button itemButtonN cooldown2" value='medicine' onClick='addMood(-5); addHealth(10); negativeReact(this);'>
           <input type=button class="ui-button itemButtonP cooldown" value='ice cream' onClick='addHunger(-3); addHealth(-2); addMood(4); positiveReact(this);'>
@@ -146,10 +142,12 @@
           <input type=button class="ui-button itemButtonN cooldown" value='chocolate' onClick='addHealth(-5); addMood(3); updateText(this);'>
           <input type=button class="ui-button itemButtonP cooldown2" value='burger' onClick='addHunger(-5); addMood(5); addHealth(-3); positiveReact(this);'>
           <input type=button class="ui-button itemButtonP cooldown" value='cucumber' onClick='addHunger(-2); addMood(-2); addHealth(2); negativeReact(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='canned food' onClick='addHunger(3); addMood(1); addHealth(3); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='canned food' onClick='addHunger(-3); addMood(1); addHealth(3); positiveReact(this);'>
           <input type=button class="ui-button itemButtonP cooldown2" value='pizza' onClick='addHunger(-5); addMood(8); addHealth(1); positiveReact(this);'>
           <input type=button class="ui-button itemButtonP cooldown" value='berries' onClick='addHunger(-3); addHealth(1); updateText(this);'>
           <input type=button class="ui-button itemButtonP cooldown" value='juice' onClick='addHunger(-1); addHealth(2); updateText(this);'>
+          <input type=button class="ui-button itemButtonP cooldown2" value='cake' onClick='addHunger(-5); addHealth(-2); addMood(5); positiveReact(this);'>
+
         </div>
 
         <!-- All Button Interactions (ITEMS) -->
@@ -180,10 +178,10 @@
     <!-- Window (3): top right of layout -->
     <div id="swatch" class="window">
       <!-- Pet room background (editable color from sliders) -->
-      <img src="assets/images/accessory0.png" width="250" height="250" alt="petAccessory" id="equip" name="accessory-swap">
+      <img src="assets/images/accessory0.png" width="250" height="250" alt="petAccessory" id="equip" name="accessory-swap" onClick='updatePetting();'>
       <img src="assets/images/accessory0.png" width="250" height="250" alt="petMouth" id="mouth" name="mouth-swap">
       <img src="assets/images/type0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap" class="invertedColor filter">
-      <img src="assets/images/eye0.png" width="250" height="250" alt="petEyes" id="eyes" class="invertedColor filter" onClick='updatePetting(); positiveReact(this);'>
+      <img src="assets/images/eye0.png" width="250" height="250" alt="petEyes" id="eyes" class="invertedColor filter" >
 
     </div>
 

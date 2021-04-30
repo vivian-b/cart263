@@ -154,7 +154,7 @@ progress {
 #red, #green, #blue {
   float: left;
   clear: left;
-  margin: 10px;
+  margin-bottom: 25px;
 }
 
 /* Sliders Display */
@@ -208,44 +208,46 @@ progress {
   background-color: #e0e0e0;
 }
 
-
 /* Sliders box height */
 fieldset {
-  height: 30vh;
+  height: 36vh;
   border: none;
 }
 
+/* Grid for the customize tab */
 .customizeTools{
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 30% 1fr;
+  grid-template-rows: 25% 20%;
 
 }
 .customizeTitles{
   grid-row:  1/2;
 }
 
+/* pet accessory image overlay */
 #petAcc{
   grid-column:  1/2;
   grid-row:  3/3;
-  width: 60%;
-  height: 70%;
+  width: 70%;
+  height: 60%;
 }
 
+/* pet mouth image overlay */
 #petMouth{
   grid-column:  1/2;
   grid-row:  4/4;
-  width: 60%;
-  height: 70%;
+  width: 70%;
+  height: 60%;
+  margin: 0;
 }
 
-
+/* grouped sliders for positioning */
 .colorSliders{
   grid-column:  2/2;
   grid-row:  2/2;
-
 }
-
 
 /* hide close button on dialog UI */
 .ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
