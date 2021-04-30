@@ -236,20 +236,9 @@ function addHunger(amount) {
 
 // Update mood bar(2), for each interaction
 //varying amounts listed in the HTML
-// additional pet reaction (positive)
 function addMood(amount) {
   var v2 = document.getElementById('progressbar2').value;
   document.getElementById("progressbar2").value = v2 + amount;
-  positiveReact();
-}
-
-// Update mood bar(2), for each interaction
-//varying amounts listed in the HTML
-// additional pet reaction (negative)
-function decreaseMood(amount) {
-  var v2 = document.getElementById('progressbar2').value;
-  document.getElementById("progressbar2").value = v2 - amount;
-  negativeReact();
 }
 
 // Update health bar(3), for each interaction
