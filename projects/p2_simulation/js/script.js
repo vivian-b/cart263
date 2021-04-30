@@ -12,7 +12,6 @@ Simulation based/inspired by jQueryUI (https://jqueryui.com/)
 $(function() {
   //General Audio for the simulation
 
-
   var sfx1 = document.createElement('audio');
   sfx1.setAttribute('src', "assets/sounds/pan14.wav");
   // source: Freesound -> https://freesound.org/people/pan14/sounds/263133/
@@ -42,14 +41,14 @@ $(function() {
   // Organize UI tabs
   $("#tabs").tabs();
 
-  let button = document.getElementById(`btnReset`);
-
   //open reset button
+  let button = document.getElementById(`btnReset`);
   button.addEventListener(`click`, function(event) {
     $(".dialog").dialog("open");
   });
 
   // change image of the pet depending on the chosen option
+  // answer taken online -> https://stackoverflow.com/questions/36666334/jquery-change-image-when-select-changes
   $("#petType").change(function() {
     $("img[name=image-swap]").attr("src", $(this).val());
   });
@@ -66,6 +65,7 @@ $(function() {
   });
 
   //Message notifying when user changes pet's name
+  //answer taken online -> https://www.sanwebe.com/snippet/simple-done-typing-jquery-function
   var timer = null;
   $("#nameInput").keydown(function() {
     clearTimeout(timer);
@@ -254,7 +254,7 @@ function positiveReact() {
   // happy face
   document.getElementById("eyes").src = "assets/images/eye1.png";
 
-//Return to neutral eyes after a second
+  //Return to neutral eyes after a second
   setTimeout(function() {
     document.getElementById("eyes").src = "assets/images/eye0.png";
   }, 1000); //1 seconds
@@ -266,9 +266,9 @@ function negativeReact() {
   document.getElementById("eyes").src = "assets/images/eye2.png";
 
   //Return to neutral eyes after a second
-    setTimeout(function() {
-      document.getElementById("eyes").src = "assets/images/eye0.png";
-    }, 1000); //1 seconds
+  setTimeout(function() {
+    document.getElementById("eyes").src = "assets/images/eye0.png";
+  }, 1000); //1 seconds
 }
 
 //Update when user interacts with pet directly
@@ -283,7 +283,7 @@ function updatePetting() {
   $("#log").append("You pat " + namedPet + "!<br>");
   updateScroll();
 
-// Sound played when petting
+  // Sound played when petting
   var sfx = document.createElement('audio');
   sfx.setAttribute('src', "assets/sounds/kianda.wav");
   //source: Freesound -> https://freesound.org/people/kianda/sounds/328120/
