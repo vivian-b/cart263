@@ -1,13 +1,5 @@
-/*********************************************
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-Here is a description of any special CSS used.
-In this case it's just padding and margin to 0
-and then centring the canvas (and anything else)
-using the CSS Grid.
-
-Also hides overflow.
-
-**********************************************/
 body {
   padding: 0;
   margin: 0;
@@ -21,6 +13,7 @@ body {
 p {
   color: white;
   margin-left: 10px;
+font-family: 'Roboto Mono', monospace;
 }
 
 .grid {
@@ -66,7 +59,6 @@ p {
   width: 40vw;
   grid-column: 2 / 2;
   grid-row: 2 / 3;
-  background-color: grey;
 }
 
 #metersWindow {
@@ -113,17 +105,9 @@ progress {
     display: block;
 
 }
-/*
-progress {
-        background-color: #eee;
-    }
-
-    progress::-moz-progress-bar {
-        background-color: #039603;
-    } */
 
 #log{
-  height: 17vw;
+  height: 13vw;
   overflow:auto;
 }
 
@@ -142,12 +126,11 @@ progress {
 
 #slider{
   margin-left: 8px;
-  margin-top: 0px;
 
 }
 
 .spacing{
-  height: 90px;
+  height: 100px;
 }
   #red .ui-slider-range { background: #ef2929; }
   #red .ui-slider-handle { border-color: white; background-color: #ef2929}
@@ -171,6 +154,18 @@ progress {
     box-shadow: none;
 }
 
+
 fieldset{
   height: 30vh;
+}
+
+.cooldown:disabled, .cooldown:disabled:hover, .cooldown2:disabled:hover, .cooldown2:disabled   {
+  background-color: #4a4a4a;
+  color: #6d7175;
+}
+
+
+.ui-button{
+  margin-top: 15px;
+
 }

@@ -8,8 +8,15 @@ author, and this description to match your project!
 
 "use strict";
 
+$(document).ready(function() {
 
-$(function() {
+
+  var v1 = document.getElementById('progressbar').value;
+  var v2 = document.getElementById('progressbar2').value;
+  var v3 = document.getElementById('progressbar3').value;
+
+  updateBackground();
+// storage();
   $("#tabs").tabs();
 
   let button = document.getElementById(`btnReset`);
@@ -36,13 +43,6 @@ $(function() {
   });
 
 
-});
-
-
-$(document).ready(function() {
-
-  updateBackground();
-
   $("#petType").change(function() {
     $("img[name=image-swap]").attr("src", $(this).val());
 
@@ -50,13 +50,11 @@ $(document).ready(function() {
 
   $("#toggleColor").click(function() {
 
-
     if ($("#toggleColor").val() == "Light") {
       $("#toggleColor").val("Dark");
     } else {
       $("#toggleColor").val("Light");
     }
-
     $("img").toggleClass("filter");
 
   });
@@ -67,11 +65,8 @@ $(document).ready(function() {
     timer = setTimeout(doStuff, 1000)
   });
 
-
-
   function doStuff() {
     let namedPet = $("#nameInput").val();
-
     $("#log").append("You renamed your pet to " + namedPet + "<br>");
     updateScroll();
   }
@@ -79,71 +74,45 @@ $(document).ready(function() {
   $('.cooldown').click(function() {
     var btn = $(this);
     btn.prop('disabled', true);
+
     setTimeout(function() {
       btn.prop('disabled', false);
-    }, 8000);
+    }, 8000); //8 seconds
   });
 
+  $('.cooldown2').click(function() {
+    var btn = $(this);
+    btn.prop('disabled', true);
+
+    setTimeout(function() {
+      btn.prop('disabled', false);
+    }, 30000); //30 seconds
+  });
 
 });
 
 
-function restart() {
-  document.getElementById('progressbar').value = 50,
-  document.getElementById('progressbar2').value = 50,
-  document.getElementById('progressbar3').value = 50,
-
-  $("#red").slider("value", 255);
-  $("#green").slider("value", 255);
-  $("#blue").slider("value", 255);
-
-  $("#log").text("");
-  $("#nameInput").val("")
-}
-
-
-
-
-function addHunger() {
+function addHunger(amount) {
   var v1 = document.getElementById('progressbar').value;
   document.getElementById("progressbar").value = v1 + amount;
-  negativeReact();
-
-}
-
-function decreaseHunger(amount) {
-  var v1 = document.getElementById('progressbar').value;
-  document.getElementById("progressbar").value = v1 - amount;
   positiveReact();
 }
-
 
 function addMood(amount) {
   var v2 = document.getElementById('progressbar2').value;
   document.getElementById("progressbar2").value = v2 + amount;
   positiveReact();
-
 }
 
 function decreaseMood(amount) {
   var v2 = document.getElementById('progressbar2').value;
   document.getElementById("progressbar2").value = v2 - amount;
   negativeReact();
-
 }
 
 function addHealth(amount) {
   var v3 = document.getElementById('progressbar3').value;
   document.getElementById("progressbar3").value = v3 + amount;
-  negativeReact();
-
-}
-
-function decreaseHealth(amount) {
-  var v3 = document.getElementById('progressbar3').value;
-  document.getElementById("progressbar3").value = v3 - amount;
-  positiveReact();
-
 }
 
 function positiveReact() {
@@ -153,8 +122,6 @@ function positiveReact() {
 function negativeReact() {
   // document.getElementById("pet").src = "assets/images/animal0.png";
 }
-
-
 
 $(function() {
   function hexFromRGB(r, g, b) {
@@ -187,9 +154,9 @@ $(function() {
     slide: refreshSwatch,
     change: refreshSwatch
   });
-  $("#red").slider("value", 255);
-  $("#green").slider("value", 255);
-  $("#blue").slider("value", 255);
+
+  $("#red, #green, #blue").slider("value",255);
+
 });
 
 $(function() {
@@ -223,16 +190,18 @@ $(function() {
 });
 
 function updatePetting() {
-  document.getElementById("pet").animate({left: "-=30px"}, 9000);
+  document.getElementById("pet").animate({
+    left: "-=30px"
+  }, 9000);
+  document.getElementById("pet").style.cursor = "pointer";
 
   var v2 = document.getElementById('progressbar2').value;
   document.getElementById("progressbar2").value = v2 + 0.1;
 
   let namedPet = $("#nameInput").val();
 
-  $("#log").append("You pat " + namedPet +"!<br>");
+  $("#log").append("You pat " + namedPet + "!<br>");
   updateScroll();
-
 
 }
 
@@ -242,17 +211,12 @@ function updateText(item) {
   $("#log").append("You gave " + namedPet + " " + item.value + "<br>");
   updateScroll();
 
-  var v1 = document.getElementById('progressbar').value;
-  var v2 = document.getElementById('progressbar2').value;
-
-
   if ((v1 <= 0) && (v2 >= 1)) {
     $("#log").append(namedPet + " is full! <br>");
     decreaseMood(2);
     updateScroll();
   }
   updateBar();
-
 }
 
 function updateTextItem(item) {
@@ -261,25 +225,20 @@ function updateTextItem(item) {
   $("#log").append("You gave " + namedPet + " a " + item.value + "<br>");
   updateScroll();
 
-  var v1 = document.getElementById('progressbar').value;
-  var v2 = document.getElementById('progressbar2').value;
-
   if ((v1 >= 1) && (v2 <= 0)) {
     $("#log").append(namedPet + " is upset... <br>");
     updateScroll();
   }
 
-updateBar();
+  updateBar();
 
 }
 
-function updateBar(){
-  let namedPet = $("#nameInput").val();
-  var v1 = document.getElementById('progressbar').value;
-  var b2 = document.getElementById('progressbar2').value;
-  var v3 = document.getElementById('progressbar3').value;
 
-  if ((v1 <= 0) && (b2 <= 0)) {
+function updateBar() {
+  let namedPet = $("#nameInput").val();
+
+  if ((v1 <= 0) && (v2 <= 0)) {
     $("#log").append(namedPet + "  is full and upset... <br>");
     updateScroll();
   }
@@ -290,10 +249,10 @@ function updateBar(){
 
 }
 
-
 var myVar = setInterval(losePoints, 3000);
 
-function losePoints(){
+function losePoints() {
+
   var v1 = document.getElementById('progressbar').value;
   var v2 = document.getElementById('progressbar2').value;
   var v3 = document.getElementById('progressbar3').value;
@@ -304,7 +263,7 @@ function losePoints(){
 
   document.getElementById("progressbar3").value = v3 - 0.01;
 
-  if (v1 <= 0){
+  if (v1 <= 0) {
     document.getElementById("progressbar3").value = v3 - 0.5;
     document.getElementById("progressbar2").value = v2 - 2;
   }
@@ -323,12 +282,11 @@ function losePoints(){
     document.getElementById("progressbar").value = 0;
     document.getElementById("progressbar2").value = 0;
 
-freeze();
-
+    freeze();
   }
 }
 
-function freeze(){
+function freeze() {
   $("#toggleColor").val("Dark");
   document.getElementById("pet").src = "assets/images/animal2.png";
 
@@ -354,37 +312,53 @@ function updateScroll() {
   textBox.scrollTop = textBox.scrollHeight;
 }
 
-$( function() {
-  $( document ).tooltip({
+$(function() {
+  $(document).tooltip({
     track: true
-       });
-} );
+  });
+});
 
 function updateBackground() {
   var d = new Date();
-var n = d.getHours();
+  var n = d.getHours();
 
- if (n < 6) {
-  document.body.style.backgroundColor = "#47a3f5"; //
-}else if(n <12) {
-  document.body.style.backgroundColor = "#198ff7";
-}else if(n <18) {
-  document.body.style.backgroundColor = "#3d89cc";
-}else{
-  document.body.style.backgroundColor = "#123099";
+  if (n < 6) {
+    document.body.style.backgroundColor = "#47a3f5";
+  } else if (n < 12) {
+    document.body.style.backgroundColor = "#198ff7";
+  } else if (n < 18) {
+    document.body.style.backgroundColor = "#3d89cc";
+  } else {
+    document.body.style.backgroundColor = "#123099";
+  }
 }
+
+function restart() {
+  document.getElementById('progressbar').value = 50,
+  document.getElementById('progressbar2').value = 50,
+  document.getElementById('progressbar3').value = 50,
+
+  $("#red").slider("value", 255);
+  $("#green").slider("value", 255);
+  $("#blue").slider("value", 255);
+
+  $("#log").text("");
+  $("#nameInput").val("")
 }
 
-let namedPet = $("#nameInput").val();
-window.localStorage.setItem('name', JSON.stringify(namedPet));
 
-function storage(){
 
-  document.getElementById("#nameInput").innerHTML = localStorage.getItem("name");
+// function storage() {
+//
+//   let namedPet = $("#nameInput").val();
+//   localStorage.setItem('name', JSON.stringify(namedPet));
+//   document.getElementById("#nameInput").innerHTML = localStorage.getItem("name");
+//   // let namedPet = JSON.parse(localStorage.getItem('name'));
+//
+//   // localStorage.setItem('type', JSON.stringify(petName));
+//   // document.getElementById("#nameInput").innerHTML = localStorage.getItem("name");
+// }
 
-  // localStorage.setItem('type', JSON.stringify(petName));
-  // document.getElementById("#nameInput").innerHTML = localStorage.getItem("name");
-}
 
 
 // //Save the values to Localstorage

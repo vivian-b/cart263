@@ -15,7 +15,7 @@
 /* Component containers
 ----------------------------------*/
 .ui-widget {
-	font-family: Roboto,Arial,sans-serif;
+	font-family: 'Roboto Mono', monospace;
 	font-size: 1.1em;
 }
 .ui-widget .ui-widget {
@@ -25,7 +25,7 @@
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button {
-	font-family: Arial,sans-serif;
+	font-family: 'Roboto Mono', monospace;
 	font-size: 1em;
 }
 .ui-widget.ui-widget-content {
@@ -86,7 +86,7 @@ a:visited.ui-button,
 .ui-button:hover,
 .ui-button:focus {
 	border: 1px solid #fff;
-	background: #000;
+	background: #333333;
 	font-weight: bold;
 	color: #ffffff;
 }
