@@ -9,12 +9,12 @@
     <!-- CSS stylesheet(s) -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-     <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" type="text/css" href="css/ui-darkness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/ui-darkness/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/ui-darkness/theme.css" />
 
-    <!-- Library script(s) -->
-    <script src="js/libraries/p5.min.js"></script>
-    <script src="js/libraries/p5.sound.min.js"></script>
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+     <link rel="stylesheet" href="/resources/demos/style.css">
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -29,7 +29,7 @@
 
 <section class="grid">
 
-<button id="btnReset">reset</button>
+<button id="btnReset" class="ui-button">reset</button>
 
   <div id="dialog-confirm" class="dialog" title="Restart with a new pet?">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Current pet will be permanently deleted and cannot be recovered. Are you sure?</p>
@@ -53,20 +53,21 @@
       <div class="demo">
 <fieldset>
       <form action="#">
-        <p>
-        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-        </p>
 
-        <div id="slider-range-min"></div>
-        <div id="red"></div>
-        <div id="green"></div>
-        <div id="blue"></div>
+<p title="change the color of the room">Room</p>
+        <div id="red" class="sliderSizing"></div>
+        <div id="green" class="sliderSizing"></div>
+        <div id="blue" class="sliderSizing"></div>
+<div class="spacing">
+</div>
+        <p title="change pet's size and appearance">Pet</p>
+
+        <div id="slider" class="sliderSizing"></div></a>
 
 
 
         </fieldset>
-        <label for="number">Breed</label>
-<select id="petType">
+<select id="petType" class="ui-button">
     <option value="assets/images/animal0.png" selected="selected">None</option>
     <option value="assets/images/animal1.png">Bunny</option>
     <option value="assets/images/animal2.png">Dog</option>
@@ -74,7 +75,7 @@
     <!-- <option value="assets/images/animal4.png">four</option>
     <option value="assets/images/animal5.png">five</option> -->
 
-<input type=button id="toggleColor" value="Light">
+<input type=button id="toggleColor" class="ui-button" value="Light">
 
 </select>
       </form>
@@ -85,25 +86,25 @@
 
       <!-- <button id="hide">Hide</button> -->
       <!-- <button id="myBtn">test</button> -->
-                <input type=button class="eventText " value='apple' onClick='decreaseHunger(3); updateText(this);'>
-                <input type=button class="eventText cooldown" value='broccoli' onClick='decreaseHunger(3); decreaseMood(1); updateText(this);'>
-                <input type=button class="eventText " value='candy' onClick='decreaseHunger(1); addMood(3); decreaseHealth(25); updateText(this);'>
-                <input type=button class="eventText cooldown" value='water' onClick='addHealth(2); updateText(this);'>
+                <input type=button class="eventText ui-button" value='apple' onClick='decreaseHunger(3); updateText(this);'>
+                <input type=button class="eventText ui-button cooldown" value='broccoli' onClick='decreaseHunger(3); decreaseMood(1); updateText(this);'>
+                <input type=button class="eventText ui-button" value='candy' onClick='decreaseHunger(1); addMood(3); decreaseHealth(25); updateText(this);'>
+                <input type=button class="eventText ui-button cooldown" value='water' onClick='addHealth(2); updateText(this);'>
                 <!-- <p id="poo" class="drag">poop</p> -->
 
     </div>
 
     <div id="tabs-3">
-          <input type=button class="eventText cooldown" value='brush' onClick='addMood(2); addHealth(1); updateTextItem(this);'>
-          <input type=button class="eventText cooldown" value='book' onClick='decreaseMood(3);  updateTextItem(this);'>
-          <input type=button class="eventText " value='ball' onClick='addMood(5); addHunger(2); updateTextItem(this);'>
-          <input type=button class="eventText " value='needle' onClick='decreaseMood(10); addHealth(10); updateTextItem(this);'>
+          <input type=button class="eventText ui-button cooldown" value='brush' onClick='addMood(2); addHealth(1); updateTextItem(this);'>
+          <input type=button class="eventText ui-button cooldown" value='book' onClick='decreaseMood(3);  updateTextItem(this);'>
+          <input type=button class="eventText ui-button " value='ball' onClick='addMood(5); addHunger(2); updateTextItem(this);'>
+          <input type=button class="eventText ui-button " value='needle' onClick='decreaseMood(10); addHealth(10); updateTextItem(this);'>
     </div>
   </div>
   </div>
 
   <div id="nameWindow">
-   <input type="text" id="nameInput"  minlength="4" maxlength="18" size="25" value="your pet">
+   <input type="text" id="nameInput" class="ui-button"  minlength="4" maxlength="18" size="25" value="your pet">
 </div>
     <div id="swatch" class="ui-widget-content ui-corner-all">
   <img src="assets/images/animal0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap" class="filter" onClick='updatePetting();'>
@@ -125,10 +126,6 @@
 
         <progress value = "50" max = "100" min= "0" id="progressbar3"></progress>
 
-
-        <!-- <div id="progressbar1"></div> -->
-        <div id="progressbar2"></div>
-        <div id="progressbar3"></div>
 
         </div>
 

@@ -15,11 +15,11 @@ body {
   /* Body is the height of the viewport */
   overflow: hidden;
   /* Hide anything that goes off the window size*/
-  background-color: darkgrey;
+  background-color: #1d1f24;
 }
 
 p {
-  color: red;
+  color: white;
   margin-left: 10px;
 }
 
@@ -126,25 +126,51 @@ progress {
   height: 17vw;
   overflow:auto;
 }
+
+#pet{
+  position: relative;
+  margin-top: 20%;
+}
 /* tests */
 
 #red, #green, #blue {
     float: left;
     clear: left;
-    width: 300px;
-    margin: 15px;
+    margin: 8px;
   }
-  /* #swatch {
-    width: 120px;
-    height: 100px;
-  } */
+
+
+#slider{
+  margin-left: 8px;
+  margin-top: 0px;
+
+}
+
+.spacing{
+  height: 90px;
+}
   #red .ui-slider-range { background: #ef2929; }
-  #red .ui-slider-handle { border-color: #ef2929; }
+  #red .ui-slider-handle { border-color: white; background-color: #ef2929}
   #green .ui-slider-range { background: #8ae234; }
-  #green .ui-slider-handle { border-color: #8ae234; }
+  #green .ui-slider-handle { border-color: white;background-color: #8ae234; }
   #blue .ui-slider-range { background: #729fcf; }
-  #blue .ui-slider-handle { border-color: #729fcf; }
+  #blue .ui-slider-handle { border-color: white;background-color: #729fcf; }
+  #slider .ui-slider-range { background: #e0e0e0; }
+  #slider .ui-slider-handle { border-color: white; background-color: #e0e0e0; }
 
   .ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
     display: none;
+}
+
+.sliderSizing{
+  width: 200px;
+
+}
+
+.ui-overlay-shadow {
+    box-shadow: none;
+}
+
+fieldset{
+  height: 30vh;
 }

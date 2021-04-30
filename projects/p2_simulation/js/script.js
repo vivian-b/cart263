@@ -8,6 +8,7 @@ author, and this description to match your project!
 
 "use strict";
 
+
 $(function() {
   $("#tabs").tabs();
 
@@ -40,15 +41,12 @@ $(function() {
 
 $(document).ready(function() {
 
+  updateBackground();
 
   $("#petType").change(function() {
     $("img[name=image-swap]").attr("src", $(this).val());
 
   });
-  // $("#petType")
-  //   .selectmenu()
-  //   .selectmenu("menuWidget")
-  //   .addClass("overflow");
 
   $("#toggleColor").click(function() {
 
@@ -195,7 +193,7 @@ $(function() {
 });
 
 $(function() {
-  $("#slider-range-min").slider({
+  $("#slider").slider({
     range: "min",
     value: 250,
     min: 150,
@@ -206,7 +204,7 @@ $(function() {
       document.getElementById("pet").height = ui.value;
     }
   });
-  $("#amount").val($("#slider-range-min").slider("value"));
+  $("#amount").val($("#slider").slider("value"));
 });
 
 $(function() {
@@ -232,7 +230,7 @@ function updatePetting() {
 
   let namedPet = $("#nameInput").val();
 
-  $("#log").append("You pat " + namedPet +" !<br>");
+  $("#log").append("You pat " + namedPet +"!<br>");
   updateScroll();
 
 
@@ -293,7 +291,7 @@ function updateBar(){
 }
 
 
-var myVar = setInterval(losePoints, 1000);
+var myVar = setInterval(losePoints, 3000);
 
 function losePoints(){
   var v1 = document.getElementById('progressbar').value;
@@ -355,3 +353,46 @@ function updateScroll() {
   let textBox = document.getElementById("log");
   textBox.scrollTop = textBox.scrollHeight;
 }
+
+$( function() {
+  $( document ).tooltip({
+    track: true
+       });
+} );
+
+function updateBackground() {
+  var d = new Date();
+var n = d.getHours();
+
+ if (n < 6) {
+  document.body.style.backgroundColor = "#47a3f5"; //
+}else if(n <12) {
+  document.body.style.backgroundColor = "#198ff7";
+}else if(n <18) {
+  document.body.style.backgroundColor = "#3d89cc";
+}else{
+  document.body.style.backgroundColor = "#123099";
+}
+}
+
+let namedPet = $("#nameInput").val();
+window.localStorage.setItem('name', JSON.stringify(namedPet));
+
+function storage(){
+
+  document.getElementById("#nameInput").innerHTML = localStorage.getItem("name");
+
+  // localStorage.setItem('type', JSON.stringify(petName));
+  // document.getElementById("#nameInput").innerHTML = localStorage.getItem("name");
+}
+
+
+// //Save the values to Localstorage
+// localStorage.setItem('first','firstvalue');
+// localStorage.setItem('second','secondvalue');
+//
+// //Retrieve the values from localstorage
+// localStorage.getItem('first')
+// //"firstvalue"
+// localStorage.getItem('second')
+// //"secondvalue"
