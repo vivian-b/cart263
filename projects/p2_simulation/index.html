@@ -90,10 +90,13 @@
 
             <!-- Pet customization: image (pet's look)change -->
             <select id="petType" class="ui-button">
-              <option value="assets/images/animal0.png" selected="selected">None</option>
-              <option value="assets/images/animal1.png">Bunny</option>
-              <option value="assets/images/animal2.png">Dog</option>
-              <option value="assets/images/animal3.png">Cat</option>
+              <option value="assets/images/type0.png" selected="selected">None</option>
+              <option value="assets/images/type1.png">option 1</option>
+              <option value="assets/images/type2.png">option 2</option>
+              <option value="assets/images/type3.png">option 3</option>
+              <option value="assets/images/type4.png">option 4</option>
+              <option value="assets/images/type5.png">option 5</option>
+              <option value="assets/images/type6.png">option 6</option>
 
               <!-- Pet customization: image color change -->
               <input type=button id="toggleColor" class="ui-button buttonSound" value="Light">
@@ -150,7 +153,9 @@
     <!-- Window (3): top right of layout -->
     <div id="swatch" class="window">
       <!-- Pet room background (editable color from sliders) -->
-      <img src="assets/images/animal0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap" class="filter" onClick='updatePetting();'>
+      <img src="assets/images/type0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap" class="filter" >
+      <img src="assets/images/eye0.png" width="250" height="250" alt="petEyes" id="eyes" class="filter" onClick='updatePetting(); positiveReact();'>
+
     </div>
 
     <!-- Window (4): bottom left of layout -->

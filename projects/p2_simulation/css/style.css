@@ -58,6 +58,8 @@ p {
   width: 40vw;
   grid-column: 2 / 2;
   grid-row: 2 / 3;
+  display: grid;
+  position: relative;
 }
 
 /* Window (4): bottom left */
@@ -89,9 +91,19 @@ p {
 /* pet image positioning */
 #pet {
   display: block;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#eyes{
+grid-column: 1;
+grid-row: 1;
+}
+
+img{
+  margin-top: 20%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20%;
 }
 
 /* color invert class */

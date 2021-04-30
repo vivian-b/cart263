@@ -11,28 +11,21 @@ Simulation based/inspired by jQueryUI (https://jqueryui.com/)
 
 $(function() {
   //General Audio for the simulation
-  var sfx1 = document.createElement('audio');
-  sfx1.setAttribute('src', "assets/sounds/kianda.wav");
-  //source: Freesound -> https://freesound.org/people/kianda/sounds/328120/
 
-  $('#pet').click(function() {
+
+  var sfx1 = document.createElement('audio');
+  sfx1.setAttribute('src', "assets/sounds/pan14.wav");
+  // source: Freesound -> https://freesound.org/people/pan14/sounds/263133/
+  $('.itemButtonP').click(function() {
     sfx1.play();
   });
 
 
   var sfx2 = document.createElement('audio');
-  sfx2.setAttribute('src', "assets/sounds/pan14.wav");
-  // source: Freesound -> https://freesound.org/people/pan14/sounds/263133/
-  $('.itemButtonP').click(function() {
-    sfx2.play();
-  });
-
-
-  var sfx3 = document.createElement('audio');
-  sfx3.setAttribute('src', "assets/sounds/dland.wav");
+  sfx2.setAttribute('src', "assets/sounds/dland.wav");
   // source: Freesound -> https://freesound.org/people/dland/sounds/320181/
   $('.itemButtonN').click(function() {
-    sfx3.play();
+    sfx2.play();
   });
 
   var sfx4 = document.createElement('audio');
@@ -56,17 +49,17 @@ $(function() {
     $(".dialog").dialog("open");
   });
 
-  // change image of the pet depending on the chose option
+  // change image of the pet depending on the chosen option
   $("#petType").change(function() {
     $("img[name=image-swap]").attr("src", $(this).val());
   });
 
   //Button to alternate pet image colors
   $("#toggleColor").click(function() {
-    if ($("#toggleColor").val() == "Light") {
-      $("#toggleColor").val("Dark");
-    } else {
+    if ($("#toggleColor").val() == "Dark") {
       $("#toggleColor").val("Light");
+    } else {
+      $("#toggleColor").val("Dark");
     }
     $("img").toggleClass("filter");
 
@@ -121,7 +114,7 @@ $(function() {
     buttons: {
       Reset: function() { //reset (simulation restart)
         $(this).dialog("close");
-        sfx3.play();
+        sfx2.play();
         restart();
       },
       Cancel: function() { // (close dialog)
@@ -207,13 +200,17 @@ $(function() {
   //Change pet image size depending on the slider value
   $("#slider").slider({
     range: "min",
-    value: 215,
+    value: 205,
     min: 150,
-    max: 275,
+    max: 255,
     slide: function(event, ui) {
       $("#amount").val(ui.value);
       document.getElementById("pet").width = ui.value;
       document.getElementById("pet").height = ui.value;
+
+      document.getElementById("eyes").width = ui.value;
+      document.getElementById("eyes").height = ui.value;
+
     }
   });
   $("#amount").val($("#slider").slider("value"));
@@ -262,12 +259,27 @@ function addHealth(amount) {
   document.getElementById("progressbar3").value = v3 + amount;
 }
 
+
+// Change pet eyes: happy
 function positiveReact() {
-  // document.getElementById("pet").src = "assets/images/animal1.png";
+  // happy face
+  document.getElementById("eyes").src = "assets/images/eye1.png";
+
+//Return to neutral eyes after a second
+  setTimeout(function() {
+    document.getElementById("eyes").src = "assets/images/eye0.png";
+  }, 1000); //1 seconds
+
 }
 
 function negativeReact() {
-  // document.getElementById("pet").src = "assets/images/animal0.png";
+  // angry face
+  document.getElementById("eyes").src = "assets/images/eye2.png";
+
+  //Return to neutral eyes after a second
+    setTimeout(function() {
+      document.getElementById("eyes").src = "assets/images/eye0.png";
+    }, 1000); //1 seconds
 }
 
 //Update when user interacts with pet directly
@@ -281,6 +293,13 @@ function updatePetting() {
   let namedPet = $("#nameInput").val();
   $("#log").append("You pat " + namedPet + "!<br>");
   updateScroll();
+
+// Sound played when petting
+  var sfx = document.createElement('audio');
+  sfx.setAttribute('src', "assets/sounds/kianda.wav");
+  //source: Freesound -> https://freesound.org/people/kianda/sounds/328120/
+  sfx.play();
+
 }
 
 // Update text in the log depending on food interacted with
@@ -386,8 +405,7 @@ function losePoints() {
 //Force user into dialog box after pet's disappearance
 //Forced simulation reset
 function freeze() {
-  $("#toggleColor").val("Dark"); //resets filter
-  document.getElementById("pet").src = "assets/images/animal2.png"; //pet image replaced
+  document.getElementById("pet").src = "assets/images/gone.png"; //pet image replaced
 
   $(".dialogForced").dialog({ //forced dialog pop up
     autoOpen: true, //auto appears
