@@ -4,16 +4,14 @@ body {
   padding: 0;
   margin: 0;
   height: 100vh;
-  /* Body is the height of the viewport */
   overflow: hidden;
-  /* Hide anything that goes off the window size*/
   background-color: #1d1f24;
 }
 
 p {
   color: white;
   margin-left: 10px;
-font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .grid {
@@ -30,7 +28,7 @@ font-family: 'Roboto Mono', monospace;
   border-style: solid;
   border-color: white;
   border-width: thin;
-  padding: 20px;
+  padding: 5px 20px 10px 20px;
 }
 
 .actionItem {
@@ -44,7 +42,8 @@ font-family: 'Roboto Mono', monospace;
 }
 
 #logWindow {
-  height: 90%;
+  width: 45vw;
+  height: 95%;
   grid-column: 1 / 2;
   grid-row: 4 / 4;
 }
@@ -78,8 +77,8 @@ font-family: 'Roboto Mono', monospace;
 
 img {
   display: block;
-margin-left: auto;
-margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .filter {
@@ -100,78 +99,99 @@ label {
 }
 
 progress {
-    min-width: 400px;
-    height: 25px;
-    margin: 8px;
-    display: block;
-
+  min-width: 400px;
+  height: 25px;
+  margin: 8px;
+  display: block;
 }
 
-#log{
+#log {
   height: 70%;
-  overflow:auto;
+  overflow: auto;
 }
 
-#pet{
+#pet {
   position: relative;
   margin-top: 20%;
 }
+
 /* tests */
-
 #red, #green, #blue {
-    float: left;
-    clear: left;
-    margin: 8px;
-  }
-
-
-#slider{
-  margin-left: 8px;
-
+  float: left;
+  clear: left;
+  margin: 8px;
 }
 
-.spacing{
+#slider {
+  margin-left: 8px;
+}
+
+.spacing {
   height: 100px;
 }
-  #red .ui-slider-range { background: #ef2929; }
-  #red .ui-slider-handle { border-color: white; background-color: #ef2929}
-  #green .ui-slider-range { background: #8ae234; }
-  #green .ui-slider-handle { border-color: white;background-color: #8ae234; }
-  #blue .ui-slider-range { background: #729fcf; }
-  #blue .ui-slider-handle { border-color: white;background-color: #729fcf; }
-  #slider .ui-slider-range { background: #e0e0e0; }
-  #slider .ui-slider-handle { border-color: white; background-color: #e0e0e0; }
 
-  .ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
-    display: none;
+#red .ui-slider-range {
+  background: #ef2929;
 }
 
-.sliderSizing{
-  width: 200px;
+#red .ui-slider-handle {
+  border-color: white;
+  background-color: #ef2929
+}
 
+#green .ui-slider-range {
+  background: #8ae234;
+}
+
+#green .ui-slider-handle {
+  border-color: white;
+  background-color: #8ae234;
+}
+
+#blue .ui-slider-range {
+  background: #729fcf;
+}
+
+#blue .ui-slider-handle {
+  border-color: white;
+  background-color: #729fcf;
+}
+
+#slider .ui-slider-range {
+  background: #e0e0e0;
+}
+
+#slider .ui-slider-handle {
+  border-color: white;
+  background-color: #e0e0e0;
+}
+
+.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+  display: none;
+}
+
+.sliderSizing {
+  width: 200px;
 }
 
 .ui-overlay-shadow {
-    box-shadow: none;
+  box-shadow: none;
 }
 
-
-fieldset{
+fieldset {
   height: 30vh;
 }
 
-.cooldown:disabled, .cooldown:disabled:hover, .cooldown2:disabled:hover, .cooldown2:disabled   {
+.cooldown:disabled, .cooldown:disabled:hover, .cooldown2:disabled:hover, .cooldown2:disabled {
   background-color: #4a4a4a;
   color: #6d7175;
 }
 
-
-.ui-button{
+.ui-button {
   margin-top: 15px;
-
 }
 
-#nameInput{
+#nameInput {
   font-size: 1.25em;
   color: black;
   background-color: white;
@@ -179,7 +199,7 @@ fieldset{
   border: none;
 }
 
-#btnReset{
+#btnReset {
   font-size: 1em;
   background: none;
   border: none;

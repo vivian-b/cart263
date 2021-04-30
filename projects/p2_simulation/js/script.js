@@ -10,6 +10,12 @@ author, and this description to match your project!
 
 $(document).ready(function() {
 
+  var audioElement = document.createElement('audio');
+     audioElement.setAttribute('src', "assets/sounds/bark.wav");
+
+         $('#pet').click(function() {
+             audioElement.play();
+         });
 
   var v1 = document.getElementById('progressbar').value;
   var v2 = document.getElementById('progressbar2').value;
@@ -23,23 +29,6 @@ $(document).ready(function() {
 
   button.addEventListener(`click`, function(event) {
     $(".dialog").dialog("open");
-  });
-
-  $(".dialog").dialog({
-    autoOpen: false,
-    resizable: false,
-    height: "auto",
-    width: 400,
-    modal: true,
-    buttons: {
-      Reset: function() {
-        $(this).dialog("close");
-        restart();
-      },
-      Cancel: function() {
-        $(this).dialog("close");
-      }
-    }
   });
 
 
@@ -89,6 +78,36 @@ $(document).ready(function() {
     }, 30000); //30 seconds
   });
 
+
+    $(".dialog").dialog({
+      autoOpen: false,
+      resizable: false,
+      height: "auto",
+      width: 400,
+      modal: true,
+      buttons: {
+        Reset: function() {
+          $(this).dialog("close");
+          restart();
+        },
+        Cancel: function() {
+          $(this).dialog("close");
+        }
+      }
+    });
+
+    $(".dialogIntro").dialog({
+      autoOpen: true,
+      resizable: false,
+      height: 400,
+      width: 600,
+      modal: true,
+      buttons: {
+        x: function() {
+          $(this).dialog("close");
+        }
+      }
+    });
 });
 
 
@@ -162,9 +181,9 @@ $(function() {
 $(function() {
   $("#slider").slider({
     range: "min",
-    value: 250,
+    value: 215,
     min: 150,
-    max: 300,
+    max: 275,
     slide: function(event, ui) {
       $("#amount").val(ui.value);
       document.getElementById("pet").width = ui.value;
@@ -190,9 +209,7 @@ $(function() {
 });
 
 function updatePetting() {
-  document.getElementById("pet").animate({
-    left: "-=30px"
-  }, 9000);
+
   document.getElementById("pet").style.cursor = "pointer";
 
   var v2 = document.getElementById('progressbar2').value;
@@ -344,8 +361,7 @@ function restart() {
   $("#blue").slider("value", 255);
 
   $("#log").text("");
-  $("#nameInput").val("your pet")
-
+  $("#nameInput").val("???")
 
 }
 
@@ -361,15 +377,3 @@ function restart() {
 //   // localStorage.setItem('type', JSON.stringify(petName));
 //   // document.getElementById("#nameInput").innerHTML = localStorage.getItem("name");
 // }
-
-
-
-// //Save the values to Localstorage
-// localStorage.setItem('first','firstvalue');
-// localStorage.setItem('second','secondvalue');
-//
-// //Retrieve the values from localstorage
-// localStorage.getItem('first')
-// //"firstvalue"
-// localStorage.getItem('second')
-// //"secondvalue"
