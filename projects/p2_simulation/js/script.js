@@ -2,14 +2,15 @@
 Virtual Blob
 Vivian Bui
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+
 */
 
 "use strict";
 
+//group all
 $(function() {
 
+//General Audio for the simulation
   var audioElement = document.createElement('audio');
      audioElement.setAttribute('src', "assets/sounds/bark.wav");
 
@@ -17,27 +18,28 @@ $(function() {
              audioElement.play();
          });
 
-  var v1 = document.getElementById('progressbar').value;
-  var v2 = document.getElementById('progressbar2').value;
-  var v3 = document.getElementById('progressbar3').value;
+//Target each bar's value
+  var v1 = document.getElementById('progressbar').value; // hunger (1)
+  var v2 = document.getElementById('progressbar2').value; // mood (2)
+  var v3 = document.getElementById('progressbar3').value; // health (3)
 
-// storage();
+// Organize UI tabs
   $("#tabs").tabs();
 
   let button = document.getElementById(`btnReset`);
 
+//open reset button
   button.addEventListener(`click`, function(event) {
     $(".dialog").dialog("open");
   });
 
-
+// change image of the pet depending on the chose option
   $("#petType").change(function() {
     $("img[name=image-swap]").attr("src", $(this).val());
-
   });
 
+//Button to alternate pet image colors
   $("#toggleColor").click(function() {
-
     if ($("#toggleColor").val() == "Light") {
       $("#toggleColor").val("Dark");
     } else {
@@ -47,18 +49,22 @@ $(function() {
 
   });
 
+//Message notifying when user changes pet's name
   var timer = null;
   $("#nameInput").keydown(function() {
     clearTimeout(timer);
-    timer = setTimeout(doStuff, 1000)
+    timer = setTimeout(renamedPet, 1000) // 1 second wait
   });
 
-  function doStuff() {
+  function renamedPet() {
     let namedPet = $("#nameInput").val();
+    //message appear in log window
     $("#log").append("You renamed your pet to " + namedPet + "<br>");
     updateScroll();
   }
 
+// Cooldowns (disable button for a certain amount of time) after click
+//standard Cooldown for most interactions (8 seconds)
   $('.cooldown').click(function() {
     var btn = $(this);
     btn.prop('disabled', true);
@@ -68,6 +74,7 @@ $(function() {
     }, 8000); //8 seconds
   });
 
+//longer Cooldown for some interactions (30 seconds)
   $('.cooldown2').click(function() {
     var btn = $(this);
     btn.prop('disabled', true);
@@ -77,7 +84,11 @@ $(function() {
     }, 30000); //30 seconds
   });
 
+//Dialog Box pop up
+//source: jquery -> https://jqueryui.com/dialog/
 
+//reset button dialog box
+//Choices: reset (simulation restart) or cancel (close dialog)
     $(".dialog").dialog({
       autoOpen: false,
       resizable: false,
@@ -85,16 +96,17 @@ $(function() {
       width: 400,
       modal: true,
       buttons: {
-        Reset: function() {
+        Reset: function() { //reset (simulation restart)
           $(this).dialog("close");
           restart();
         },
-        Cancel: function() {
+        Cancel: function() { // (close dialog)
           $(this).dialog("close");
         }
       }
     });
 
+    //forced introduction dialog box
     $(".dialogIntro").dialog({
       autoOpen: true,
       resizable: false,
@@ -102,13 +114,18 @@ $(function() {
       width: 600,
       modal: true,
       buttons: {
-        x: function() {
+        x: function() { // (close dialog)
           $(this).dialog("close");
         }
       }
     });
 
-    updateBackground();
+    updateBackground(); //backgroundColor update depending on time of the day
+
+//Color Picker slider (Line 113 -153)
+//source: jquery -> https://jqueryui.com/slider/#colorpicker
+
+// Create color for room based on sliders
     function hexFromRGB(r, g, b) {
       var hex = [
         r.toString(16),
@@ -123,6 +140,8 @@ $(function() {
       return hex.join("").toUpperCase();
     }
 
+//Customized Room color
+// Updated color (live) based on sliders
     function refreshSwatch() {
       var red = $("#red").slider("value"),
         green = $("#green").slider("value"),
@@ -131,6 +150,8 @@ $(function() {
       $("#swatch").css("background-color", "#" + hex);
     }
 
+    //Customized Room color sliders
+    //Linking the color sliders to DIV room
     $("#red, #green, #blue").slider({
       orientation: "horizontal",
       range: "min",
@@ -140,21 +161,23 @@ $(function() {
       change: refreshSwatch
     });
 
+//Default sliders value
     $("#red, #green, #blue").slider("value",255);
 
-    $(".drag").draggable({
-      revert: "invalid",
+    // $(".drag").draggable({
+    //   revert: "invalid",
+    //
+    // });
+    // $("#droppable").droppable({
+    //   drop: function(event, ui) {
+    //     $(this)
+    //       .find("p")
+    //     $("#test").hide();
+    //   }
+    // });
 
-    });
-    $("#droppable").droppable({
-      drop: function(event, ui) {
-        $(this)
-          .find("p")
-        $("#poo").hide();
-      }
-
-    });
-
+//Pet customization slider
+//Change pet image size depending on the slider value
     $("#slider").slider({
       range: "min",
       value: 215,
@@ -168,31 +191,45 @@ $(function() {
     });
     $("#amount").val($("#slider").slider("value"));
 
+//Tooltip pop up in the entire document
     $(document).tooltip({
       track: true
     });
+
+//change cursor when mouse is on pet image
+    document.getElementById("pet").style.cursor = "pointer";
+
 });
 //
 //
-//
 
+// Update hunger bar(1), for each interaction
+//varying amounts listed in the HTML
 function addHunger(amount) {
   var v1 = document.getElementById('progressbar').value;
   document.getElementById("progressbar").value = v1 + amount;
 }
 
+// Update mood bar(2), for each interaction
+//varying amounts listed in the HTML
+// additional pet reaction (positive)
 function addMood(amount) {
   var v2 = document.getElementById('progressbar2').value;
   document.getElementById("progressbar2").value = v2 + amount;
   positiveReact();
 }
 
+// Update mood bar(2), for each interaction
+//varying amounts listed in the HTML
+// additional pet reaction (negative)
 function decreaseMood(amount) {
   var v2 = document.getElementById('progressbar2').value;
   document.getElementById("progressbar2").value = v2 - amount;
   negativeReact();
 }
 
+// Update health bar(3), for each interaction
+//varying amounts listed in the HTML
 function addHealth(amount) {
   var v3 = document.getElementById('progressbar3').value;
   document.getElementById("progressbar3").value = v3 + amount;
@@ -206,28 +243,30 @@ function negativeReact() {
   // document.getElementById("pet").src = "assets/images/animal0.png";
 }
 
+//Update when user interacts with pet directly
+//Mouse click on the pet image
 function updatePetting() {
-
-  document.getElementById("pet").style.cursor = "pointer";
-
+//Increase the mood bar(2) each click
   var v2 = document.getElementById('progressbar2').value;
   document.getElementById("progressbar2").value = v2 + 0.1;
 
+// Text message in log: pet name + getting pated
   let namedPet = $("#nameInput").val();
-
   $("#log").append("You pat " + namedPet + "!<br>");
   updateScroll();
-
 }
 
+// Update text in the log depending on food interacted with
 function updateText(item) {
   let namedPet = $("#nameInput").val();
 
+  //Text message in log: interacted food + pet name mentionned
   $("#log").append("You gave " + namedPet + " " +item.value + "<br>");
   updateScroll();
 
-
-  if ((v1 <= 0) && (v2 >= 1)) {
+  // When hunger bar(1) is high [bad] + mood bar(2) is high [good]
+  // warning text for hunger bar(1)
+  if ((v1 >= 0) && (v2 >= 1)) {
     $("#log").append(namedPet + " is full! <br>");
     decreaseMood(2);
     updateScroll();
@@ -235,13 +274,17 @@ function updateText(item) {
   updateBar();
 }
 
+// Update text in the log depending on item interacted with
 function updateTextItem(item) {
   let namedPet = $("#nameInput").val();
 
+//Text message in log: interacted item +  pet name mentionned
   $("#log").append("You gave " + namedPet + " a " + item.value + "<br>");
   updateScroll();
 
-  if ((v1 >= 1) && (v2 <= 0)) {
+// When hunger bar(1) is low [good] + mood bar(2) is low [bad]
+// warning text for mood bar(2)
+  if ((v1 <= 1) && (v2 <= 0)) {
     $("#log").append(namedPet + " is upset... <br>");
     updateScroll();
   }
@@ -258,61 +301,71 @@ function updateTextItem(item) {
 //   updateScroll();
 // }
 
+
 function updateBar() {
   let namedPet = $("#nameInput").val();
 
+//Final message when health bar reaches 0 (death of pet)
   if (v3 <= 0) {
     $("#log").append(namedPet + " is gone... <br>");
     updateScroll();
   }
-
 }
 
+// 3s Interval in decrease/increase bars
 var myVar = setInterval(losePoints, 3000);
 
 function losePoints() {
 
+//Recall bars from the HTML
   var v1 = document.getElementById('progressbar').value;
   var v2 = document.getElementById('progressbar2').value;
   var v3 = document.getElementById('progressbar3').value;
 
+// Decrease/Increase of the bars on intervals
   document.getElementById("progressbar").value = v1 + 0.5;
-
   document.getElementById("progressbar2").value = v2 - 0.2;
-
   document.getElementById("progressbar3").value = v3 - 0.01;
 
+//if hunger bar (1) is at 0
+//faster decrease on mood bar (2) && health bar (3)
   if (v1 <= 0) {
     document.getElementById("progressbar3").value = v3 - 0.5;
     document.getElementById("progressbar2").value = v2 - 2;
   }
 
+  //if hunger bar (1) is nearing 100 && mood bar (2) is at 0
+  //faster decrease on health bar (3)
   if ((v1 >= 90) && (v2 <= 0)) {
     document.getElementById("progressbar3").value = v3 - 3;
   }
 
+  //if mood bar (2) is at 0
+  //faster decrease on health bar (3)
   if (v2 <= 0) {
     document.getElementById("progressbar3").value = v3 - 1;
-
   }
 
+//if health bar (3) is at 0
+// other two health bars appears as 0 (hunger + mood)
   if (v3 <= 0) {
-
     document.getElementById("progressbar").value = 0;
     document.getElementById("progressbar2").value = 0;
 
-    freeze();
+    freeze(); //Force user in dialog box
   }
 }
 
+//Force user into dialog box after pet's disappearance
+//Forced simulation reset
 function freeze() {
-  $("#toggleColor").val("Dark");
-  document.getElementById("pet").src = "assets/images/animal2.png";
+  $("#toggleColor").val("Dark"); //resets filter
+  document.getElementById("pet").src = "assets/images/animal2.png"; //pet image replaced
 
-  $(".dialogForced").dialog({
-    autoOpen: true,
+  $(".dialogForced").dialog({ //forced dialog pop up
+    autoOpen: true, //auto appears
     resizable: false,
-    closeOnEscape: false,
+    closeOnEscape: false, //cannot exit
     width: 400,
     modal: true,
     buttons: {
@@ -324,43 +377,51 @@ function freeze() {
   });
 }
 
+// Shifts focus onto the newest line of text
+// code taken from previous student's project:
+// (Computational Wizard Duel by Anne Boutet -> https://purplunicorn25.github.io/CART263/00-Projects/Project_3/index.html)
 function updateScroll() {
-  // Scroll to the bottom of the recap div
   let textBox = document.getElementById("log");
-  textBox.scrollTop = textBox.scrollHeight;
+  textBox.scrollTop = textBox.scrollHeight; //defaul scroll to the bottom of the text
 }
 
+//Changes background color based on the hour / time of the day
 function updateBackground() {
-  var d = new Date();
-  var n = d.getHours();
+  var d = new Date(); //day
+  var n = d.getHours(); //time in the day
 
-  if (n < 6) {
-    document.body.style.backgroundColor = "#47a3f5";
-  } else if (n < 12) {
-    document.body.style.backgroundColor = "#198ff7";
-  } else if (n < 18) {
-    document.body.style.backgroundColor = "#3d89cc";
-  } else {
-    document.body.style.backgroundColor = "#123099";
+  if (n < 6) { //under 6
+    document.body.style.backgroundColor = "#47a3f5"; //light blue color
+  } else if (n < 12) { //between 6-12
+    document.body.style.backgroundColor = "#198ff7"; //cyan blue color
+  } else if (n < 18) { //between 12-18
+    document.body.style.backgroundColor = "#3d89cc"; //blue color
+  } else { //between 18-6
+    document.body.style.backgroundColor = "#123099"; //dark blue color
   }
 }
 
+// From Reset Button dialog confirmation:
+// Resets the simulation (pet, progress bars, customization, logs)
 function restart() {
 
-  document.getElementById('progressbar').value = 50,
-  document.getElementById('progressbar2').value = 50,
-  document.getElementById('progressbar3').value = 50,
+// Resets Progress Bar's values back to original value (50)
+  document.getElementById('progressbar').value = 50, //hunger bar
+  document.getElementById('progressbar2').value = 50, //mood bar
+  document.getElementById('progressbar3').value = 50, //health bar
 
+//Resets all sliders back to original value (255)
   $("#red").slider("value", 255);
   $("#green").slider("value", 255);
   $("#blue").slider("value", 255);
 
+  //Resets Text Log history
   $("#log").text("");
+  //Resets Pet's name
   $("#nameInput").val("???")
-
 }
 
-
+//failed tests
 
 // function storage() {
 //
