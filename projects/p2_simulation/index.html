@@ -33,7 +33,7 @@
   <section class="grid">
 
     <!-- reset button (top right) -->
-    <button id="btnReset" class="ui-button buttonSound">RESET</button>
+    <button id="btnReset" class="ui-button buttonSound"  onClick="openReset">RESET</button>
 
     <!-- Dialog (1): confirmation from reset button (on click) -->
     <div id="dialog-confirm" class="dialog" title="Restart with a new pet?">
@@ -109,37 +109,37 @@
 
         <!-- All Button Interactions (FOOD) -->
         <div id="tabs-2">
-          <input type=button class="ui-button itemButtonP cooldown" value='apple' onClick='addHunger(-3); updateText(this);'>
-          <input type=button class="ui-button itemButtonN cooldown" value='broccoli' onClick='addHunger(-3); addMood(-1);addHealth(1); updateText(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='candy' onClick='addHunger(-1); addMood(3); addHealth(-2); positiveReact(); updateText(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='apple' onClick='addHunger(-3); addHealth(1); updateText(this);'>
+          <input type=button class="ui-button itemButtonN cooldown" value='broccoli' onClick='addHunger(-3); addMood(-1);addHealth(1); negativeReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='candy' onClick='addHunger(-1); addMood(3); addHealth(-2); positiveReact(this); '>
           <input type=button class="ui-button itemButtonP cooldown" value='water' onClick='addHealth(2); updateText(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='banana' onClick='addHunger(-1); increaseHealth(1); updateText(this);'>
-          <input type=button class="ui-button itemButtonN cooldown2" value='medicine' onClick='addMood(-5); addHealth(10); negativeReact(); updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='ice cream' onClick='addHunger(-3); addHealth(-2); addMood(4); positiveReact(); updateText(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='cookies' onClick='addHunger(-1); addMood(3); addHealth(-2); positiveReact(); updateText(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='banana' onClick='addHunger(-3); addHealth(1); updateText(this);'>
+          <input type=button class="ui-button itemButtonN cooldown2" value='medicine' onClick='addMood(-5); addHealth(10); negativeReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='ice cream' onClick='addHunger(-3); addHealth(-2); addMood(4); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='cookies' onClick='addHunger(-1); addMood(3); addHealth(-2); positiveReact(this);'>
           <input type=button class="ui-button itemButtonN cooldown" value='chocolate' onClick='addHealth(-5); addMood(3); updateText(this);'>
-          <input type=button class="ui-button itemButtonP cooldown2" value='burger' onClick='addHunger(-5); addMood(5); positiveReact(); addHealth(-3); updateText(this);'>
-          <input type=button class="ui-button itemButtonN cooldown" value='cucumber' onClick='addHunger(-2); addMood(-2); negativeReact(); addHealth(3); updateText(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='canned food' onClick='addHunger(3); addMood(1); addHealth(3); positiveReact(); updateText(this);'>
-          <input type=button class="ui-button itemButtonP cooldown2" value='pizza' onClick='addHunger(-5); addMood(8); positiveReact(); addHealth(1); updateText(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='berries' onClick='addHunger(-1); increaseHealth(2); updateText(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='juice' onClick='addHunger(-1); increaseHealth(2); updateText(this);'>
+          <input type=button class="ui-button itemButtonP cooldown2" value='burger' onClick='addHunger(-5); addMood(5); addHealth(-3); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='cucumber' onClick='addHunger(-2); addMood(-2); addHealth(2); negativeReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='canned food' onClick='addHunger(3); addMood(1); addHealth(3); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown2" value='pizza' onClick='addHunger(-5); addMood(8); addHealth(1); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='berries' onClick='addHunger(-3); addHealth(1); updateText(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='juice' onClick='addHunger(-1); addHealth(2); updateText(this);'>
         </div>
 
         <!-- All Button Interactions (ITEMS) -->
         <div id="tabs-3">
-          <input type=button class="ui-button itemButtonP cooldown" value='brush' onClick='addMood(2); addHealth(1); positiveReact(); updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonN cooldown2" value='shower' onClick='addMood(-5); addHealth(5); negativeReact();  updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonN cooldown" value='book' onClick='addMood(-3); negativeReact(); updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='ball' onClick='addMood(5); addHunger(4); positiveReact(); updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='pencil' onClick='addMood(2);  updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonP cooldown2" value='laser pointer' onClick='addMood(4); addHunger(3); positiveReact(); updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='frisbee' onClick='addMood(-5); addHunger(4); positiveReact(); updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonP cooldown2" value='massage' onClick='addMood(5); addHealth(5); positiveReact(); updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='stick' onClick='addMood(10); addHunger(2); positiveReact(); updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='tennis ball' onClick='addMood(5); addHunger(3); positiveReact(); updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonP cooldown" value='chew toy' onClick='addMood(7); positiveReact(); updateTextItem(this);'>
-          <input type=button class="ui-button itemButtonN cooldown2" value='needle' onClick='addMood(-10); addHealth(10);  addHunger(3); negativeReact(); updateTextItem(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='brush' onClick='addMood(2); addHealth(1); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonN cooldown2" value='shower' onClick='addMood(-5); addHealth(5); negativeReact(this);'>
+          <input type=button class="ui-button itemButtonN cooldown" value='book' onClick='addMood(-3); updateTextItem(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='ball' onClick='addMood(5); addHunger(4); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='pencil' onClick='addMood(2); updateTextItem(this);'>
+          <input type=button class="ui-button itemButtonP cooldown2" value='box' onClick='addMood(4); addHunger(2); updateTextItem(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='frisbee' onClick='addMood(-5); addHunger(4); updateTextItem(this);'>
+          <input type=button class="ui-button itemButtonP cooldown2" value='massage' onClick='addMood(5); addHealth(5); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='stick' onClick='addMood(10); addHunger(2); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='tennis ball' onClick='addMood(5); addHunger(3); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonP cooldown" value='chew toy' onClick='addMood(7); positiveReact(this);'>
+          <input type=button class="ui-button itemButtonN cooldown2" value='needle' onClick='addMood(-10); addHealth(10);  addHunger(3); negativeReact(this);'>
           <input type=button class="ui-button itemButtonP cooldown2" value='bed' onClick='addMood(5); addHealth(3); addHunger(-2); updateTextItem(this);'>
         </div>
       </div>
@@ -148,14 +148,14 @@
     <!-- Window (2): top center of layout -->
     <div id="nameWindow">
       <!-- editable name window -->
-      <input type="text" id="nameInput" class="ui-button buttonSound" minlength="4" maxlength="18" size="25" value="???" title="name your pet!">
+      <input type="text" id="nameInput" class="ui-button buttonSound" minlength="4" maxlength="18" size="25" value="?" title="name your pet!">
     </div>
 
     <!-- Window (3): top right of layout -->
     <div id="swatch" class="window">
       <!-- Pet room background (editable color from sliders) -->
       <img src="assets/images/type0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap" class="filter" >
-      <img src="assets/images/eye0.png" width="250" height="250" alt="petEyes" id="eyes" class="filter" onClick='updatePetting(); positiveReact();'>
+      <img src="assets/images/eye0.png" width="250" height="250" alt="petEyes" id="eyes" class="filter" onClick='updatePetting(); positiveReact(this);'>
 
     </div>
 
@@ -164,6 +164,7 @@
       <h1>  <p title="history of interactions of you and your pet!">Logs</p> </h1>
       <!-- Displays all messages (interactions history) -->
       <p id="log"></p>
+
     </div>
 
     <!-- Window (5): bottom right of layout -->

@@ -54,6 +54,7 @@ $(function() {
   });
 
   //Button to alternate pet image colors
+  // answer taken online -> https://codepen.io/rvsanches/pen/djydEj
   $("#toggleColor").click(function() {
     if ($("#toggleColor").val() == "Dark") {
       $("#toggleColor").val("Light");
@@ -221,7 +222,7 @@ $(function() {
   });
 
   //change cursor when mouse is on pet image
-  document.getElementById("pet").style.cursor = "pointer";
+  document.getElementById("eyes").style.cursor = "pointer";
 
 });
 //
@@ -249,27 +250,6 @@ function addHealth(amount) {
 }
 
 
-// Change pet eyes: happy
-function positiveReact() {
-  // happy face
-  document.getElementById("eyes").src = "assets/images/eye1.png";
-
-  //Return to neutral eyes after a second
-  setTimeout(function() {
-    document.getElementById("eyes").src = "assets/images/eye0.png";
-  }, 1000); //1 seconds
-
-}
-
-function negativeReact() {
-  // angry face
-  document.getElementById("eyes").src = "assets/images/eye2.png";
-
-  //Return to neutral eyes after a second
-  setTimeout(function() {
-    document.getElementById("eyes").src = "assets/images/eye0.png";
-  }, 1000); //1 seconds
-}
 
 //Update when user interacts with pet directly
 //Mouse click on the pet image
@@ -306,7 +286,7 @@ function updateText(item) {
     decreaseMood(2);
     updateScroll();
   }
-  updateBar();
+  updateBar(); //check if pet is gone
 }
 
 // Update text in the log depending on item interacted with
@@ -323,6 +303,44 @@ function updateTextItem(item) {
     $("#log").append(namedPet + " is upset... <br>");
     updateScroll();
   }
+
+// Play sound on click
+  sfx1.play();
+
+}
+
+// Change pet eyes: happy
+function positiveReact(item) {
+  let namedPet = $("#nameInput").val();
+
+  // happy face
+  document.getElementById("eyes").src = "assets/images/eye1.png";
+  //Return to neutral eyes after a second
+  setTimeout(function() {
+    document.getElementById("eyes").src = "assets/images/eye0.png";
+  }, 1000); //1 seconds
+
+  // update text log (happy)
+  $("#log").append(namedPet+ " liked the "+ item.value +"!<br>");
+  updateScroll();
+
+}
+
+// Change pet eyes: angry
+function negativeReact(item) {
+  let namedPet = $("#nameInput").val();
+
+  // angry face
+  document.getElementById("eyes").src = "assets/images/eye2.png";
+
+  //Return to neutral eyes after a second
+  setTimeout(function() {
+    document.getElementById("eyes").src = "assets/images/eye0.png";
+  }, 1000); //1 seconds
+
+// update text log (unhappy)
+  $("#log").append(namedPet+ " did not like the "+ item.value +" ...<br>");
+  updateScroll();
 }
 
 // function petReaction(item){
@@ -337,6 +355,7 @@ function updateTextItem(item) {
 // }
 
 
+// Check if pet is gone (health bar at 0)
 function updateBar() {
   let namedPet = $("#nameInput").val();
 
@@ -349,9 +368,7 @@ function updateBar() {
 
 // 3s Interval in decrease/increase bars
 var myVar = setInterval(losePoints, 3000);
-
 function losePoints() {
-
   //Recall bars from the HTML
   var v1 = document.getElementById('progressbar').value;
   var v2 = document.getElementById('progressbar2').value;
@@ -395,6 +412,7 @@ function losePoints() {
 //Forced simulation reset
 function freeze() {
   document.getElementById("pet").src = "assets/images/gone.png"; //pet image replaced
+  document.getElementById("eyes").src = "assets/images/gone.png"; //pet image replaced
 
   $(".dialogForced").dialog({ //forced dialog pop up
     autoOpen: true, //auto appears
@@ -405,7 +423,7 @@ function freeze() {
     buttons: {
       OK: function() {
         $(this).dialog("close");
-        restart();
+        restart(); //resets the program on click
       },
     }
   });
@@ -439,6 +457,16 @@ function updateBackground() {
 // Resets the simulation (pet, progress bars, customization, logs)
 function restart() {
 
+//Reset Pet Image
+  document.getElementById("pet").src = "assets/images/type0.png";
+  document.getElementById("eyes").src = "assets/images/eye0.png";
+
+  //Reset Pet Color
+    document.getElementById("toggleColor").val = "Dark"; //reset to light mode
+    if ($("#toggleColor").val() == "Dark") {
+      $("img").toggleClass("filter");
+    }
+
   // Resets Progress Bar's values back to original value (50)
   document.getElementById('progressbar').value = 50, //hunger bar
     document.getElementById('progressbar2').value = 50, //mood bar
@@ -452,7 +480,7 @@ function restart() {
   //Resets Text Log history
   $("#log").text("");
   //Resets Pet's name
-  $("#nameInput").val("???")
+  $("#nameInput").val("?")
 }
 
 //failed tests
