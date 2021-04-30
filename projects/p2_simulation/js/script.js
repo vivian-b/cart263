@@ -8,7 +8,7 @@ author, and this description to match your project!
 
 "use strict";
 
-$(document).ready(function() {
+$(function() {
 
   var audioElement = document.createElement('audio');
      audioElement.setAttribute('src', "assets/sounds/bark.wav");
@@ -21,7 +21,6 @@ $(document).ready(function() {
   var v2 = document.getElementById('progressbar2').value;
   var v3 = document.getElementById('progressbar3').value;
 
-  updateBackground();
 // storage();
   $("#tabs").tabs();
 
@@ -108,13 +107,78 @@ $(document).ready(function() {
         }
       }
     });
-});
 
+    updateBackground();
+    function hexFromRGB(r, g, b) {
+      var hex = [
+        r.toString(16),
+        g.toString(16),
+        b.toString(16)
+      ];
+      $.each(hex, function(nr, val) {
+        if (val.length === 1) {
+          hex[nr] = "0" + val;
+        }
+      });
+      return hex.join("").toUpperCase();
+    }
+
+    function refreshSwatch() {
+      var red = $("#red").slider("value"),
+        green = $("#green").slider("value"),
+        blue = $("#blue").slider("value"),
+        hex = hexFromRGB(red, green, blue);
+      $("#swatch").css("background-color", "#" + hex);
+    }
+
+    $("#red, #green, #blue").slider({
+      orientation: "horizontal",
+      range: "min",
+      max: 255,
+      value: 127,
+      slide: refreshSwatch,
+      change: refreshSwatch
+    });
+
+    $("#red, #green, #blue").slider("value",255);
+
+    $(".drag").draggable({
+      revert: "invalid",
+
+    });
+    $("#droppable").droppable({
+      drop: function(event, ui) {
+        $(this)
+          .find("p")
+        $("#poo").hide();
+      }
+
+    });
+
+    $("#slider").slider({
+      range: "min",
+      value: 215,
+      min: 150,
+      max: 275,
+      slide: function(event, ui) {
+        $("#amount").val(ui.value);
+        document.getElementById("pet").width = ui.value;
+        document.getElementById("pet").height = ui.value;
+      }
+    });
+    $("#amount").val($("#slider").slider("value"));
+
+    $(document).tooltip({
+      track: true
+    });
+});
+//
+//
+//
 
 function addHunger(amount) {
   var v1 = document.getElementById('progressbar').value;
   document.getElementById("progressbar").value = v1 + amount;
-  positiveReact();
 }
 
 function addMood(amount) {
@@ -142,72 +206,6 @@ function negativeReact() {
   // document.getElementById("pet").src = "assets/images/animal0.png";
 }
 
-$(function() {
-  function hexFromRGB(r, g, b) {
-    var hex = [
-      r.toString(16),
-      g.toString(16),
-      b.toString(16)
-    ];
-    $.each(hex, function(nr, val) {
-      if (val.length === 1) {
-        hex[nr] = "0" + val;
-      }
-    });
-    return hex.join("").toUpperCase();
-  }
-
-  function refreshSwatch() {
-    var red = $("#red").slider("value"),
-      green = $("#green").slider("value"),
-      blue = $("#blue").slider("value"),
-      hex = hexFromRGB(red, green, blue);
-    $("#swatch").css("background-color", "#" + hex);
-  }
-
-  $("#red, #green, #blue").slider({
-    orientation: "horizontal",
-    range: "min",
-    max: 255,
-    value: 127,
-    slide: refreshSwatch,
-    change: refreshSwatch
-  });
-
-  $("#red, #green, #blue").slider("value",255);
-
-});
-
-$(function() {
-  $("#slider").slider({
-    range: "min",
-    value: 215,
-    min: 150,
-    max: 275,
-    slide: function(event, ui) {
-      $("#amount").val(ui.value);
-      document.getElementById("pet").width = ui.value;
-      document.getElementById("pet").height = ui.value;
-    }
-  });
-  $("#amount").val($("#slider").slider("value"));
-});
-
-$(function() {
-  $(".drag").draggable({
-    revert: "invalid",
-
-  });
-  $("#droppable").droppable({
-    drop: function(event, ui) {
-      $(this)
-        .find("p")
-      $("#poo").hide();
-    }
-
-  });
-});
-
 function updatePetting() {
 
   document.getElementById("pet").style.cursor = "pointer";
@@ -225,8 +223,9 @@ function updatePetting() {
 function updateText(item) {
   let namedPet = $("#nameInput").val();
 
-  $("#log").append("You gave " + namedPet + " " + item.value + "<br>");
+  $("#log").append("You gave " + namedPet + " " +item.value + "<br>");
   updateScroll();
+
 
   if ((v1 <= 0) && (v2 >= 1)) {
     $("#log").append(namedPet + " is full! <br>");
@@ -246,19 +245,22 @@ function updateTextItem(item) {
     $("#log").append(namedPet + " is upset... <br>");
     updateScroll();
   }
-
-  updateBar();
-
 }
 
+// function petReaction(item){
+//   let namedPet = $("#nameInput").val();
+//   if(item.value ="apple"){
+//   $("#log").append(namedPet +": nom! <br><br>");
+// }else {
+//   $("#log").append(namedPet +": grr! <br><br>");
+//
+// }
+//   updateScroll();
+// }
 
 function updateBar() {
   let namedPet = $("#nameInput").val();
 
-  if ((v1 <= 0) && (v2 <= 0)) {
-    $("#log").append(namedPet + "  is full and upset... <br>");
-    updateScroll();
-  }
   if (v3 <= 0) {
     $("#log").append(namedPet + " is gone... <br>");
     updateScroll();
@@ -311,7 +313,6 @@ function freeze() {
     autoOpen: true,
     resizable: false,
     closeOnEscape: false,
-    height: "auto",
     width: 400,
     modal: true,
     buttons: {
@@ -328,12 +329,6 @@ function updateScroll() {
   let textBox = document.getElementById("log");
   textBox.scrollTop = textBox.scrollHeight;
 }
-
-$(function() {
-  $(document).tooltip({
-    track: true
-  });
-});
 
 function updateBackground() {
   var d = new Date();
@@ -369,11 +364,11 @@ function restart() {
 
 // function storage() {
 //
-//   let namedPet = $("#nameInput").val();
+//   // let namedPet = $("#nameInput").val();
 //   localStorage.setItem('name', JSON.stringify(namedPet));
 //   document.getElementById("#nameInput").innerHTML = localStorage.getItem("name");
-//   // let namedPet = JSON.parse(localStorage.getItem('name'));
-//
-//   // localStorage.setItem('type', JSON.stringify(petName));
-//   // document.getElementById("#nameInput").innerHTML = localStorage.getItem("name");
+//   let namedPet = JSON.parse(localStorage.getItem('name'));
+
+  // localStorage.setItem('type', JSON.stringify(petName));
+  // document.getElementById("#nameInput").innerHTML = localStorage.getItem("name");
 // }
