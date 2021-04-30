@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+/* general display */
 body {
   padding: 0;
   margin: 0;
@@ -8,12 +9,14 @@ body {
   background-color: #1d1f24;
 }
 
+/* general text font+color  */
 p {
   color: white;
   margin-left: 10px;
   font-family: 'Roboto Mono', monospace;
 }
 
+/* overall grid layout  */
 .grid {
   width: 100vw;
   padding: 5vmin;
@@ -23,6 +26,7 @@ p {
   grid-gap: 2vmin;
 }
 
+/* general windows display (black box with white border) */
 .window {
   background-color: black;
   border-style: solid;
@@ -31,23 +35,16 @@ p {
   padding: 5px 20px 10px 20px;
 }
 
-.actionItem {
-  display: block;
-}
-
+/* Window (1): top left */
+/* Interactions UI */
 #interactionsWindow {
   width: 45vw;
   grid-column: 1 / 2;
   grid-row: 1 / 4;
 }
 
-#logWindow {
-  width: 45vw;
-  height: 95%;
-  grid-column: 1 / 2;
-  grid-row: 4 / 4;
-}
-
+/* Window (2): top center */
+/* Name Button */
 #nameWindow {
   width: 40vw;
   grid-column: 2 / 2;
@@ -55,18 +52,32 @@ p {
   align-self: center;
 }
 
+/* Window (3): top right */
+/* Pet Room */
 #swatch {
   width: 40vw;
   grid-column: 2 / 2;
   grid-row: 2 / 3;
 }
 
+/* Window (4): bottom left */
+/* Messages (activity history) */
+#logWindow {
+  width: 45vw;
+  height: 95%;
+  grid-column: 1 / 2;
+  grid-row: 4 / 4;
+}
+
+/* Window (5): bottom right */
+/* progress bars (hunger/mood/health) */
 #metersWindow {
   width: 40vw;
   grid-column: 2 / 2;
   grid-row: 3 / 5;
 }
 
+/* Reset button (Top right) */
 #btnReset {
   width: 80px;
   grid-column: 2 / 2;
@@ -75,61 +86,66 @@ p {
   margin-right: 70px;
 }
 
-img {
+/* pet image positioning */
+#pet {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20%;
 }
 
+/* color invert class */
 .filter {
   filter: invert(1);
 }
 
-fieldset {
-  border: 0;
-}
-
-label {
-  display: block;
-  margin: 30px 0 0 0;
-}
-
-.overflow {
-  height: 200px;
-}
-
+/* progress bars  */
 progress {
-  min-width: 400px;
+  min-width: 90%;
   height: 25px;
   margin: 8px;
   display: block;
 }
 
+/* action history */
 #log {
   height: 70%;
   overflow: auto;
 }
 
-#pet {
-  position: relative;
-  margin-top: 20%;
+
+/* Name Box */
+#nameInput {
+  font-size: 1.25em;
+  color: black;
+  background-color: white;
+  height: 4vh;
+  border: none;
 }
 
-/* tests */
+/* Reset Button */
+#btnReset {
+  font-size: 1em;
+  background: none;
+  border: none;
+}
+
+/* Sliders positioning */
+/* color sliders */
 #red, #green, #blue {
   float: left;
   clear: left;
   margin: 8px;
 }
 
-#slider {
-  margin-left: 8px;
+/* Sliders Display */
+
+/* slider width */
+.sliderSizing {
+  width: 200px;
 }
 
-.spacing {
-  height: 100px;
-}
-
+/* color slider specifics (handle + bacground color) */
 #red .ui-slider-range {
   background: #ef2929;
 }
@@ -161,46 +177,39 @@ progress {
   background: #e0e0e0;
 }
 
+/* pet scale slider */
+#slider {
+  margin-left: 8px;
+}
+
 #slider .ui-slider-handle {
   border-color: white;
   background-color: #e0e0e0;
 }
 
-.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
-  display: none;
+/* spacing div */
+.spacing {
+  height: 100px;
 }
 
-.sliderSizing {
-  width: 200px;
-}
-
-.ui-overlay-shadow {
-  box-shadow: none;
-}
-
+/* Sliders box height */
 fieldset {
   height: 30vh;
 }
 
+/* hide close button on dialog UI */
+.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+  display: none;
+}
+
+
+/* change button color on cooldown */
 .cooldown:disabled, .cooldown:disabled:hover, .cooldown2:disabled:hover, .cooldown2:disabled {
   background-color: #4a4a4a;
   color: #6d7175;
 }
 
+/* All buttons spacing */
 .ui-button {
   margin-top: 15px;
-}
-
-#nameInput {
-  font-size: 1.25em;
-  color: black;
-  background-color: white;
-  height: 4vh;
-  border: none;
-}
-
-#btnReset {
-  font-size: 1em;
-  background: none;
-  border: none;
 }

@@ -1,14 +1,15 @@
 /**
 Vivian Bui
 
-
+Virtual Pet
+Small and simple, straightforward virutal pet game.
+User can interact with their pet with food and other items and slightly customize it.
+Simulation based/inspired by jQueryUI (https://jqueryui.com/)
 */
 
 "use strict";
 
-//group all
 $(function() {
-
   //General Audio for the simulation
   var sfx1 = document.createElement('audio');
   sfx1.setAttribute('src', "assets/sounds/kianda.wav");

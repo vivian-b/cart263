@@ -8,38 +8,44 @@
   <title>Virtual Pet</title>
 
   <!-- CSS stylesheet(s) -->
+  <!-- Personal CSS -->
   <link rel="stylesheet" type="text/css" href="css/style.css" />
 
+  <!-- Additional CSS styles for UI taken from jQuery-->
   <link rel="stylesheet" type="text/css" href="css/ui-darkness/jquery-ui.css" />
   <link rel="stylesheet" type="text/css" href="css/ui-darkness/jquery-ui.min.css" />
   <link rel="stylesheet" type="text/css" href="css/ui-darkness/theme.css" />
 
-  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
-  <link rel="stylesheet" href="/resources/demos/style.css">
-
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <!-- My script(s) -->
+
+  <!-- Script from jQuery -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Personal script -->
   <script src="js/script.js"></script>
-  <script src="js/pet.js"></script>
 
 </head>
 
 <body>
 
+  <!-- Overal Grid Layout for the windows -->
   <section class="grid">
 
+    <!-- reset button (top right) -->
     <button id="btnReset" class="ui-button buttonSound">RESET</button>
 
+    <!-- Dialog (1): confirmation from reset button (on click) -->
     <div id="dialog-confirm" class="dialog" title="Restart with a new pet?">
       <p><span style="float:left; margin:12px 12px 20px 0;"></span>Current pet will be deleted forever. Are you sure?</p>
     </div>
 
+    <!-- Dialog (2): forced confirmation from end of simulation (pet gone)-->
     <div id="dialog-confirm" class="dialogForced" title="Oh no!">
       <p><span style="float:left; margin:12px 12px 20px 0;"></span>Your pet is gone. <br> Press OK to restart with a new pet.</p>
     </div>
 
+    <!-- Dialog (3): forced introduction dialog (landing)-->
     <div id="dialog-confirm" class="dialogIntro" title="Hello!">
       <p><span style="float:left; margin:12px 12px 20px 0;"></span>Welcome to a simple virtual pet game!~ <br>
         <br>Play, feed and pet it as much as you wish! <br>Be careful of what you feed and give it.
@@ -47,11 +53,14 @@
       </p>
     </div>
 
+    <!-- Window (1): top left of layout -->
     <div id="interactionsWindow" class="window">
       <h1>
+        <!-- title + tool tip -->
         <p title="plenty of tools to interact with your pet!">Interactions</p>
       </h1>
 
+      <!-- Interaction tabs: organize each types of interaction in different windows -->
       <div id="tabs">
         <ul>
           <li><a href="#tabs-1" class="buttonSound">Customize</a></li>
@@ -60,31 +69,33 @@
         </ul>
         <div id="tabs-1">
 
+          <!-- Display / Organize tabs inside the window -->
           <div class="demo">
             <fieldset>
               <form action="#">
 
+                <!-- Room customization: color sliders -->
                 <p title="change the color of the room">Room</p>
                 <div id="red" class="sliderSizing"></div>
                 <div id="green" class="sliderSizing"></div>
                 <div id="blue" class="sliderSizing"></div>
-                <div class="spacing">
-                </div>
-                <p title="change pet's size and appearance">Pet</p>
 
+                <div class="spacing"> </div> <!-- spacing block -->
+
+                <!-- Pet customization: scale -->
+                <p title="change pet's size and appearance">Pet</p>
                 <div id="slider" class="sliderSizing"></div></a>
 
-
-
             </fieldset>
+
+            <!-- Pet customization: image (pet's look)change -->
             <select id="petType" class="ui-button">
               <option value="assets/images/animal0.png" selected="selected">None</option>
               <option value="assets/images/animal1.png">Bunny</option>
               <option value="assets/images/animal2.png">Dog</option>
               <option value="assets/images/animal3.png">Cat</option>
-              <!-- <option value="assets/images/animal4.png">four</option>
-    <option value="assets/images/animal5.png">five</option> -->
 
+              <!-- Pet customization: image color change -->
               <input type=button id="toggleColor" class="ui-button buttonSound" value="Light">
 
             </select>
@@ -92,8 +103,9 @@
 
           </div>
         </div>
-        <div id="tabs-2">
 
+        <!-- All Button Interactions (FOOD) -->
+        <div id="tabs-2">
           <input type=button class="ui-button itemButtonP cooldown" value='apple' onClick='addHunger(-3); updateText(this);'>
           <input type=button class="ui-button itemButtonN cooldown" value='broccoli' onClick='addHunger(-3); decreaseMood(1);addHealth(1); updateText(this);'>
           <input type=button class="ui-button itemButtonP cooldown" value='candy' onClick='addHunger(-1); addMood(3); addHealth(-2); updateText(this);'>
@@ -108,9 +120,9 @@
           <input type=button class="ui-button itemButtonP cooldown2" value='pizza' onClick='addHunger(-5); addMood(8); addHealth(1); updateText(this);'>
           <input type=button class="ui-button itemButtonP cooldown" value='berries' onClick='addHunger(-1); increaseHealth(2); updateText(this);'>
           <input type=button class="ui-button itemButtonP cooldown" value='juice' onClick='addHunger(-1); increaseHealth(2); updateText(this);'>
-
         </div>
 
+        <!-- All Button Interactions (ITEMS) -->
         <div id="tabs-3">
           <input type=button class="ui-button itemButtonP cooldown" value='brush' onClick='addMood(2); addHealth(1); updateTextItem(this);'>
           <input type=button class="ui-button itemButtonN cooldown2" value='shower' onClick='addMood(-5); addHealth(5);  updateTextItem(this);'>
@@ -125,40 +137,45 @@
           <input type=button class="ui-button itemButtonP cooldown" value='chew toy' onClick='addMood(7); updateTextItem(this);'>
           <input type=button class="ui-button itemButtonN cooldown2" value='needle' onClick='decreaseMood(10); addHealth(10); addHunger(3); updateTextItem(this);'>
           <input type=button class="ui-button itemButtonP cooldown2" value='bed' onClick='addMood(5); addHealth(3); addHunger(-2); updateTextItem(this);'>
-
-
         </div>
       </div>
     </div>
 
+    <!-- Window (2): top center of layout -->
     <div id="nameWindow">
+      <!-- editable name window -->
       <input type="text" id="nameInput" class="ui-button buttonSound" minlength="4" maxlength="18" size="25" value="???" title="name your pet!">
     </div>
+
+    <!-- Window (3): top right of layout -->
     <div id="swatch" class="window">
+      <!-- Pet room background (editable color from sliders) -->
       <img src="assets/images/animal0.png" width="250" height="250" alt="petImage" id="pet" name="image-swap" class="filter" onClick='updatePetting();'>
-      <!-- <div id="droppable" class="ui-widget-header"> </div> -->
     </div>
 
+    <!-- Window (4): bottom left of layout -->
     <div id="logWindow" class="window">
-      <h1>
-        <p title="history of interactions of you and your pet!">Logs</p>
-      </h1>
-
+      <h1>  <p title="history of interactions of you and your pet!">Logs</p> </h1>
+      <!-- Displays all messages (interactions history) -->
       <p id="log"></p>
     </div>
 
+    <!-- Window (5): bottom right of layout -->
     <div id="metersWindow" class="window">
-      <h1>
-        <p title="progress bars of your pet">Status</p>
-      </h1>
+      <h1><p title="progress bars of your pet">Status</p></h1>
+
+      <!-- Displays all bars (1-hunger 2-mood 3-health) -->
       <div class="window">
+        <!-- First Bar: Hunger -->
         <p class="tag" title="feed you pet some food so it doesn't get hungry!"> Hunger</p>
         <progress value="50" max="100" min="0" id="progressbar"></progress>
+
+        <!-- Second Bar: Mood -->
         <p class="tag" title="Take good care of your pet, keep it happy!"> Mood</p>
-
         <progress value="50" max="100" min="0" id="progressbar2"></progress>
-        <p class="tag" title="Keep your pet healthy or else it will disappear"> Health</p>
 
+        <!-- Third Bar: Health -->
+        <p class="tag" title="Keep your pet healthy or else it will disappear"> Health</p>
         <progress value="50" max="100" min="0" id="progressbar3"></progress>
 
       </div>
