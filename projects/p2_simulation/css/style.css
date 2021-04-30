@@ -44,7 +44,7 @@ font-family: 'Roboto Mono', monospace;
 }
 
 #logWindow {
-  width: 45vw;
+  height: 90%;
   grid-column: 1 / 2;
   grid-row: 4 / 4;
 }
@@ -53,6 +53,7 @@ font-family: 'Roboto Mono', monospace;
   width: 40vw;
   grid-column: 2 / 2;
   grid-row: 1 / 1;
+  align-self: center;
 }
 
 #swatch {
@@ -107,7 +108,7 @@ progress {
 }
 
 #log{
-  height: 13vw;
+  height: 70%;
   overflow:auto;
 }
 
@@ -168,4 +169,18 @@ fieldset{
 .ui-button{
   margin-top: 15px;
 
+}
+
+#nameInput{
+  font-size: 1.25em;
+  color: black;
+  background-color: white;
+  height: 4vh;
+  border: none;
+}
+
+#btnReset{
+  font-size: 1em;
+  background: none;
+  border: none;
 }

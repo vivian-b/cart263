@@ -334,6 +334,7 @@ function updateBackground() {
 }
 
 function restart() {
+
   document.getElementById('progressbar').value = 50,
   document.getElementById('progressbar2').value = 50,
   document.getElementById('progressbar3').value = 50,
@@ -343,7 +344,9 @@ function restart() {
   $("#blue").slider("value", 255);
 
   $("#log").text("");
-  $("#nameInput").val("")
+  $("#nameInput").val("your pet")
+
+
 }
 
 
